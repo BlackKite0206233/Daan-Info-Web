@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace daan_info_web;
 
 use Illuminate\Database\Eloquent\Model;
 
