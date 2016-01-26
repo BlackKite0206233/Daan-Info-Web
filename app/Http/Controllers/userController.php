@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
-use daan_info_web\User;
+use daan_info_web\Repositories\UserRepository;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;

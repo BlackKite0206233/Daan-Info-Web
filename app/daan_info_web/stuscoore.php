@@ -4,7 +4,7 @@ namespace daan_info_web;
 
 use Illuminate\Database\Eloquent\Model;
 
-class stuscoore extends Model
+class Stuscoore extends Model
 {
     //
     protected $table = 'stuscoore';

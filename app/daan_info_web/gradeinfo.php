@@ -4,7 +4,7 @@ namespace daan_info_web;
 
 use Illuminate\Database\Eloquent\Model;
 
-class gradeinfo extends Model
+class Gradeinfo extends Model
 {
     //
     protected $table = 'gradeinfo';
