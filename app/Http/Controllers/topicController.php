@@ -33,4 +33,10 @@ class topicController extends Controller
         //尋找專題
 
     }
+
+    public function Pagination(Request $request)
+    {
+        //分頁顯示
+
+    }
 }

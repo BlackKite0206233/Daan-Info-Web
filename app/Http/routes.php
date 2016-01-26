@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {   return view('index');   });
-Route::get('/login', 'userController@login');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
