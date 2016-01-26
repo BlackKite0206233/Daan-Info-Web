@@ -10,28 +10,27 @@ use App\Http\Controllers\Controller;
 class scoreController extends Controller
 {
     //
-    public function add(Request $request)
+    public function store(Request $request)// post score
     {
-        //新增評分項目
+        //新增評分
 
     }
 
-    public function edit(Request $request)
+    public function update(Request $request)// put score/{score}
     {
-        //修改評分項目
+        //修改評分
 
     }
 
-    public function del(Request $request)
+    public function index()// get score
     {
-        //移除評分項目
 
     }
 
-    public function score(Request $request)
+    public function edit(Request $request)// get score/{score}/edit
     {
-        //打分數
 
     }
+
 
 }

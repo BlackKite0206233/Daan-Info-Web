@@ -8,7 +8,7 @@
     </div>
     <div class="body">
         <div class="ctrlbar">
-            <a href="/browse"><button>瀏覽專題</button></a>
+            <a href="/browse/page/1"><button>瀏覽專題</button></a>
             <a href="/search"><button>搜尋專題</button></a>
             <a href="/gradeinfo"><button>開課資訊</button></a>
             <a href="/login"><button>會員登入</button></a>
