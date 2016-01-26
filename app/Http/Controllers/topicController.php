@@ -10,33 +10,37 @@ use App\Http\Controllers\Controller;
 class topicController extends Controller
 {
     //
-    public function add(Request $request)
+    public function store(Request $request)//post topic
     {
         //新增專題
 
     }
 
-    public function edit(Request $request)
+    public function update(Request $request)//put topic/{topic}
     {
         //編輯專題
 
     }
 
-    public function del(Request $request)
+    public function destroy(Request $request)// delete topic/{topic}
     {
         //刪除專題
 
     }
 
-    public function search(Request $request)
+    public function show(Request $request)// get topic/{topic}
     {
-        //尋找專題
 
     }
 
-    public function Pagination(Request $request)
+    public function create()// get topic/create
     {
-        //分頁顯示
 
     }
+
+    public function edit()// get topic/{topic}/edit
+    {
+
+    }
+
 }

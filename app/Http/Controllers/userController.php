@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
-use Hush;
-use App\User;
+use daan_info_web\User;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,22 +13,21 @@ use App\Http\Controllers\Controller;
 class userController extends Controller
 {
     //
-    public function login(Request $request)
+    public function index()// get /login
     {
-        //登入
 
     }
 
-    public function signup(Request $request)
+    public function create(Request $request)// post /login
     {
-        //註冊
+        //登入驗證
 
     }
 
-    public function update(Request $request)
+    public function logout(Request $request)
     {
-        //修改密碼
-
+        //登出
 
     }
+
 }

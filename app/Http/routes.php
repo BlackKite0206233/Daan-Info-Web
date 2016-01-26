@@ -12,6 +12,18 @@
 */
 
 Route::get('/', function () {   return view('index');   });
+Route::group(['prefix'=>'browse'],function(){
+    Route::get('/page/{pageNo}','browseController@Pagination');
+    Route::get('/search','browseController@searchPage');
+    Route::post('/search','browseController@search');
+    Route::get('/year/{year}','browseController@year');
+});
+Route::resource('topic','topicController');
+Route::resource('gradeinfo','gradeinfoController');
+Route::resource('member','memberController');
+Route::resource('login','userController');
+Route::resource('class','classController');
+Route::get('/logout','userController@logout');
 
 /*
 |--------------------------------------------------------------------------
