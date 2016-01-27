@@ -33,7 +33,6 @@ Route::resource('class','classController');
 Route::resource('scorelist','scorelistController');
 Route::resource('score','scoreController');
 
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
