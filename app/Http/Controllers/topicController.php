@@ -38,7 +38,12 @@ class topicController extends Controller
 
     }
 
-    public function edit()// get topic/{topic}/edit
+    public function edit(Request $request)// get topic/{topic}/edit
+    {
+
+    }
+
+    public function upload(Request $request)// get topic/{topic}/upload
     {
 
     }

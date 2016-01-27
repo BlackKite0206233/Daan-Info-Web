@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class browseController extends Controller
 {
     //
-    public function Pagination(Request $request)
+    public function Pagination()
     {
         //分頁顯示
 
@@ -31,5 +31,10 @@ class browseController extends Controller
     {
         //依年度顯示
 
+    }
+
+    public function topic(Request $request)
+    {
+        //顯示指定專題
     }
 }

@@ -14,14 +14,16 @@
 Route::get('/', function () {   return view('index');   });
 
 Route::group(['prefix'=>'browse'],function(){
-    Route::get('/page/{pageNo}','browseController@Pagination');
+    Route::get('/page','browseController@Pagination');
     Route::get('/search','browseController@searchPage');
     Route::post('/search','browseController@search');
     Route::get('/year/{year}','browseController@year');
+    Route::get('/topic/{topic}','browseController@topic');
 });
 
 Route::get('/logout','userController@logout');
 Route::get('/ref','refController@index');
+Route::get('/upload','topicController@upload');
 
 Route::resource('topic','topicController');
 Route::resource('gradeinfo','gradeinfoController');

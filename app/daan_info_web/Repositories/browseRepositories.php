@@ -13,18 +13,31 @@ class browseRepositories
         $this->topicinfo = $topicinfo;
     }
 
-    public function Pagination($page)
+    public function Pagination()
     {
         //分頁
+        return $this->topicinfo
+                    ->paginate(15);
     }
 
     public function search($type ,$searchWord ,$where)
     {
         //搜尋
+        if($type == 0)
+            return $this->topicinfo
+                        ->where('' , '')
+                        ->get();
+        else
+            return $this->topicinfo
+                        ->where('' ,'like' ,'%'.'%')
+                        ->get();
     }
 
     public function year($year)
     {
         //搜尋年份
+        return $this->topicinfo
+                    ->where('groupno' ,'like' ,'%'.$year.'%')
+                    ->get();
     }
 }
