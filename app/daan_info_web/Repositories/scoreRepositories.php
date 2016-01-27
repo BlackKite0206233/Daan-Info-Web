@@ -41,19 +41,35 @@ class classRepositories
             ->delete();
     }
 
-    public function insertScore($stuNo ,$scorelistNo ,$score)
+    public function insertScore($scorelist)//傳json
     {
         //新增分數
-
+        foreach(json_decode($scorelist) as $score)
+        {
+            $stusore = new Stuscoore;
+            $stusore->stuno = $score->stuno;
+            $stusore->scoorelistidno = $score->scoorelistidno;
+            $stusore->scoore = $score->scoore;
+        }
     }
 
-    public function editScore($id  ,$scorelistNo ,$score)
+    public function editScore($scorelist)//傳json
     {
         //編輯分數
+        foreach(json_decode($scorelist) as $score)
+        {
+            $this->stuscoore
+                ->where('stuno' ,$score->stuno)
+                ->where('scoorelistidno' ,$score->scoorelistidno)
+                ->update(['scoore'=>$score->scoore]);
+        }
     }
 
     public function deleteScore($id)
     {
         //刪除分數
+        $this->stuscoore
+            ->where('idno',$id)
+            ->delete();
     }
 }
