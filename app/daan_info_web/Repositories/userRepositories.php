@@ -7,7 +7,7 @@ use Auth;
 
 use daan_info_web\User;
 use daan_info_web\Student;
-use Illuminate\Support\Facades\Hash;
+//use Illuminate\Support\Facades\Hash;
 
 //use Illuminate\Support\Facades\Auth;
 
