@@ -7,6 +7,7 @@ use Auth;
 
 use daan_info_web\User;
 use daan_info_web\Student;
+use daan_info_web\Stuscoore;
 //use Illuminate\Support\Facades\Hash;
 
 //use Illuminate\Support\Facades\Auth;
@@ -16,11 +17,13 @@ class userRepositories
 {
     protected $user;
     protected $student;
+    protected $stuscore;
 
-    public function __construct(User $user ,Student $student)
+    public function __construct(User $user ,Student $student ,Stuscoore $stuscoore)
     {
         $this->user = $user;
         $this->student = $student;
+        $this->stuscoore = $stuscoore;
     }
 
     public function login($acc ,$password)
@@ -60,6 +63,10 @@ class userRepositories
             $stu->stuno = $acc_id;
             $stu->stuname = $stuName;
             $stu->save();
+
+            $score = new Stuscoore;
+            $score->stuno = $acc;
+            $score->save();
         }
 
     }
@@ -68,7 +75,7 @@ class userRepositories
     {
         //編輯
         $this->user
-            ->where('id' ,$id)
+            ->where('idno' ,$id)
             ->update(['password' => Hash::make($password)]);
     }
 
@@ -76,10 +83,10 @@ class userRepositories
     {
         //刪除
         $acc_id = $this->user
-                        ->where('id',$id)
+                        ->where('idno',$id)
                         ->get('acc_id');
         $this->user
-            ->where('id',$id)
+            ->where('idno',$id)
             ->delete();
         $this->student
             ->where('stuno',$acc_id)

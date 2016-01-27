@@ -32,7 +32,7 @@ class userRepositories
     {
         //刪除
         $this->topicinfo
-            ->where('id' ,$id)
+            ->where('idno' ,$id)
             ->delete();
     }
 }
