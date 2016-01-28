@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 
 class gradeinfoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>['index','teacher']]);
+    }
     //
     public function store(Request $request)//post gradeinfo
     {
@@ -39,6 +43,11 @@ class gradeinfoController extends Controller
     }
 
     public function edit()// get gradeinfo/{gradeinfo}/edit
+    {
+
+    }
+
+    public function teacher(Request $request)
     {
 
     }

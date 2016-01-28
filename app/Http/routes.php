@@ -12,26 +12,30 @@
 */
 
 Route::get('/', function () {   return view('index');   });
+Route::get('/ref','refController@index');
+Route::get('/gradeinfo/{teacher}','gradeingoController@teacher');
 
 Route::group(['prefix'=>'browse'],function(){
     Route::get('/page','browseController@Pagination');
     Route::get('/search','browseController@searchPage');
-    Route::post('/search','browseController@search');
     Route::get('/year/{year}','browseController@year');
     Route::get('/topic/{topic}','browseController@topic');
+    Route::post('/search','browseController@search');
+});
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/upload','topicController@upload');
+    Route::get('/logout','userController@logout');
+    Route::resource('topic','topicController');
+    Route::resource('scorelist','scorelistController');
+    Route::resource('score','scoreController');
+    Route::resource('member','memberController');
+    Route::resource('class','classController');
 });
 
-Route::get('/logout','userController@logout');
-Route::get('/ref','refController@index');
-Route::get('/upload','topicController@upload');
-
-Route::resource('topic','topicController');
 Route::resource('gradeinfo','gradeinfoController');
-Route::resource('member','memberController');
 Route::resource('login','userController');
-Route::resource('class','classController');
-Route::resource('scorelist','scorelistController');
-Route::resource('score','scoreController');
+
+
 
 /*
 |--------------------------------------------------------------------------
