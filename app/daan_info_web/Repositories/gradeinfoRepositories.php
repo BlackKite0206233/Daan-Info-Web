@@ -16,15 +16,36 @@ class gradeinfoRepositories
     public function insert($gradeNo ,$teacherNo ,$content)
     {
         //新增
+        $info = new Gradeinfo;
+        $info->gradeno = $gradeNo;
+        $info->teacherno = $teacherNo;
+        $info->content = $content;
+        $info->save();
     }
 
-    public function edit($id  ,$gradeNo ,$teacherNo ,$content)
+    public function edit($gradeinfo)//傳json
     {
         //編輯
+        foreach(json_decode($gradeinfo) as $grade)
+        {
+            $this->gradeinfo
+                ->where('idno', $grade->id)
+                ->update(['teacherno'=>$grade->teacherno ,'content'=>$grade->content]);
+        }
     }
 
     public function delete($id)
     {
         //刪除
+        $this->gradeinfo
+            ->where('idno',$id)
+            ->delete();
+    }
+
+    public function teacher($teacherno)
+    {
+        $this->gradeinfo
+            ->where('teacherno' ,$teacherno)
+            ->get();
     }
 }

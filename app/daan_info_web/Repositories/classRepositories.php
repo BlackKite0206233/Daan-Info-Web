@@ -16,15 +16,24 @@ class classRepositories
     public function insert($typeName)
     {
         //新增
+        $class = new Topictype;
+        $class->typename = $typeName;
+        $class->save();
     }
 
     public function edit($id  ,$typeName)
     {
         //編輯
+        $this->topictype
+            ->where('idno' ,$id)
+            ->update(['typename'=>$typeName]);
     }
 
     public function delete($id)
     {
         //刪除
+        $this->topictype
+            ->where('idno' ,$id)
+            ->delete();
     }
 }

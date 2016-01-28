@@ -14,7 +14,7 @@ class CreateGradeinfoTable extends Migration
     {
         Schema::create('gradeinfo', function (Blueprint $table) {
             $table->increments('gradeidno');
-            $table->string('gradeno',10);
+            $table->string('idno',10);
             $table->string('teacherno',10);
             $table->text('content');
 
