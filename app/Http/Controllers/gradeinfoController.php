@@ -11,7 +11,7 @@ class gradeinfoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',['except'=>['index','teacher']]);
+        $this->middleware('teacherMiddleware',['except'=>['index','teacher']]);
     }
     //
     public function store(Request $request)//post gradeinfo
