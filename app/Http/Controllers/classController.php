@@ -54,6 +54,7 @@ class classController extends Controller
 
     public function edit()// get class/{class}/edit
     {
-
+        $class = $this->classRepositories
+                        ->all();
     }
 }

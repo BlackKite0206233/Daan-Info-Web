@@ -40,4 +40,9 @@ class browseRepositories
                     ->where('groupno' ,'like' ,'%'.$year.'%')
                     ->get();
     }
+
+    public function teacher($teacherno)
+    {
+
+    }
 }
