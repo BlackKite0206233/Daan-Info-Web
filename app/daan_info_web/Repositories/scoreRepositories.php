@@ -5,7 +5,7 @@ namespace daan_info_web\Repositories;
 use daan_info_web\Scoorelistno;
 use daan_info_web\Stuscoore;
 
-class classRepositories
+class scoreRepositories
 {
     protected $scoorelistno;
     protected $stuscoore;
