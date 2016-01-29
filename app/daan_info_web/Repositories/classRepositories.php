@@ -36,4 +36,10 @@ class classRepositories
             ->where('idno' ,$id)
             ->delete();
     }
+
+    public function all()
+    {
+        return $this->topictype
+                    ->get();
+    }
 }
