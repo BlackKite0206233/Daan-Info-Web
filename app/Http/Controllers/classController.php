@@ -26,13 +26,13 @@ class classController extends Controller
                 ->insert($request['typename']);
     }
 
-    public function update(Request $request)//put class/{class}
-    {
-        //編輯分類
-        if(isset($request['typename']))
-            $this->classRepositories
-                ->edit($request['id'],$request['typename']);
-    }
+//    public function update(Request $request)//put class/{class}
+//    {
+//        //編輯分類
+//        if(isset($request['typename']))
+//            $this->classRepositories
+//                ->edit($request['id'],$request['typename']);
+//    }
 
     public function destroy(Request $request)// delete class/{class}
     {
@@ -52,8 +52,8 @@ class classController extends Controller
 
     }
 
-    public function edit()// get class/{class}/edit
-    {
-
-    }
+//    public function edit()// get class/{class}/edit
+//    {
+//
+//    }
 }

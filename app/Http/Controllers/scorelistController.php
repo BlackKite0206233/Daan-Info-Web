@@ -33,4 +33,9 @@ class scorelistController extends Controller
 
 
     }
+
+    public function create()//get scorelist/create
+    {
+
+    }
 }

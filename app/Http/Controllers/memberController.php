@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class memberController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('adminMiddleware',['except'=>['update','edit']]);
+    }
     //
     public function store(Request $request)//post member
     {
@@ -23,11 +27,11 @@ class memberController extends Controller
 
     }
 
-    public function destroy(Request $request)// delete member/{member}
-    {
-        //刪除學生
-
-    }
+//    public function destroy(Request $request)// delete member/{member}
+//    {
+//        //刪除學生
+//
+//    }
 
     public function index()// get member/
     {

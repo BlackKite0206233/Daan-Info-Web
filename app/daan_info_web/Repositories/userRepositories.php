@@ -16,14 +16,10 @@ use daan_info_web\Stuscoore;
 class userRepositories
 {
     protected $user;
-    protected $student;
-    protected $stuscore;
 
-    public function __construct(User $user ,Student $student ,Stuscoore $stuscoore)
+    public function __construct(User $user)
     {
         $this->user = $user;
-        $this->student = $student;
-        $this->stuscoore = $stuscoore;
     }
 
     public function login($acc ,$password)
@@ -33,8 +29,10 @@ class userRepositories
         {
             if(Auth::user()->category == "s")
                 return 1;
-            else
+            else if(Auth::user()->acc == "admin")
                 return 2;
+            else
+                return 3;
         }
         else
             return 0;
@@ -46,7 +44,7 @@ class userRepositories
         Auth::logout();
     }
 
-    public function insert($acc ,$acc_id ,$password ,$memberNo ,$category ,$stuName)
+    public function insert($acc ,$acc_id ,$password ,$memberNo ,$category)
     {
         //新增
         $member = new User;
@@ -56,18 +54,6 @@ class userRepositories
         $member->memberNo = $memberNo;
         $member->category = $category;
         $member->save();
-
-        if($category == "s")
-        {
-            $stu = new Student;
-            $stu->stuno = $acc_id;
-            $stu->stuname = $stuName;
-            $stu->save();
-
-            $score = new Stuscoore;
-            $score->stuno = $acc;
-            $score->save();
-        }
 
     }
 
@@ -79,19 +65,19 @@ class userRepositories
             ->update(['password' => Hash::make($password)]);
     }
 
-    public function delete($id)
-    {
-        //刪除
-        $acc_id = $this->user
-                        ->where('idno',$id)
-                        ->get('acc_id');
-        $this->user
-            ->where('idno',$id)
-            ->delete();
-        $this->student
-            ->where('stuno',$acc_id)
-            ->delete();
-    }
+//    public function delete($id)
+//    {
+//        //刪除
+//        $acc_id = $this->user
+//                        ->where('idno',$id)
+//                        ->get('acc_id');
+//        $this->user
+//            ->where('idno',$id)
+//            ->delete();
+//        $this->student
+//            ->where('stuno',$acc_id)
+//            ->delete();
+//    }
 
     public function all()
     {

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeachergroupTable extends Migration
+class CreateTopicgroupTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateTeachergroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('teachergroup', function (Blueprint $table) {
+        Schema::create('topicgroup', function (Blueprint $table) {
             $table->increments('idno');
             $table->string('groupno',10);
             $table->string('stuno',10);
@@ -26,6 +26,6 @@ class CreateTeachergroupTable extends Migration
      */
     public function down()
     {
-        Schema::drop('teachergroup');
+        Schema::drop('topicgroup');
     }
 }

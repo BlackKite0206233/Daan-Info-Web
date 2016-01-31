@@ -16,13 +16,14 @@ class topicController extends Controller
     public function __construct(topicRepositories $topicRepositories)
     {
         $this->topicRepositories = $topicRepositories;
+        $this->middleware('adminMiddleware',['only'=>['store','create']]);
     }
     //
     public function store(Request $request)//post topic
     {
         //新增專題
-        $this->topicRepositories
-            ->insert($request['groupno']);
+//        $this->topicRepositories
+//            ->insert($request['groupno']);
     }
 
     public function update(Request $request)//put topic/{topic}
@@ -31,12 +32,12 @@ class topicController extends Controller
 
     }
 
-    public function destroy(Request $request)// delete topic/{topic}
-    {
-        //刪除專題
-        $this->topicRepositories
-            ->delete($request['id']);
-    }
+//    public function destroy(Request $request)// delete topic/{topic}
+//    {
+//        //刪除專題
+//        $this->topicRepositories
+//            ->delete($request['id']);
+//    }
 
     public function show(Request $request)// get topic/{topic}
     {
