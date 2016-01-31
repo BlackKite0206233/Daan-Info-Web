@@ -35,4 +35,17 @@ class topicRepositories
             ->where('idno' ,$id)
             ->delete();
     }
+
+    public function all()
+    {
+        return $this->topicinfo
+                    ->get();
+    }
+
+    public function one($id)
+    {
+        return $this->topicinfo
+                    ->where('idno' ,$id)
+                    ->get();
+    }
 }

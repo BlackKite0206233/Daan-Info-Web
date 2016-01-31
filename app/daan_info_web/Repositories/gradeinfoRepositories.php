@@ -42,10 +42,5 @@ class gradeinfoRepositories
             ->delete();
     }
 
-    public function teacher($teacherno)
-    {
-        $this->gradeinfo
-            ->where('teacherno' ,$teacherno)
-            ->get();
-    }
+
 }

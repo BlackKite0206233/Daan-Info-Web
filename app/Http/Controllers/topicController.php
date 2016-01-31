@@ -44,7 +44,8 @@ class topicController extends Controller
 
     public function show(Request $request)// get topic/{topic}
     {
-
+        $topic = $this->topicRepositories
+                        ->one($request['id']);
     }
 
     public function create()// get topic/create
@@ -54,7 +55,8 @@ class topicController extends Controller
 
     public function edit(Request $request)// get topic/{topic}/edit
     {
-
+        $topic = $this->topicRepositories
+                        ->one($request['id']);
     }
 
     public function upload(Request $request)// get topic/{topic}/upload
@@ -62,4 +64,9 @@ class topicController extends Controller
 
     }
 
+    public function index()
+    {
+        $topic = $this->topicRepositories
+                        ->all();
+    }
 }

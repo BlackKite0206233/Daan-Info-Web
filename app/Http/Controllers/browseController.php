@@ -37,4 +37,14 @@ class browseController extends Controller
     {
         //顯示指定專題
     }
+
+    public function teacherPage()
+    {
+
+    }
+
+    public function teacher(Request $request)
+    {
+
+    }
 }
