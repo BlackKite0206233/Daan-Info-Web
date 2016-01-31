@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use daan_info_web\Repositories\topicRepositories;
 
 class topicController extends Controller
@@ -18,12 +17,15 @@ class topicController extends Controller
         $this->topicRepositories = $topicRepositories;
         $this->middleware('adminMiddleware',['only'=>['store','create']]);
     }
+
     //
     public function store(Request $request)//post topic
     {
         //新增專題
+
 //        $this->topicRepositories
 //            ->insert($request['groupno']);
+
     }
 
     public function update(Request $request)//put topic/{topic}
@@ -31,6 +33,7 @@ class topicController extends Controller
         //編輯專題
 
     }
+
 
 //    public function destroy(Request $request)// delete topic/{topic}
 //    {
