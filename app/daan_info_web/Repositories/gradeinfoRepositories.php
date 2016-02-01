@@ -30,7 +30,7 @@ class gradeinfoRepositories
         {
             $this->gradeinfo
                 ->where('idno', $grade->id)
-                ->update(['teacherno'=>$grade->teacherno ,'content'=>$grade->content]);
+                ->update(['content'=>$grade->content]);
         }
     }
 
@@ -42,5 +42,18 @@ class gradeinfoRepositories
             ->delete();
     }
 
+    public function all($year)
+    {
+        return $this->gradeinfo
+                    ->where('gradeno',$year)
+                    ->get();
+    }
 
+    public function teacher($teacherno,$year)
+    {
+        return $this->gradeinfo
+            ->where('gradeno',$year)
+            ->where('teacherno',$teacherno)
+            ->get();
+    }
 }
