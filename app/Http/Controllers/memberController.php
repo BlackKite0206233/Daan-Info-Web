@@ -16,7 +16,9 @@ class memberController extends Controller
     protected $userRepositories;
     protected $studentRepositories;
     protected $stuscoreRepositories;
-    public function __construct(userRepositories $userRepositories ,studentRepositories $studentRepositories ,stuscoreRepositories $stuscoreRepositories)
+    public function __construct(userRepositories $userRepositories ,
+                                studentRepositories $studentRepositories ,
+                                stuscoreRepositories $stuscoreRepositories)
     {
         $this->middleware('adminMiddleware',['except'=>['update','edit']]);
         $this->userRepositories = $userRepositories;
@@ -27,13 +29,22 @@ class memberController extends Controller
     public function store(Request $request)//post member
     {
         //新增學生
+        $this->userRepositories
+            ->insert($request['acc'],$request['acc_id'],$request['password'],$request['memberno'],"s");
+
+        $this->studentRepositories
+            ->insert($request['acc_id'],$request['name']);
+
+        $this->stuscoreRepositories
+            ->insert($request['acc_id']);
         
     }
 
     public function update(Request $request)//put member/{member}
     {
         //編輯學生
-
+        $this->userRepositories
+            ->edit($request['id'],$request['password']);
     }
 
 //    public function destroy(Request $request)// delete member/{member}
@@ -44,12 +55,14 @@ class memberController extends Controller
 
     public function index()// get member/
     {
-
+        $stu = $this->studentRepositories
+                    ->all();
     }
 
     public function show(Request $request)// get member/{member}
     {
-
+        $stu = $this->studentRepositories
+                    ->year($request['year']);
     }
 
     public function create()// get member/create
