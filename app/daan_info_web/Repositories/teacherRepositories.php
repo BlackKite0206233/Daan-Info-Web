@@ -12,4 +12,12 @@ class teacherRepositories
     {
         $this->teacher = $teacher;
     }
+
+    public function insert($groupno,$teacherno)
+    {
+        $Teacher = new Teacher;
+        $Teacher->groupno = $groupno;
+        $Teacher->teacher = $teacherno;
+        $Teacher->save();
+    }
 }

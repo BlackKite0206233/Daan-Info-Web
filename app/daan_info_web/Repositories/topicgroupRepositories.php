@@ -12,4 +12,14 @@ class topicgroupRepositories
     {
         $this->topicgroup = $topicgroup;
     }
+    public function insert($groupno,$student)
+    {
+        foreach(json_decode($student) as $stu)
+        {
+            $topic = new Topicgroup;
+            $topic->groupno = $groupno;
+            $topic->student = $stu;
+        }
+
+    }
 }

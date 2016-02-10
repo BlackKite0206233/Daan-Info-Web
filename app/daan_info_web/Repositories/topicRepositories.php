@@ -22,10 +22,14 @@ class topicRepositories
         $topic->save();
     }
 
-    public function edit($id  ,$update)
+    public function edit($id,$title,$keyword,$type,$lastdate,$content)
     {
         //編輯
-
+        $this->topicinfo
+            ->where('idno' ,$id)
+            ->update(['title' => $title ,'keyword' => $keyword ,
+                        'type' => $type , 'lastdate' => $lastdate ,
+                        'content' => $content]);
     }
 
     public function delete($id)
