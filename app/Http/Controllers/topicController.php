@@ -10,19 +10,24 @@ use daan_info_web\Repositories\topicRepositories;
 use daan_info_web\Repositories\topicgroupRepositories;
 use daan_info_web\Repositories\teacherRepositories;
 
+use daan_info_web\Services\topicServices;
+
 class topicController extends Controller
 {
     protected $topicRepositories;
     protected $topicgroupRepositories;
     protected $teacherRepositories;
+    protected $topicServices;
 
     public function __construct(topicRepositories $topicRepositories,
                                 topicgroupRepositories $topicgroupRepositories,
-                                teacherRepositories $teacherRepositories)
+                                teacherRepositories $teacherRepositories,
+                                topicServices $topicServices)
     {
         $this->topicRepositories = $topicRepositories;
         $this->topicgroupRepositories = $topicgroupRepositories;
         $this->teacherRepositories = $teacherRepositories;
+        $this->topicServices = $topicServices;
         $this->middleware('adminMiddleware',['only'=>['store','create']]);
     }
 
@@ -76,9 +81,10 @@ class topicController extends Controller
 
     public function upload(Request $request)// get topic/{topic}/upload
     {
-        $this->topicRepositories
-            ->upload($request['id'],$request['ppt'],$request['pdf'],
-                    $request['wmv'],$request['dat']);
+        $file = $request->file('file');
+        $this->topicServices
+            ->upload($file);
+
     }
 
     public function index()

@@ -8,15 +8,20 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\gradeinfoRepositories;
 
+use daan_info_web\Services\gradeinfoServices;
+
 use Auth;
 
 class gradeinfoController extends Controller
 {
     protected $gradeinfoRepositories;
+    protected $gradeinfoServices;
 
-    public function __construct(gradeinfoRepositories $gradeinfoRepositories)
+    public function __construct(gradeinfoRepositories $gradeinfoRepositories,
+                                gradeinfoServices $gradeinfoServices)
     {
         $this->gradeinfoRepositories = $gradeinfoRepositories;
+        $this->gradeinfoServices = $gradeinfoServices;
     }
     //
     public function store(Request $request)//post gradeinfo
@@ -29,8 +34,10 @@ class gradeinfoController extends Controller
     public function update(Request $request)//put gradeinfo/{gradeinfo}
     {
         //編輯課程資訊
+        $gradeinfo = $this->gradeinfoServices
+                            ->encode($request);
         $this->gradeinfoRepositories
-            ->edit($request);
+            ->edit($gradeinfo);
     }
 
     public function destroy(Request $request)// delete gradeinfo/{gradeinfo}

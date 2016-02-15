@@ -12,4 +12,17 @@ class studentRepositories
     {
         $this->student = $student;
     }
+
+    public function all()
+    {
+        return $this->student
+                    ->get();
+    }
+
+    public function year($year)
+    {
+        return $this->student
+                    ->where('stuno' , 'like' ,$year.'%')
+                    ->get();
+    }
 }

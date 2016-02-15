@@ -18,4 +18,12 @@ class teacherlistRepositories
     {
         $this->teacherlist = $teacherlist;
     }
+
+    public function insert($memberno,$name)
+    {
+        $teacher = new Teacherlist;
+        $teacher->memberno = $memberno;
+        $teacher->name = $name;
+        $teacher->save();
+    }
 } 

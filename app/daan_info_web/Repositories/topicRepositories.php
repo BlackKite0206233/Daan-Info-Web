@@ -32,6 +32,14 @@ class topicRepositories
                         'content' => $content]);
     }
 
+    public function upload($id,$ppt,$pdf,$wmv,$dat)
+    {
+        $this->topicinfo
+            ->where('idno' ,$id)
+            ->update(['ppt' => $ppt ,'pdf' => $pdf ,
+                'wmv' => $wmv , 'dat' => $dat]);
+    }
+
     public function delete($id)
     {
         //刪除
