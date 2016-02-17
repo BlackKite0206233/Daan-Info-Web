@@ -24,7 +24,7 @@ class topicServices
         $this->topicRepositories = $topicRepositories;
     }
 
-    public function upload(Request &$files)
+    public function upload($id ,$groupno ,Request &$files)
     {
         $rule = ['file' => 'required | mimes:ppt,pptx,ppts,pdf,zip,rar,7z'];
 
@@ -39,8 +39,30 @@ class topicServices
             {
                 if($file->isVaild())
                 {
+                    $year = substr($groupno,1,3);
                     $extension = $file->getClientOriginalExtension();
+                    $destinationPath = base_path() . '/file/upload/' . $year . '/' . $groupno;
+                    $fileName = $file->getClientOriginaName() . '.' . $extension;
 
+                    switch($extension)
+                    {
+                        case 'ppt':
+                        case 'pptx':
+                        case 'ppts':
+                            $field = 'ppt';
+                            break;
+                        case 'pdf':
+                            $field = 'pdf';
+                            break;
+                        default :
+                            $field = 'dat';
+                            break;
+                    }
+
+                    $file->move($destinationPath,$fileName);
+
+                    $this->topicRepositories
+                        ->upload($id,$field,$destinationPath . '/' . $fileName);
                 }
             }
         }

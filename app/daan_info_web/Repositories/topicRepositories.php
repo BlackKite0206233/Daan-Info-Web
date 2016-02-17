@@ -22,22 +22,22 @@ class topicRepositories
         $topic->save();
     }
 
-    public function edit($id,$title,$keyword,$type,$lastdate,$content)
+    public function edit($id,$title,$keyword,$type,$lastdate,$content,$wmv)
     {
         //編輯
         $this->topicinfo
             ->where('idno' ,$id)
             ->update(['title' => $title ,'keyword' => $keyword ,
                         'type' => $type , 'lastdate' => $lastdate ,
-                        'content' => $content]);
+                        'content' => $content , 'wmv' => $wmv]);
     }
 
-    public function upload($id,$ppt,$pdf,$wmv,$dat)
+    public function upload($id,$field,$path)
     {
+
         $this->topicinfo
             ->where('idno' ,$id)
-            ->update(['ppt' => $ppt ,'pdf' => $pdf ,
-                'wmv' => $wmv , 'dat' => $dat]);
+            ->update([$field => $path]);
     }
 
     public function delete($id)
@@ -55,6 +55,13 @@ class topicRepositories
     }
 
     public function one($id)
+    {
+        return $this->topicinfo
+                    ->where('idno' ,$id)
+                    ->get();
+    }
+
+    public function getGroupno($id)
     {
         return $this->topicinfo
                     ->where('idno' ,$id)

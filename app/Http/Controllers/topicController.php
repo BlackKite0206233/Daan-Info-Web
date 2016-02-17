@@ -51,7 +51,8 @@ class topicController extends Controller
         //編輯專題
         $this->topicRepositories
             ->edit($request['id'],$request['title'],$request['keyword'],
-                    $request['type'],$request['lastdate'],$request['content']);
+                    $request['type'],$request['lastdate'],$request['content'],
+                    $request['wmv']);
     }
 
 
@@ -82,8 +83,10 @@ class topicController extends Controller
     public function upload(Request $request)// get topic/{topic}/upload
     {
         $file = $request->file('file');
+        $groupno = $this->topicRepositories
+                        ->getGroupno($request['id']);
         $this->topicServices
-            ->upload($file);
+            ->upload($request['id'],$groupno,$file);
 
     }
 
