@@ -14,7 +14,7 @@ class topicgroupRepositories
     }
     public function insert($groupno,$student)
     {
-        foreach(json_decode($student) as $stu)
+        foreach($student as $stu)
         {
             $topic = new Topicgroup;
             $topic->groupno = $groupno;

@@ -25,4 +25,21 @@ class studentRepositories
                     ->where('stuno' , 'like' ,$year.'%')
                     ->get();
     }
+
+    public function getStuNo($student)
+    {
+        $stuNo = Array(5);
+        $i = 0;
+
+        foreach($student as $stu)
+        {
+            $no = $this->student
+                        ->where('stuname' , $stu)
+                        ->get();
+            $stuNo[$i] = $no->stuno;
+            $i++;
+        }
+
+        return $stuNo;
+    }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\topicRepositories;
 use daan_info_web\Repositories\topicgroupRepositories;
 use daan_info_web\Repositories\teacherRepositories;
+use daan_info_web\Repositories\studentRepositories;
 
 use daan_info_web\Services\topicServices;
 
@@ -17,16 +18,21 @@ class topicController extends Controller
     protected $topicRepositories;
     protected $topicgroupRepositories;
     protected $teacherRepositories;
+    protected $studentRepositories;
+
     protected $topicServices;
 
     public function __construct(topicRepositories $topicRepositories,
                                 topicgroupRepositories $topicgroupRepositories,
                                 teacherRepositories $teacherRepositories,
+                                studentRepositories $studentRepositories,
                                 topicServices $topicServices)
     {
         $this->topicRepositories = $topicRepositories;
         $this->topicgroupRepositories = $topicgroupRepositories;
         $this->teacherRepositories = $teacherRepositories;
+        $this->studentRepositories = $studentRepositories;
+
         $this->topicServices = $topicServices;
         $this->middleware('adminMiddleware',['only'=>['store','create']]);
     }
@@ -35,10 +41,13 @@ class topicController extends Controller
     public function store(Request $request)//post topic
     {
         //新增專題
+        $studentName = $request['student'];
+        $studentNo = $this->studentRepositories
+                        ->getStuNo($studentName);
         $this->topicRepositories
             ->insert($request['groupno']);
         $this->topicgroupRepositories
-            ->insert($request['groupno'],$student);
+            ->insert($request['groupno'],$studentNo);
         $this->teacherRepositories
             ->insert($request['groupno'],$request['teacher']);
 //        $this->topicRepositories

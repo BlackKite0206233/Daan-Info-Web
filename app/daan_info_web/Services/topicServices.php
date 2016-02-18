@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 
 use daan_info_web\Repositories\topicRepositories;
 
-
 class topicServices
 {
     protected $topicRepositories;
@@ -67,4 +66,5 @@ class topicServices
             }
         }
     }
+
 } 

@@ -63,8 +63,9 @@ class topicRepositories
 
     public function getGroupno($id)
     {
-        return $this->topicinfo
-                    ->where('idno' ,$id)
-                    ->get();
+        $groupno =  $this->topicinfo
+                        ->where('idno' ,$id)
+                        ->get();
+        return $groupno->groupno;
     }
 }
