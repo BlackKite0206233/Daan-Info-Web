@@ -94,9 +94,10 @@ class topicController extends Controller
         $file = $request->file('file');
         $groupno = $this->topicRepositories
                         ->getGroupno($request['id']);
-        $this->topicServices
-            ->upload($request['id'],$groupno,$file);
+        $isSuccess = $this->topicServices
+                        ->upload($request['id'],$groupno,$file);
 
+        return $isSuccess;
     }
 
     public function index()

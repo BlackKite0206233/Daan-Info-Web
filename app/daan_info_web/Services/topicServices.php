@@ -30,11 +30,7 @@ class topicServices
         foreach($files as $file)
         {
             $validator = Validator::make(['file' => $file],$rule);
-            if($validator->fails())
-            {
-
-            }
-            else
+            if(!$validator->fails())
             {
                 if($file->isVaild())
                 {
@@ -64,7 +60,13 @@ class topicServices
                         ->upload($id,$field,$destinationPath . '/' . $fileName);
                 }
             }
+            else
+            {
+                return $fileName = $file->getClientOriginaName();
+            }
         }
+
+        return 0;
     }
 
 } 
