@@ -26,7 +26,7 @@ class gradeinfoRepositories
     public function edit($gradeinfo)//傳json
     {
         //編輯
-        foreach(json_decode($gradeinfo) as $grade)
+        foreach($gradeinfo as $grade)
         {
             $this->gradeinfo
                 ->where('idno', $grade->id)
@@ -42,14 +42,14 @@ class gradeinfoRepositories
             ->delete();
     }
 
-    public function all($year)
+    public function getAll($year)
     {
         return $this->gradeinfo
                     ->where('gradeno',$year)
                     ->get();
     }
 
-    public function teacher($teacherno,$year)
+    public function getTeacher($teacherno,$year)
     {
         return $this->gradeinfo
             ->where('gradeno',$year)

@@ -48,13 +48,13 @@ class topicRepositories
             ->delete();
     }
 
-    public function all()
+    public function getAll()
     {
         return $this->topicinfo
                     ->get();
     }
 
-    public function one($id)
+    public function getOne($id)
     {
         return $this->topicinfo
                     ->where('idno' ,$id)

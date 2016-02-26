@@ -39,7 +39,7 @@ class scoreRepositories
             ->delete();
     }
 
-    public function all()
+    public function getAll()
     {
         return $this->scoorelistno
                     ->get();

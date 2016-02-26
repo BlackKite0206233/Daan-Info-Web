@@ -34,10 +34,10 @@ class gradeinfoController extends Controller
     public function update(Request $request)//put gradeinfo/{gradeinfo}
     {
         //編輯課程資訊
-        $gradeinfo = $this->gradeinfoServices
-                            ->encode($request);
+//        $gradeinfo = $this->gradeinfoServices
+//                            ->encode($request);
         $this->gradeinfoRepositories
-            ->edit($gradeinfo);
+            ->edit($request['gradeinfo']);
     }
 
     public function destroy(Request $request)// delete gradeinfo/{gradeinfo}
@@ -63,9 +63,9 @@ class gradeinfoController extends Controller
         $teacher = Auth::user();
         if($teacher->acc == "admin")
             $this->gradeinfoRepositories
-                ->all($request['year']);
+                ->getAll($request['year']);
         else
             $this->gradeinfoRepositories
-                ->teacher($teacher->memberno,$request['year']);
+                ->getTeacher($teacher->memberno,$request['year']);
     }
 }

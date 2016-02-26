@@ -18,24 +18,28 @@ use daan_info_web\Repositories\questionRepositories;
 class questionController {
 
     protected $questionRepositories;
-    public function __consrtuct(questionRepositories $questionRepositories)
+
+    public function __construct(questionRepositories $questionRepositories)
     {
         $this->questionRepositories = $questionRepositories;
     }
 
     public function store(Request $request)
     {
-
+        $this->questionRepositories
+            ->insert($request['groupno'],$request['question']);
     }
 
     public function update(Request $request)
     {
-
+        $this->questionRepositories
+            ->update($request['id'],$request['question']);
     }
 
     public function destroy(Request $request)
     {
-
+        $this->questionRepositories
+            ->delete($request['id']);
     }
 
     public function create()
@@ -43,14 +47,16 @@ class questionController {
 
     }
 
-    public function edit(Request $request)
+//    public function edit(Request $request)
+//    {
+//        $this->questionRepositories
+//            ->getAll($request['groupno']);
+//    }
+
+    public function index(Request $request)
     {
-
-    }
-
-    public function index()
-    {
-
+        $question = $this->questionRepositories
+                        ->getAll($request['groupno']);
     }
 
 } 

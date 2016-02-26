@@ -13,13 +13,21 @@ class studentRepositories
         $this->student = $student;
     }
 
-    public function all()
+    public function insert($acc_id,$name)
+    {
+        $stu = new Student;
+        $stu->acc_id = $acc_id;
+        $stu->name = $name;
+        $stu->save();
+    }
+
+    public function getAll()
     {
         return $this->student
                     ->get();
     }
 
-    public function year($year)
+    public function getYear($year)
     {
         return $this->student
                     ->where('stuno' , 'like' ,$year.'%')

@@ -10,8 +10,5 @@ namespace daan_info_web\Services;
 
 
 class gradeinfoServices {
-    public function encode($request)
-    {
 
-    }
 } 

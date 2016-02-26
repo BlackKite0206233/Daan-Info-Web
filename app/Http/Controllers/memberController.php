@@ -56,13 +56,13 @@ class memberController extends Controller
     public function index()// get member/
     {
         $stu = $this->studentRepositories
-                    ->all();
+                    ->getAll();
     }
 
     public function show(Request $request)// get member/{member}
     {
         $stu = $this->studentRepositories
-                    ->year($request['year']);
+                    ->getYear($request['year']);
     }
 
     public function create()// get member/create

@@ -37,7 +37,7 @@ class classRepositories
             ->delete();
     }
 
-    public function all()
+    public function getAll()
     {
         return $this->topictype
                     ->get();

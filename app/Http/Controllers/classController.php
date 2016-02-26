@@ -44,7 +44,7 @@ class classController extends Controller
     public function index()// get class/
     {
         $class = $this->classRepositories
-                        ->all();
+                        ->getAll();
     }
 
     public function create()// get class/create

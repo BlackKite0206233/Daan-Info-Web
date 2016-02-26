@@ -13,4 +13,11 @@ class stuscoreRepositories
         $this->stuscore = $stuscoore;
     }
 
+    public function insert($acc_id)
+    {
+        $stu = new Stuscoore;
+        $stu->acc_id = $acc_id;
+        $stu->save();
+    }
+
 }

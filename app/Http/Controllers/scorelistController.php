@@ -42,8 +42,8 @@ class scorelistController extends Controller
 
     public function index()// get scorelist
     {
-        $this->scoreRepositories
-            ->all();
+        $scorelist = $this->scoreRepositories
+                        ->getAll();
 
     }
 

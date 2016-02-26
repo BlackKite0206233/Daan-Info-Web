@@ -19,4 +19,35 @@ class questionRepositories {
     {
         $this->question = $question;
     }
+
+    public function insert($groupno,$questions)
+    {
+        foreach($questions as $question)
+        {
+            $que = new Question;
+            $que->groupno->$groupno;
+            $que->question = $question;
+            $que->save();
+        }
+    }
+
+    public function update($id,$question)
+    {
+        $this->question
+            ->where('idno',$id)
+            ->update(['question'=>$question]);
+    }
+
+    public function delete($id)
+    {
+        $this->question
+            ->where('idno',$id)
+            ->delete();
+    }
+
+    public function getAll()
+    {
+        return $this->question
+                    ->get();
+    }
 } 
