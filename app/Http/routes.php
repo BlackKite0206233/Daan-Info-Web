@@ -26,6 +26,9 @@ Route::group(['prefix'=>'browse'],function(){
 Route::group(['middleware'=>'userMiddleware'],function(){
     Route::get('/upload','topicController@upload');
     Route::get('/logout','userController@logout');
+    Route::group(['prefix'=>'{topic}'],function(){
+        Route::resource('question','questionController');
+    });
     Route::resource('topic','topicController',['except'=>['destroy']]);
     Route::resource('member','memberController',['except'=>['destroy']]);
 });
