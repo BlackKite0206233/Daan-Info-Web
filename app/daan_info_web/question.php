@@ -7,4 +7,6 @@ class Question extends Model
 {
     //
     protected $table = 'question';
+
+
 }

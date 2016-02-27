@@ -36,6 +36,7 @@ class questionRepositories {
         $this->question
             ->where('idno',$id)
             ->update(['question'=>$question]);
+
     }
 
     public function delete($id)
