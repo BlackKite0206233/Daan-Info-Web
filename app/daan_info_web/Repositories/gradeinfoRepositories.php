@@ -42,14 +42,14 @@ class gradeinfoRepositories
             ->delete();
     }
 
-    public function getAll($year)
+    public function getFromYear($year)
     {
         return $this->gradeinfo
                     ->where('gradeno',$year)
                     ->get();
     }
 
-    public function getTeacher($teacherno,$year)
+    public function getFromTeacherAndYear($teacherno,$year)
     {
         return $this->gradeinfo
             ->where('gradeno',$year)

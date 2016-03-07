@@ -56,7 +56,7 @@ class questionController {
     public function index(Request $request)
     {
         $question = $this->questionRepositories
-                        ->getAll($request['groupno']);
+                        ->getQuestionFromGroupno($request['groupno']);
     }
 
 } 

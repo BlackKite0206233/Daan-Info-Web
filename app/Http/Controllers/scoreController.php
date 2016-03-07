@@ -10,11 +10,11 @@ use App\Http\Controllers\Controller;
 class scoreController extends Controller
 {
     //
-    public function store(Request $request)// post score
-    {
-        //新增評分
-
-    }
+//    public function store(Request $request)// post score
+//    {
+//        //新增評分
+//
+//    }
 
     public function update(Request $request)// put score/{score}
     {

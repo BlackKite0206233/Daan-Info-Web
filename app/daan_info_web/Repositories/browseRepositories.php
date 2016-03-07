@@ -33,7 +33,7 @@ class browseRepositories
                         ->get();
     }
 
-    public function year($year)
+    public function getTopicinfoFromYear($year)
     {
         //搜尋年份
         return $this->topicinfo
@@ -41,7 +41,7 @@ class browseRepositories
                     ->get();
     }
 
-    public function teacher($teacherno)
+    public function getTopicinfoFromTeacher($teacherno)
     {
 
     }

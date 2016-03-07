@@ -43,7 +43,7 @@ class topicController extends Controller
         //新增專題
         $studentName = $request['student'];
         $studentNo = $this->studentRepositories
-                        ->getStuNo($studentName);
+                        ->getFromStuNo($studentName);
         $this->topicRepositories
             ->insert($request['groupno']);
         $this->topicgroupRepositories
@@ -75,7 +75,7 @@ class topicController extends Controller
     public function show(Request $request)// get topic/{topic}
     {
         $topic = $this->topicRepositories
-                        ->getOne($request['id']);
+                        ->getFromId($request['id']);
     }
 
     public function create()// get topic/create
@@ -86,7 +86,7 @@ class topicController extends Controller
     public function edit(Request $request)// get topic/{topic}/edit
     {
         $topic = $this->topicRepositories
-                        ->getOne($request['id']);
+                        ->getFromId($request['id']);
     }
 
     public function upload(Request $request)// get topic/{topic}/upload

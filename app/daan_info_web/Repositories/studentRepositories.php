@@ -27,14 +27,14 @@ class studentRepositories
                     ->get();
     }
 
-    public function getYear($year)
+    public function getFromYear($year)
     {
         return $this->student
-                    ->where('stuno' , 'like' ,$year.'%')
+                    ->where('stuno' , 'like' ,'%'.$year.'%')
                     ->get();
     }
 
-    public function getStuNo($student)
+    public function getStunoFromStuName($student)
     {
         $stuNo = Array(5);
         $i = 0;

@@ -22,4 +22,10 @@ class topicgroupRepositories
         }
 
     }
+
+    public function getFromGroupno($groupno)
+    {
+
+    }
+
 }

@@ -46,9 +46,10 @@ class questionRepositories {
             ->delete();
     }
 
-    public function getAll()
+    public function getQuestionFromGroupno($groupno)
     {
         return $this->question
+                    ->where('groupno',$groupno)
                     ->get();
     }
 } 

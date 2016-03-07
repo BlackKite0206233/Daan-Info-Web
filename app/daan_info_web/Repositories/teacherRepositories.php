@@ -20,4 +20,16 @@ class teacherRepositories
         $Teacher->teacher = $teacherno;
         $Teacher->save();
     }
+
+    public function getFromYear($year)
+    {
+        return $this->teacher
+                    ->where('group','like','%'.$year.'%')
+                    ->get();
+    }
+
+    public function getFromTeacherAndYear($teacher,$year)
+    {
+
+    }
 }

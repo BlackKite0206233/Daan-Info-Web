@@ -54,7 +54,7 @@ class topicRepositories
                     ->get();
     }
 
-    public function getOne($id)
+    public function getFromId($id)
     {
         return $this->topicinfo
                     ->where('idno' ,$id)

@@ -62,7 +62,7 @@ class memberController extends Controller
     public function show(Request $request)// get member/{member}
     {
         $stu = $this->studentRepositories
-                    ->getYear($request['year']);
+                    ->getFromYear($request['year']);
     }
 
     public function create()// get member/create

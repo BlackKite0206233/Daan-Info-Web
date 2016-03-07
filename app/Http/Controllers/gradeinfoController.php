@@ -63,9 +63,9 @@ class gradeinfoController extends Controller
         $teacher = Auth::user();
         if($teacher->acc == "admin")
             $this->gradeinfoRepositories
-                ->getAll($request['year']);
+                ->getFromYear($request['year']);
         else
             $this->gradeinfoRepositories
-                ->getTeacher($teacher->memberno,$request['year']);
+                ->getFromTeacherAndYear($teacher->memberno,$request['year']);
     }
 }
