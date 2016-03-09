@@ -15,7 +15,7 @@ class CreateTopicinfoTable extends Migration
         Schema::create('topicinfo', function (Blueprint $table) {
             $table->increments('idno');
             $table->string('groupno',10);
-            $table->integer('postnum');
+            //$table->integer('postnum');
             $table->string('topictitle',500);
             $table->string('topickeyword',200);
             $table->string('topictype',20);
@@ -25,9 +25,9 @@ class CreateTopicinfoTable extends Migration
             $table->text('pdfpos');
             $table->text('wmvpos');
             $table->text('datpos');
-            $table->string('lastadmin',10);
-            $table->integer('topicsco');
-            $table->integer('topicvediosco');
+            //$table->string('lastadmin',10);
+            //$table->integer('topicsco');
+            //$table->integer('topicvediosco');
         });
     }
 
