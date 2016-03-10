@@ -23,19 +23,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function student()
-    {
-        return $this->hasOne('daan_info_web\Student','acc_id','stuno');
-    }
-
-    public function teacherList()
-    {
-        return $this->hasOne('daan_info_web\Teacherlist','memberno','idno');
-    }
-
-    public function stuScore()
-    {
-        return$this->hasMany('daan_info_web\Stuscore','acc_id','stuno');
-    }
 }

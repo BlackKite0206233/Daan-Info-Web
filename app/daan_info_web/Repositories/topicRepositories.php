@@ -27,9 +27,9 @@ class topicRepositories
         //編輯
         $this->topicinfo
             ->where('idno' ,$id)
-            ->update(['topictitle' => $title ,'topickeyword' => $keyword ,
-                        'topictype' => $type , 'lastdate' => $lastdate ,
-                        'topiccontent' => $content , 'wmvpos' => $wmv]);
+            ->update(['title' => $title ,'keyword' => $keyword ,
+                        'type' => $type , 'lastdate' => $lastdate ,
+                        'content' => $content , 'wmv' => $wmv]);
     }
 
     public function upload($id,$field,$path)

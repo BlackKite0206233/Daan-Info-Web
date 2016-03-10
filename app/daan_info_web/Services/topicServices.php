@@ -44,13 +44,13 @@ class topicServices
                         case 'ppt':
                         case 'pptx':
                         case 'ppts':
-                            $field = 'pptpos';
+                            $field = 'ppt';
                             break;
                         case 'pdf':
-                            $field = 'pdfpos';
+                            $field = 'pdf';
                             break;
                         default :
-                            $field = 'datpos';
+                            $field = 'dat';
                             break;
                     }
 
