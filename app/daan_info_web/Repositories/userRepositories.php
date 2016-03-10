@@ -2,15 +2,10 @@
 
 namespace daan_info_web\Repositories;
 
-use Hush;
-use Auth;
-
+use Hash;
 use daan_info_web\User;
 use daan_info_web\Student;
 use daan_info_web\Stuscoore;
-//use Illuminate\Support\Facades\Hash;
-
-//use Illuminate\Support\Facades\Auth;
 
 
 class userRepositories
@@ -20,28 +15,6 @@ class userRepositories
     public function __construct(User $user)
     {
         $this->user = $user;
-    }
-
-    public function login($acc ,$password)
-    {
-        //登入
-        if(Auth::attempt(['acc'=>$acc,'password'=>$password]))
-        {
-            if(Auth::user()->category == "s")
-                return 1;
-            else if(Auth::user()->acc == "admin")
-                return 2;
-            else
-                return 3;
-        }
-        else
-            return 0;
-    }
-
-    public function logout()
-    {
-        //登出
-        Auth::logout();
     }
 
     public function insert($acc ,$acc_id ,$password ,$memberNo ,$category)
@@ -65,31 +38,4 @@ class userRepositories
             ->update(['password' => Hash::make($password)]);
     }
 
-//    public function delete($id)
-//    {
-//        //刪除
-//        $acc_id = $this->user
-//                        ->where('idno',$id)
-//                        ->get('acc_id');
-//        $this->user
-//            ->where('idno',$id)
-//            ->delete();
-//        $this->student
-//            ->where('stuno',$acc_id)
-//            ->delete();
-//    }
-
-    public function all()
-    {
-        //回傳所有學生
-        return $this->student->get();
-    }
-
-    public function year($year)
-    {
-        //回傳指定年度
-        return $this->student
-                    ->where('stuno','like',$year.'%')
-                    ->get();
-    }
 }

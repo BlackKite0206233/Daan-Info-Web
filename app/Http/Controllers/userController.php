@@ -4,20 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Auth;
-use daan_info_web\Repositories\UserRepository;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use daan_info_web\Repositories\userRepositories;
+use daan_info_web\Services\loginServices;
 
 class userController extends Controller
 {
-    protected $userRepositories;
+    protected $loginServices;
 
-    public function __construct(userRepositories $userRepositories)
+    public function __construct(loginServices $loginServices)
     {
-        $this->userRepositories = $userRepositories;
+        $this->loginServices = $loginServices;
     }
     //
     public function index()// get /login
@@ -28,14 +25,14 @@ class userController extends Controller
     public function create(Request $request)// post /login
     {
         //登入驗證
-        $this->userRepositories
-            ->login($request['acc'],$request['password']);
+        $this->loginServices
+                ->login($request['acc'],$request['password']);
     }
 
     public function logout()
     {
         //登出
-        $this->userRepositories
+        $this->loginServices
             ->logout();
 
     }
