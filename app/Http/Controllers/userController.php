@@ -19,7 +19,7 @@ class userController extends Controller
     //
     public function index()// get /login
     {
-
+        return view('login');
     }
 
     public function create(Request $request)// post /login
