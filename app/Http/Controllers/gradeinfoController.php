@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\gradeinfoRepositories;
+use daan_info_web\Repositories\teacherlistRepositories;
 
 use daan_info_web\Services\gradeinfoServices;
 
@@ -15,27 +16,29 @@ use Auth;
 class gradeinfoController extends Controller
 {
     protected $gradeinfoRepositories;
+    protected $teacherlistRepositories;
     protected $gradeinfoServices;
 
     public function __construct(gradeinfoRepositories $gradeinfoRepositories,
+                                teacherlistRepositories $teacherlistRepositories,
                                 gradeinfoServices $gradeinfoServices)
     {
         $this->gradeinfoRepositories = $gradeinfoRepositories;
+        $this->teacherlistRepositories = $teacherlistRepositories;
         $this->gradeinfoServices = $gradeinfoServices;
     }
     //
     public function store(Request $request)//post gradeinfo
     {
         //新增課程資訊
+        $teacherno = $this->teacherlistRepositories
+                            ->getTeacherNo($request['teacher']);
         $this->gradeinfoRepositories
-            ->insert($request['gradeno'],$request['teacherno'],$request['content']);
+            ->insert($request['gradeno'],$teacherno,$request['content']);
     }
 
     public function update(Request $request)//put gradeinfo/{gradeinfo}
     {
-        //編輯課程資訊
-//        $gradeinfo = $this->gradeinfoServices
-//                            ->encode($request);
         $this->gradeinfoRepositories
             ->edit($request['gradeinfo']);
     }
@@ -60,12 +63,8 @@ class gradeinfoController extends Controller
 
     public function edit(Request $request)// get gradeinfo/{gradeinfo}/edit
     {
-        $teacher = Auth::user();
-        if($teacher->acc == "admin")
-            $this->gradeinfoRepositories
-                ->getFromYear($request['year']);
-        else
-            $this->gradeinfoRepositories
-                ->getFromTeacherAndYear($teacher->memberno,$request['year']);
+        $this->gradeinfoServices
+                ->edit($request['year']);
     }
+
 }

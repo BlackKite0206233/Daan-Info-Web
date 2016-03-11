@@ -56,4 +56,6 @@ class gradeinfoRepositories
             ->where('teacherno',$teacherno)
             ->get();
     }
+
+
 }

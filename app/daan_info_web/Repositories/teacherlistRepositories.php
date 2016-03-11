@@ -26,4 +26,13 @@ class teacherlistRepositories
         $teacher->name = $name;
         $teacher->save();
     }
+
+    public function getTeacherNo($teacherName)
+    {
+        $teacher = $this->teacherlist
+                        ->where('name',$teacherName)
+                        ->get();
+        return $teacher;
+    }
+
 } 

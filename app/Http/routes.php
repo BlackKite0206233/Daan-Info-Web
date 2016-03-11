@@ -13,22 +13,20 @@
 
 Route::get('/', function () {   return view('index');   });
 Route::get('/ref','refController@index');
-Route::get('/gradeinfo/{teacher}','gradeingoController@teacher');
 
 Route::group(['prefix'=>'browse'],function(){
     Route::get('/page','browseController@Pagination');
     Route::get('/search','browseController@searchPage');
     Route::get('/year/{year}','browseController@year');
     Route::get('/topic/{topic}','browseController@topic');
+    Route::get('teacher','browseController@groupinfo');
+    Route::get('teacher/{teacher}','browseController@teacher');
     Route::post('/search','browseController@search');
 });
 
 Route::group(['middleware'=>'userMiddleware'],function(){
     Route::get('/upload','topicController@upload');
     Route::get('/logout','userController@logout');
-//    Route::group(['prefix'=>'{topic}'],function(){
-//        Route::resource('question','questionController');
-//    });
     Route::resource('{topic}/question','questionController');
     Route::resource('topic','topicController',['except'=>['destroy']]);
     Route::resource('member','memberController',['except'=>['destroy']]);
@@ -36,6 +34,7 @@ Route::group(['middleware'=>'userMiddleware'],function(){
 
 Route::group(['middleware'=>'teacherMiddleware'],function(){
     Route::resource('score','scoreController',['except'=>['destroy','create','show']]);
+    Route::resource('gradeinfo','gradeinfoController');
 });
 
 Route::group(['middleware'=>'adminMiddleware'],function(){
@@ -44,7 +43,6 @@ Route::group(['middleware'=>'adminMiddleware'],function(){
     Route::resource('scorelist','scorelistController',['except'=>['edit']]);
 });
 
-Route::resource('gradeinfo','gradeinfoController');
 Route::resource('login','userController',['only'=>['index','create']]);
 
 
