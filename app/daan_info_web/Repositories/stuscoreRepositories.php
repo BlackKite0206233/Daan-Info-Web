@@ -20,4 +20,14 @@ class stuscoreRepositories
         $stu->save();
     }
 
+    public function edit($scores)
+    {
+        foreach($scores as $score)
+        {
+            $this->stuscore
+                ->where('idno',$score['id'])
+                ->update(['score'=>$score['score']]);
+        }
+    }
+
 }
