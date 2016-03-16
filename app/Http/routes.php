@@ -43,7 +43,7 @@ Route::group(['middleware'=>'adminMiddleware'],function(){
     Route::resource('scorelist','scorelistController',['except'=>['edit']]);
 });
 
-Route::resource('login','userController',['only'=>['index','create']]);
+Route::resource('login','userController',['only'=>['index','store']]);
 
 
 

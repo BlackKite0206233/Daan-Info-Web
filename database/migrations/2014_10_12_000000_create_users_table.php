@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('idno');
             $table->string('acc',20);
             $table->text('acc_id');
-            $table->string('password',20);
+            $table->string('password',100);
             $table->string('memberno',10);
             $table->string('category',4);
         });

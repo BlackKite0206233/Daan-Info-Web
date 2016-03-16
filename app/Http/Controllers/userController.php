@@ -22,11 +22,12 @@ class userController extends Controller
         return view('login');
     }
 
-    public function create(Request $request)// post /login
+    public function store(Request $request)// post /login
     {
         //登入驗證
-        $this->loginServices
-                ->login($request['acc'],$request['password']);
+        $login = $this->loginServices
+                        ->login($request['acc'],$request['password']);
+        return $login;
     }
 
     public function logout()

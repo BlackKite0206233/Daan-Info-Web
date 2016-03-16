@@ -10,6 +10,8 @@ namespace daan_info_web\Services;
 
 use Auth;
 
+use daan_info_web\User;
+
 class loginServices {
 
     public function login($acc ,$password)
@@ -19,20 +21,20 @@ class loginServices {
         {
             if(Auth::user()->category == "s")
             {
-                //return 'student';
+                return 'student';
             }
             else if(Auth::user()->acc == "admin")
             {
-                //return 'admin';
+                return 'admin';
             }
             else
             {
-                //return 'teacher';
+                return 'teacher';
             }
         }
         else
         {
-            //return 'loginFail';
+            return 'loginFail';
         }
     }
 
