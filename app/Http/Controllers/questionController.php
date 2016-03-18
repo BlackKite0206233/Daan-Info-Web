@@ -26,35 +26,26 @@ class questionController {
 
     public function store(Request $request)
     {
+        //新增問題
         $this->questionRepositories
             ->insert($request['groupno'],$request['question']);
     }
 
     public function update(Request $request)
     {
+        //編輯問題
         $this->questionRepositories
             ->update($request['id'],$request['question']);
     }
 
-    public function destroy(Request $request)
-    {
-        $this->questionRepositories
-            ->delete($request['id']);
-    }
-
     public function create()
     {
-
+        //新增問題 頁面
     }
-
-//    public function edit(Request $request)
-//    {
-//        $this->questionRepositories
-//            ->getAll($request['groupno']);
-//    }
 
     public function index(Request $request)
     {
+        //編輯、刪除問題 頁面
         $question = $this->questionRepositories
                         ->getQuestionFromGroupno($request['groupno']);
     }

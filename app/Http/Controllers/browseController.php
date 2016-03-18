@@ -18,12 +18,12 @@ class browseController extends Controller
 
     public function searchPage()
     {
-
+        //搜尋 頁面
     }
 
     public function search(Request $request)
     {
-        //尋找專題
+        //搜尋結果 頁面
 
     }
 
@@ -40,11 +40,11 @@ class browseController extends Controller
 
     public function teacherPage()
     {
-
+        //老師開課資訊
     }
 
     public function teacher(Request $request)
     {
-
+        //依老師顯示
     }
 }

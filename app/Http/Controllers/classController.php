@@ -26,14 +26,6 @@ class classController extends Controller
                 ->insert($request['typename']);
     }
 
-//    public function update(Request $request)//put class/{class}
-//    {
-//        //編輯分類
-//        if(isset($request['typename']))
-//            $this->classRepositories
-//                ->edit($request['id'],$request['typename']);
-//    }
-
     public function destroy(Request $request)// delete class/{class}
     {
         //刪除分類
@@ -43,13 +35,14 @@ class classController extends Controller
 
     public function index()// get class/
     {
+        //編輯分類 頁面
         $class = $this->classRepositories
                         ->getAll();
     }
 
     public function create()// get class/create
     {
-
+        //新增分類 頁面
     }
 
 //    public function edit()// get class/{class}/edit

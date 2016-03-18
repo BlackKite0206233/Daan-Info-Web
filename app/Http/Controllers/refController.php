@@ -12,6 +12,6 @@ class refController extends Controller
     //
     public function index()// get ref/
     {
-
+        //參考資料 頁面
     }
 }

@@ -49,24 +49,26 @@ class memberController extends Controller
 
     public function index()// get member/
     {
+        //所有學生 頁面
         $stu = $this->studentRepositories
                     ->getAll();
     }
 
     public function show(Request $request)// get member/{member}
     {
+        //依年度
         $stu = $this->studentRepositories
                     ->getFromYear($request['year']);
     }
 
     public function create()// get member/create
     {
-
+        //新增學生 頁面
     }
 
     public function edit()// get member/{member}/edit
     {
-
+        //修改密碼 頁面
     }
 
 }

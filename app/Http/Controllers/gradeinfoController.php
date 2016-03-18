@@ -39,6 +39,7 @@ class gradeinfoController extends Controller
 
     public function update(Request $request)//put gradeinfo/{gradeinfo}
     {
+        //編輯課程資訊
         $this->gradeinfoRepositories
             ->edit($request['gradeinfo']);
     }
@@ -53,16 +54,17 @@ class gradeinfoController extends Controller
 
     public function index()// get gradeinfo/
     {
-
+        //課程資訊 頁面
     }
 
     public function create()// get gradeinfo/create
     {
-
+        //新增課程資訊 頁面
     }
 
     public function edit(Request $request)// get gradeinfo/{gradeinfo}/edit
     {
+        //編輯課程資訊 頁面
         $this->gradeinfoServices
                 ->edit($request['year']);
     }

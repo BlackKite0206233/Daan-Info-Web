@@ -18,13 +18,6 @@ class scoreController extends Controller
         $this->stuscoreRepositories = $stuscoreRepositories;
     }
 
-    //
-//    public function store(Request $request)// post score
-//    {
-//        //新增評分
-//
-//    }
-
     public function update(Request $request)// put score/{score}
     {
         //修改評分

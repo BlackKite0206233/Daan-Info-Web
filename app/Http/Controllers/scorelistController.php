@@ -42,6 +42,7 @@ class scorelistController extends Controller
 
     public function index()// get scorelist
     {
+        //編輯、刪除評分項目 頁面
         $scorelist = $this->scoreRepositories
                         ->getAll();
 
@@ -49,6 +50,6 @@ class scorelistController extends Controller
 
     public function create()//get scorelist/create
     {
-
+        //新增評分項目 頁面
     }
 }

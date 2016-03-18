@@ -27,13 +27,15 @@ Route::group(['prefix'=>'browse'],function(){
 Route::group(['middleware'=>'userMiddleware'],function(){
     Route::get('/upload','topicController@upload');
     Route::get('/logout','userController@logout');
-    Route::resource('{topic}/question','questionController');
+    Route::resource('{topic}/question','questionController',['except'=>['destroy','edit']]);
     Route::resource('topic','topicController',['except'=>['destroy']]);
     Route::resource('member','memberController',['except'=>['destroy']]);
 });
 
 Route::group(['middleware'=>'teacherMiddleware'],function(){
-    Route::resource('score','scoreController',['except'=>['destroy','create','show']]);
+    Route::get('/topic/edit','topicController@teacherEdit');
+    Route::get('/download','downloadController@index');
+    Route::resource('score','scoreController',['only'=>['index','update','edit']]);
     Route::resource('gradeinfo','gradeinfoController');
 });
 

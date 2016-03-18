@@ -64,33 +64,28 @@ class topicController extends Controller
                     $request['wmv']);
     }
 
-
-//    public function destroy(Request $request)// delete topic/{topic}
-//    {
-//        //刪除專題
-//        $this->topicRepositories
-//            ->delete($request['id']);
-//    }
-
     public function show(Request $request)// get topic/{topic}
     {
+        //顯示指定專題 頁面
         $topic = $this->topicRepositories
                         ->getFromId($request['id']);
     }
 
     public function create()// get topic/create
     {
-
+        //新增專題 頁面
     }
 
     public function edit(Request $request)// get topic/{topic}/edit
     {
+        //編輯專題 頁面
         $topic = $this->topicRepositories
                         ->getFromId($request['id']);
     }
 
     public function upload(Request $request)// get topic/{topic}/upload
     {
+        //上傳檔案
         $file = $request->file('file');
         $groupno = $this->topicRepositories
                         ->getGroupno($request['id']);
@@ -102,7 +97,13 @@ class topicController extends Controller
 
     public function index()
     {
+        //所有專題 頁面
         $topic = $this->topicRepositories
                         ->getAll();
+    }
+
+    public function teacherEdit()
+    {
+        //老師編輯 頁面
     }
 }
