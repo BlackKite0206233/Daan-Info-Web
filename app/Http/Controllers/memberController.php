@@ -47,12 +47,6 @@ class memberController extends Controller
             ->edit($request['id'],$request['password']);
     }
 
-//    public function destroy(Request $request)// delete member/{member}
-//    {
-//        //刪除學生
-//
-//    }
-
     public function index()// get member/
     {
         $stu = $this->studentRepositories

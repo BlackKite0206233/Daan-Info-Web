@@ -19,7 +19,7 @@ Route::group(['prefix'=>'browse'],function(){
     Route::get('/search','browseController@searchPage');
     Route::get('/year/{year}','browseController@year');
     Route::get('/topic/{topic}','browseController@topic');
-    Route::get('teacher','browseController@groupinfo');
+    Route::get('teacher','browseController@teacherPage');
     Route::get('teacher/{teacher}','browseController@teacher');
     Route::post('/search','browseController@search');
 });

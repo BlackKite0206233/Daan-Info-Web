@@ -8,11 +8,15 @@
     </div>
     <div class="body">
         <div class="ctrlbar">
-            <a href="/browse/page/1"><button>瀏覽專題</button></a>
-            <a href="/search"><button>搜尋專題</button></a>
-            <a href="/gradeinfo"><button>開課資訊</button></a>
-            <a href="/login"><button>會員登入</button></a>
-            <a href="/ref"><button>參考資料</button></a>
+            @if(!Auth::check())
+                @include('ctrlbar.guest')
+            @elseif(Auth::user()->category == "s")
+                @include('ctrlbar.student')
+            @elseif(Auth::user()->acc == "admin")
+                @include('ctrlbar.admin')
+            @else
+                @include('ctrlbar.teacher')
+            @endif
         </div>
         <div class="content">
             @yield('content')

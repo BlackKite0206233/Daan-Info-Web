@@ -21,15 +21,15 @@ class loginServices {
         {
             if(Auth::user()->category == "s")
             {
-                return 'student';
+                return view('index');
             }
             else if(Auth::user()->acc == "admin")
             {
-                return 'admin';
+                return view('index');
             }
             else
             {
-                return 'teacher';
+                return view('index');
             }
         }
         else
@@ -42,6 +42,7 @@ class loginServices {
     {
         //登出
         Auth::logout();
+        return view('index');
     }
 
 } 
