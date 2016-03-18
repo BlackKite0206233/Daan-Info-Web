@@ -19,6 +19,7 @@ class userController extends Controller
     //
     public function index()// get /login
     {
+        //登入 頁面
         return view('login');
     }
 

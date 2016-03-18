@@ -36,11 +36,11 @@ class teacherController extends Controller
 
     public function create()// get teacher/create
     {
-
+        //新增老師 頁面
     }
 
     public function index()// get teacher
     {
-
+        //老師列表
     }
 }
