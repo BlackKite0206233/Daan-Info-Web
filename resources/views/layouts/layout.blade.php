@@ -8,21 +8,14 @@
     </div>
     <div class="body">
         <div class="ctrlbar">
-            <a href="/browse/page"><button>瀏覽專題</button></a>
-            <a href="/browse/search"><button>搜尋專題</button></a>
             @if(!Auth::check())
                 @include('ctrlbar.guest')
+            @elseif(Auth::user()->category == "s")
+                @include('ctrlbar.student')
+            @elseif(Auth::user()->acc == "admin")
+                @include('ctrlbar.admin')
             @else
-                @if(Auth::user()->category == "s")
-                    @include('ctrlbar.student')
-                @else
-                    @if(Auth::user()->acc == "admin")
-                        @include('ctrlbar.admin')
-                    @endif
-                    @include('ctrlbar.teacher')
-                @endif
-                <a href="/member/pwd/edit"><button>修改密碼</button></a>
-                <a href="/logout"><button>系統登出</button></a>
+                @include('ctrlbar.teacher')
             @endif
         </div>
         <div class="content">

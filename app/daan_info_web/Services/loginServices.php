@@ -19,11 +19,22 @@ class loginServices {
         //登入
         if(Auth::attempt(['acc'=>$acc,'password'=>$password]))
         {
-            return true;
+            if(Auth::user()->category == "s")
+            {
+                return view('index');
+            }
+            else if(Auth::user()->acc == "admin")
+            {
+                return view('index');
+            }
+            else
+            {
+                return view('index');
+            }
         }
         else
         {
-            return false;
+            return 'loginFail';
         }
     }
 
@@ -31,6 +42,7 @@ class loginServices {
     {
         //登出
         Auth::logout();
+        return view('index');
     }
 
 } 

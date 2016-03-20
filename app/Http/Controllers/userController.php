@@ -28,10 +28,7 @@ class userController extends Controller
         //登入驗證
         $login = $this->loginServices
                         ->login($request['acc'],$request['password']);
-        if($login)
-            return view('index');
-        else
-            return '登入失敗';
+        return $login;
     }
 
     public function logout()
