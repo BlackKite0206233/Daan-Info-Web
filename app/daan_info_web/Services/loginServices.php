@@ -21,26 +21,33 @@ class loginServices {
         {
             if(Auth::user()->category == "s")
             {
-                return view('index');
+                //return view('index');
+                session(['status'=>'student']);
             }
             else if(Auth::user()->acc == "admin")
             {
-                return view('index');
+                //return view('index');
+                session(['status'=>'admin']);
             }
             else
             {
-                return view('index');
+                //return view('index');
+                session(['status'=>'teacher']);
             }
         }
         else
         {
-            return 'loginFail';
+            //return 'loginFail';
+            session(['status'=>'guest']);
         }
+
+        return view('index');
     }
 
     public function logout()
     {
         //登出
+        session(['status'=>'guest']);
         Auth::logout();
         return view('index');
     }
