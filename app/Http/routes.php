@@ -16,7 +16,7 @@ Route::get('/ref','refController@index');
 
 Route::group(['prefix'=>'browse'],function(){
     Route::get('/page','browseController@Pagination');
-    Route::get('/search','browseController@searchPage');
+    //Route::get('/search','browseController@searchPage');
     Route::get('/year/{year}','browseController@year');
     Route::get('/topic/{topic}','browseController@topic');
     Route::get('teacher','browseController@teacherPage');

@@ -20,17 +20,12 @@ class browseRepositories
                     ->paginate(15);
     }
 
-    public function search($type ,$searchWord ,$where)
+    public function search($searchWord )
     {
         //搜尋
-        if($type == 0)
-            return $this->topicinfo
-                        ->where('' , '')
-                        ->get();
-        else
-            return $this->topicinfo
-                        ->where('' ,'like' ,'%'.'%')
-                        ->get();
+        return $this->topicinfo
+                    ->where('topictitle' ,'like' ,'%'.$searchWord.'%')
+                    ->get();
     }
 
     public function getTopicinfoFromYear($year)

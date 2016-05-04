@@ -7,8 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use daan_info_web\Repositories\browseRepositories;
+
 class browseController extends Controller
 {
+    protected $browseRepositories;
+
+    public function __construct(browseRepositories $browseRepositories)
+    {
+        $this->browseRepositories = $browseRepositories;
+    }
     //
     public function Pagination()
     {
@@ -16,15 +24,16 @@ class browseController extends Controller
 
     }
 
-    public function searchPage()
-    {
-        //搜尋 頁面
-    }
+//    public function searchPage()
+//    {
+//        //搜尋 頁面
+//    }
 
     public function search(Request $request)
     {
         //搜尋結果 頁面
-
+        $searchResult = $this->browseRepositories->search($request['searchWord']);
+        return redirect('');
     }
 
     public function year(Request $request)
