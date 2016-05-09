@@ -21,7 +21,8 @@ class browseController extends Controller
     public function Pagination()
     {
         //分頁顯示
-
+        $Pagination = $this->browseRepositories->Pagination();
+        return view('list');
     }
 
 //    public function searchPage()
@@ -36,13 +37,13 @@ class browseController extends Controller
         return redirect('');
     }
 
-    public function year(Request $request)
+    public function year($year,Request $request)
     {
         //依年度顯示
 
     }
 
-    public function topic(Request $request)
+    public function topic($topic,Request $request)
     {
         //顯示指定專題
     }
@@ -50,9 +51,10 @@ class browseController extends Controller
     public function teacherPage()
     {
         //老師開課資訊
+        return view('teacher');
     }
 
-    public function teacher(Request $request)
+    public function teacher($teacher,Request $request)
     {
         //依老師顯示
     }

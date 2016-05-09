@@ -1,3 +1,28 @@
+.container{
+   padding-top: 70px;
+   padding-bottom: 70px;
+}
+
+.tab-pane{
+    padding:25px;
+    border: 1px #ddd solid;
+    border-style:none solid solid solid;
+}
+
+table{
+    border:1px solid #999;
+}
+
+table>tbody>tr{
+    border:1px solid #999;
+}
+
+table>tbody>tr>td{
+    border:1px solid #999;
+}
+
+
+
 /* Prevents slides from flashing */
 
 #slides {
@@ -76,7 +101,7 @@ a:hover.slidesjs-stop {
     width: 13px;
     height: 0;
     padding-top: 13px;
-    background-image: url(/img/pagination.png);
+    background-image: url(../img/pagination.png);
     background-position: 0 0;
     float: left;
     overflow: hidden;

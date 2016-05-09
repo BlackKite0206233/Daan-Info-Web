@@ -24,14 +24,14 @@ class questionController {
         $this->questionRepositories = $questionRepositories;
     }
 
-    public function store(Request $request)
+    public function store($topic,Request $request)
     {
         //新增問題
         $this->questionRepositories
             ->insert($request['groupno'],$request['question']);
     }
 
-    public function update(Request $request)
+    public function update($topic,Request $request)
     {
         //編輯問題
         $this->questionRepositories
@@ -43,7 +43,7 @@ class questionController {
         //新增問題 頁面
     }
 
-    public function index(Request $request)
+    public function index($topic,Request $request)
     {
         //編輯、刪除問題 頁面
         $question = $this->questionRepositories

@@ -1,36 +1,54 @@
 @extends('layouts.layout')
 @section('content')
-<div id="mid" class="ui grid container stackable">
-    <div class="sixteen wide column centered">
+    <div id="mid" class="container">
         <div id="slides">
-            <img src="http://placehold.it/940x528">
-            <img src="http://placehold.it/940x528">
-            <img src="http://placehold.it/940x528">
-            <img src="http://placehold.it/940x528">
-            <img src="http://placehold.it/940x528">
+            <img src="img/home.jpg">
+            <img src="img/home1.jpg">
+            <img src="img/teacher.jpg">
+            <img src="img/home.jpg">
+            <img src="img/home.jpg">
         </div>
-
-        <div class="ui grid cards">
-            <div class="card five wide column centered">
-                <div class="content">
-                    <div class="header">Elliot Fu</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque sit nesciunt. Nulla accusantium voluptatem modi voluptatum repudiandae expedita id, perferendis hic, reprehenderit magnam. Laborum autem quidem, et voluptatem est!</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4" style="padding:5px;">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h4>Elliot Fu</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque sit nesciunt. Nulla accusantium voluptatem modi voluptatum repudiandae expedita id, perferendis hic, reprehenderit magnam. Laborum autem quidem, et voluptatem est!</p>
+                    </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card five wide column centered">
-                <div class="content">
-                    <div class="header">Elliot Fu</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque sit nesciunt. Nulla accusantium voluptatem modi voluptatum repudiandae expedita id, perferendis hic, reprehenderit magnam. Laborum autem quidem, et voluptatem est!</div>
+                <div class="col-md-4" style="padding:5px;">
+                   <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Elliot Fu</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque sit nesciunt. Nulla accusantium voluptatem modi voluptatum repudiandae expedita id, perferendis hic, reprehenderit magnam. Laborum autem quidem, et voluptatem est!</p>
+                    </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card five wide column centered">
-                <div class="content">
-                    <div class="header">Elliot Fu</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque sit nesciunt. Nulla accusantium voluptatem modi voluptatum repudiandae expedita id, perferendis hic, reprehenderit magnam. Laborum autem quidem, et voluptatem est!</div>
+                <div class="col-md-4" style="padding:5px;">
+                   <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Elliot Fu</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eaque sit nesciunt. Nulla accusantium voluptatem modi voluptatum repudiandae expedita id, perferendis hic, reprehenderit magnam. Laborum autem quidem, et voluptatem est!</p>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
-</div>
+
+    <script>
+            $(function () {
+                $('#slides').slidesjs({
+                    width: 940,
+                    height: 528,
+                    play: {
+                        auto: true,
+                        interval: 2000,
+                    }
+                });
+            });
+        </script>
 @endsection

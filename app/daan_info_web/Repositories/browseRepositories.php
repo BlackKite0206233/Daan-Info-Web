@@ -17,15 +17,15 @@ class browseRepositories
     {
         //分頁
         return $this->topicinfo
-                    ->paginate(15);
+                    ->paginate(6);
     }
 
-    public function search($searchWord )
+    public function search($searchWord)
     {
         //搜尋
         return $this->topicinfo
                     ->where('topictitle' ,'like' ,'%'.$searchWord.'%')
-                    ->get();
+                    ->paginate(6);
     }
 
     public function getTopicinfoFromYear($year)
@@ -33,7 +33,7 @@ class browseRepositories
         //搜尋年份
         return $this->topicinfo
                     ->where('groupno' ,'like' ,'%'.$year.'%')
-                    ->get();
+                    ->paginate(6);
     }
 
     public function getTopicinfoFromTeacher($teacherno)
