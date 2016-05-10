@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\topicRepositories;
-use daan_info_web\Repositories\topicgroupRepositories;
 use daan_info_web\Repositories\teacherRepositories;
 use daan_info_web\Repositories\studentRepositories;
 
@@ -16,20 +15,17 @@ use daan_info_web\Services\topicServices;
 class topicController extends Controller
 {
     protected $topicRepositories;
-    protected $topicgroupRepositories;
     protected $teacherRepositories;
     protected $studentRepositories;
 
     protected $topicServices;
 
     public function __construct(topicRepositories $topicRepositories,
-                                topicgroupRepositories $topicgroupRepositories,
-                                teacherRepositories $teacherRepositories,
-                                studentRepositories $studentRepositories,
-                                topicServices $topicServices)
+                              teacherRepositories $teacherRepositories,
+                              studentRepositories $studentRepositories,
+                              topicServices $topicServices)
     {
         $this->topicRepositories = $topicRepositories;
-        $this->topicgroupRepositories = $topicgroupRepositories;
         $this->teacherRepositories = $teacherRepositories;
         $this->studentRepositories = $studentRepositories;
 
@@ -43,15 +39,9 @@ class topicController extends Controller
         //新增專題
         $studentName = $request['student'];
         $studentNo = $this->studentRepositories
-                        ->getFromStuNo($studentName);
+                          ->getStunoFromStuName($studentName);
         $this->topicRepositories
-            ->insert($request['groupno']);
-        $this->topicgroupRepositories
-            ->insert($request['groupno'],$studentNo);
-        $this->teacherRepositories
-            ->insert($request['groupno'],$request['teacher']);
-//        $this->topicRepositories
-//            ->insert($request['groupno']);
+             ->insert($request['groupno']);
 
     }
 
@@ -59,16 +49,16 @@ class topicController extends Controller
     {
         //編輯專題
         $this->topicRepositories
-            ->edit($request['id'],$request['title'],$request['keyword'],
+             ->edit($request['id'],$request['title'],$request['keyword'],
                     $request['type'],$request['lastdate'],$request['content'],
-                    $request['wmv']);
+                    $request['video']);
     }
 
     public function show(Request $request)// get topic/{topic}
     {
         //顯示指定專題 頁面
         $topic = $this->topicRepositories
-                        ->getFromId($request['id']);
+                      ->getFromId($request['id']);
     }
 
     public function create()// get topic/create
@@ -80,7 +70,7 @@ class topicController extends Controller
     {
         //編輯專題 頁面
         $topic = $this->topicRepositories
-                        ->getFromId($request['id']);
+                      ->getFromId($request['id']);
     }
 
     public function upload(Request $request)// get topic/{topic}/upload
@@ -90,7 +80,7 @@ class topicController extends Controller
         $groupno = $this->topicRepositories
                         ->getGroupno($request['id']);
         $isSuccess = $this->topicServices
-                        ->upload($request['id'],$groupno,$file);
+                          ->upload($request['id'],$groupno,$file);
 
         return $isSuccess;
     }
@@ -99,7 +89,7 @@ class topicController extends Controller
     {
         //所有專題 頁面
         $topic = $this->topicRepositories
-                        ->getAll();
+                      ->getAll();
     }
 
     public function teacherEdit()

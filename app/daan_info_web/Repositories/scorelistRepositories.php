@@ -2,22 +2,21 @@
 
 namespace daan_info_web\Repositories;
 
-use daan_info_web\Scoorelistno;
-use daan_info_web\Stuscoore;
+use daan_info_web\Scorelist;
 
 class scoreRepositories
 {
-    protected $scoorelistno;
+    protected $scorelist;
 
-    public function __construct(Scoorelistno $scoorelistno)
+    public function __construct(Scorelist $scorelist)
     {
-        $this->scoorelistno = $scoorelistno;
+        $this->scorelist = $scorelist;
     }
 
     public function insertScoreList($scoreName ,$present)
     {
         //新增評分項目
-        $scorelist = new Scoorelistno;
+        $scorelist = new Scorelist;
         $scorelist->scorename = $scoreName;
         $scorelist->present = $present;
         $scorelist->save();
@@ -26,7 +25,7 @@ class scoreRepositories
     public function editScoreList($id  ,$scoreName ,$present)
     {
         //編輯評分項目
-        $this->scoorelistno
+        $this->scorelist
             ->where('idno' ,$id)
             ->update(['scorename'=>$scoreName ,'present'=>$present]);
     }
@@ -34,14 +33,14 @@ class scoreRepositories
     public function deleteScoreList($id)
     {
         //刪除評分項目
-        $this->scoorelistno
+        $this->scorelist
             ->where('idno' ,$id)
             ->delete();
     }
 
     public function getAll()
     {
-        return $this->scoorelistno
+        return $this->scorelist
                     ->get();
     }
 

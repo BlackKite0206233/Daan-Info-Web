@@ -17,15 +17,16 @@ class userRepositories
         $this->user = $user;
     }
 
-    public function insert($acc ,$acc_id ,$password ,$memberNo ,$category)
+    public function insert($acc ,$password ,$name ,$category ,$groupno)
     {
         //新增
         $member = new User;
         $member->acc = $acc;
-        $member->acc_id = $acc_id;
+        //$member->acc_id = $acc_id;
         $member->password = Hash::make($password);
-        $member->memberNo = $memberNo;
+        $member->name = $name;
         $member->category = $category;
+        $member->groupno = $groupno;
         $member->save();
 
     }

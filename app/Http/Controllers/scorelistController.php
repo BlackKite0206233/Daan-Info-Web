@@ -22,7 +22,7 @@ class scorelistController extends Controller
     {
         //新增評分項目
         $this->scoreRepositories
-            ->insertScoreList($request['scorename'],$request['present']);
+             ->insertScoreList($request['scorename'],$request['present']);
 
     }
 
@@ -30,21 +30,21 @@ class scorelistController extends Controller
     {
         //修改評分項目
         $this->scoreRepositories
-            ->editScoreList($request['id'],$request['scorename'],$request['present']);
+             ->editScoreList($request['id'],$request['scorename'],$request['present']);
     }
 
     public function destroy(Request $request)// delete scorelist/{scorelist}
     {
         //移除評分項目
         $this->scoreRepositories
-            ->deleteScoreList($request['id']);
+             ->deleteScoreList($request['id']);
     }
 
     public function index()// get scorelist
     {
         //編輯、刪除評分項目 頁面
         $scorelist = $this->scoreRepositories
-                        ->getAll();
+                          ->getAll();
 
     }
 

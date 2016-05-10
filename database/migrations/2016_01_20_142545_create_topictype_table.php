@@ -14,7 +14,7 @@ class CreateTopictypeTable extends Migration
     {
         Schema::create('topictype', function (Blueprint $table) {
             $table->increments('idno');
-            $table->string('typename',32);
+            $table->string('typename');
         });
     }
 

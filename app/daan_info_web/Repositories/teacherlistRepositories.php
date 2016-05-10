@@ -8,31 +8,29 @@
 
 namespace daan_info_web\Repositories;
 
-use daan_info_web\Teacherlist;
+use daan_info_web\User;
 
 class teacherlistRepositories
 {
-    protected $teacherlist;
+    protected $user;
 
-    public function __construct(Teacherlist $teacherlist)
+    public function __construct(User $user)
     {
-        $this->teacherlist = $teacherlist;
-    }
-
-    public function insert($memberno,$name)
-    {
-        $teacher = new Teacherlist;
-        $teacher->memberno = $memberno;
-        $teacher->name = $name;
-        $teacher->save();
+        $this->user = $user;
     }
 
     public function getTeacherNo($teacherName)
     {
-        $teacher = $this->teacherlist
+        $teacher = $this->user
                         ->where('name',$teacherName)
                         ->get();
         return $teacher;
     }
 
+    public function getTeacher()
+    {
+        return $this->user
+                   ->where('category','t')
+                   ->get();
+    }
 } 

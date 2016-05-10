@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use daan_info_web\Repositories\gradeinfoRepositories;
 use daan_info_web\Repositories\teacherlistRepositories;
 
@@ -20,8 +21,8 @@ class gradeinfoController extends Controller
     protected $gradeinfoServices;
 
     public function __construct(gradeinfoRepositories $gradeinfoRepositories,
-                                teacherlistRepositories $teacherlistRepositories,
-                                gradeinfoServices $gradeinfoServices)
+                              teacherlistRepositories $teacherlistRepositories,
+                              gradeinfoServices $gradeinfoServices)
     {
         $this->gradeinfoRepositories = $gradeinfoRepositories;
         $this->teacherlistRepositories = $teacherlistRepositories;
@@ -32,23 +33,23 @@ class gradeinfoController extends Controller
     {
         //新增課程資訊
         $teacherno = $this->teacherlistRepositories
-                            ->getTeacherNo($request['teacher']);
+                          ->getTeacherNo($request['teacher']);
         $this->gradeinfoRepositories
-            ->insert($request['gradeno'],$teacherno,$request['content']);
+             ->insert($request['gradeno'],$teacherno,$request['content']);
     }
 
     public function update(Request $request)//put gradeinfo/{gradeinfo}
     {
         //編輯課程資訊
         $this->gradeinfoRepositories
-            ->edit($request['gradeinfo']);
+             ->edit($request['gradeinfo']);
     }
 
     public function destroy(Request $request)// delete gradeinfo/{gradeinfo}
     {
         //刪除課程資訊
         $this->gradeinfoRepositories
-            ->delete($request['id']);
+             ->delete($request['id']);
 
     }
 
@@ -66,7 +67,7 @@ class gradeinfoController extends Controller
     {
         //編輯課程資訊 頁面
         $this->gradeinfoServices
-                ->edit($request['year']);
+             ->edit($request['year']);
     }
 
 }

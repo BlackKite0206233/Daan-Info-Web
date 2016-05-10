@@ -2,49 +2,43 @@
 
 namespace daan_info_web\Repositories;
 
-use daan_info_web\Student;
+use daan_info_web\User;
 
 class studentRepositories
 {
-    protected $student;
+    protected $user;
 
-    public function __construct(Student $student)
+    public function __construct(User $user)
     {
-        $this->student = $student;
-    }
-
-    public function insert($acc_id,$name)
-    {
-        $stu = new Student;
-        $stu->acc_id = $acc_id;
-        $stu->name = $name;
-        $stu->save();
+        $this->user = $user;
     }
 
     public function getAll()
     {
-        return $this->student
-                    ->get();
+        return $this->user
+                   ->where('category','s')
+                   ->get();
     }
 
     public function getFromYear($year)
     {
-        return $this->student
-                    ->where('stuno' , 'like' ,'%'.$year.'%')
-                    ->get();
+        return $this->user
+                   ->where('category','s')
+                   ->where('stuno' , 'like' ,'%'.$year.'%')
+                   ->get();
     }
 
-    public function getStunoFromStuName($student)
+    public function getStunoFromStuName($student)//?
     {
         $stuNo = Array(5);
         $i = 0;
 
         foreach($student as $stu)
         {
-            $no = $this->student
-                        ->where('stuname' , $stu)
-                        ->get();
-            $stuNo[$i] = $no->stuno;
+            $no = $this->user
+                       ->where('stuname' , $stu)
+                       ->get();
+            $stuNo[$i] = $no->acc;
             $i++;
         }
 

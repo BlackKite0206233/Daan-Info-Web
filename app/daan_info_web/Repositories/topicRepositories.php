@@ -22,14 +22,14 @@ class topicRepositories
         $topic->save();
     }
 
-    public function edit($id,$title,$keyword,$type,$lastdate,$content,$wmv)
+    public function edit($id,$title,$keyword,$type,$lastdate,$content,$video)
     {
         //編輯
         $this->topicinfo
             ->where('idno' ,$id)
             ->update(['title' => $title ,'keyword' => $keyword ,
                         'type' => $type , 'lastdate' => $lastdate ,
-                        'content' => $content , 'wmv' => $wmv]);
+                        'content' => $content , 'video' => $video]);
     }
 
     public function upload($id,$field,$path)

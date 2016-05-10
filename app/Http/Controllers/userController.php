@@ -27,7 +27,7 @@ class userController extends Controller
     {
         //登入驗證
         $login = $this->loginServices
-                        ->login($request['acc'],$request['password']);
+                      ->login($request['ID'],$request['password']);
         return $login;
     }
 
@@ -35,7 +35,7 @@ class userController extends Controller
     {
         //登出
         $this->loginServices
-            ->logout();
+             ->logout();
 
     }
 

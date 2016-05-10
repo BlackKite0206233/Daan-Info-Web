@@ -8,4 +8,6 @@ class Gradeinfo extends Model
 {
     //
     protected $table = 'gradeinfo';
+
+    public $timestamps = false;
 }

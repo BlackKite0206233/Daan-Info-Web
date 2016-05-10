@@ -2,21 +2,21 @@
 
 namespace daan_info_web\Repositories;
 
-use daan_info_web\Stuscoore;
+use daan_info_web\Stuscore;
 
 class stuscoreRepositories
 {
     protected $stuscore;
 
-    public function __construct(Stuscoore $stuscoore)
+    public function __construct(Stuscore $stuscore)
     {
-        $this->stuscore = $stuscoore;
+        $this->stuscore = $stuscore;
     }
 
-    public function insert($acc_id)
+    public function insert($stuno)
     {
-        $stu = new Stuscoore;
-        $stu->acc_id = $acc_id;
+        $stu = new Stuscore;
+        $stu->stuno = $stuno;
         $stu->save();
     }
 
@@ -25,8 +25,8 @@ class stuscoreRepositories
         foreach($scores as $score)
         {
             $this->stuscore
-                ->where('idno',$score['id'])
-                ->update(['score'=>$score['score']]);
+                 ->where('idno',$score['id'])
+                 ->update(['score'=>$score['score']]);
         }
     }
 

@@ -33,7 +33,8 @@ class browseController extends Controller
     public function search(Request $request)
     {
         //搜尋結果 頁面
-        $searchResult = $this->browseRepositories->search($request['searchWord']);
+        $searchResult = $this->browseRepositories
+                             ->search($request['searchWord']);
         return redirect('');
     }
 

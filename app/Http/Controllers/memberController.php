@@ -17,8 +17,8 @@ class memberController extends Controller
     protected $studentRepositories;
     protected $stuscoreRepositories;
     public function __construct(userRepositories $userRepositories ,
-                                studentRepositories $studentRepositories ,
-                                stuscoreRepositories $stuscoreRepositories)
+                              studentRepositories $studentRepositories ,
+                              stuscoreRepositories $stuscoreRepositories)
     {
         $this->middleware('adminMiddleware',['except'=>['update','edit']]);
         $this->userRepositories = $userRepositories;
@@ -30,21 +30,18 @@ class memberController extends Controller
     {
         //新增學生
         $this->userRepositories
-            ->insert($request['acc'],$request['acc_id'],$request['password'],$request['memberno'],"s");
-
-        $this->studentRepositories
-            ->insert($request['acc_id'],$request['name']);
+             ->insert($request['acc'],$request['password'],$request['name'],"s",$request['group']);
 
         $this->stuscoreRepositories
-            ->insert($request['acc_id']);
+             ->insert($request['acc']);
         
     }
 
     public function update(Request $request)//put member/{member}
     {
-        //編輯學生
+        //修改密碼
         $this->userRepositories
-            ->edit($request['id'],$request['password']);
+             ->edit($request['id'],$request['password']);
     }
 
     public function index()// get member/

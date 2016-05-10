@@ -2,29 +2,29 @@
 
 namespace daan_info_web\Repositories;
 
-use daan_info_web\Teacher;
+use daan_info_web\User;
 
 class teacherRepositories
 {
-    protected $teacher;
+    protected $user;
 
-    public function __construct(Teacher $teacher)
+    public function __construct(User $user)
     {
-        $this->teacher = $teacher;
+        $this->user = $user;
     }
 
-    public function insert($groupno,$teacherno)
-    {
-        $Teacher = new Teacher;
-        $Teacher->groupno = $groupno;
-        $Teacher->teacher = $teacherno;
-        $Teacher->save();
-    }
+//    public function insert($groupno,$teacherno)
+//    {
+//        $Teacher = new Teacher;
+//        $Teacher->groupno = $groupno;
+//        $Teacher->teacher = $teacherno;
+//        $Teacher->save();
+//    }
 
     public function getFromYear($year)
     {
-        return $this->teacher
-                    ->where('group','like','%'.$year.'%')
+        return $this->user
+                    ->where('groupno','like','%'.$year.'%')
                     ->get();
     }
 

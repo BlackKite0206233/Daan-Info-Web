@@ -12,26 +12,28 @@
 */
 
 Route::get('/', function () {   return view('index');   });
-Route::get('ref','refController@index');
+Route::get('ref',function () {  return view('ref'); });
 
-Route::get('browse.page','browseController@Pagination');
-//Route::get('/search','browseController@searchPage');
-Route::get('browse.year.{year}','browseController@year');
-Route::get('browse.topic.{topic}','browseController@topic');
-Route::get('browse.teacher','browseController@teacherPage');
-Route::get('browse.teacher.{teacher}','browseController@teacher');
-Route::post('browse.search','browseController@search');
+Route::group(['prefix'=>'browse'],function(){
+    Route::get('page','browseController@Pagination');
+    //Route::get('/search','browseController@searchPage');
+    Route::get('year/{year}','browseController@year');
+    Route::get('topic/{topic}','browseController@topic');
+    Route::get('teacher','browseController@teacherPage');
+    Route::get('teacher/{teacher}','browseController@teacher');
+    Route::post('search','browseController@search');
+});
 
 Route::group(['middleware'=>'userMiddleware'],function(){
     Route::get('upload','topicController@upload');
     Route::get('logout','userController@logout');
-    //Route::resource('{topic}.question','questionController',['except'=>['destroy','edit']]);
+    Route::resource('{topicNo}/question','questionController',['except'=>['destroy','edit']]);
     Route::resource('topic','topicController',['except'=>['destroy']]);
     Route::resource('member','memberController',['except'=>['destroy']]);
 });
 
 Route::group(['middleware'=>'teacherMiddleware'],function(){
-    Route::get('topic.edit','topicController@teacherEdit');
+    Route::get('topic/edit','topicController@teacherEdit');
     Route::get('download','downloadController@index');
     Route::resource('score','scoreController',['only'=>['index','update','edit']]);
     Route::resource('gradeinfo','gradeinfoController');

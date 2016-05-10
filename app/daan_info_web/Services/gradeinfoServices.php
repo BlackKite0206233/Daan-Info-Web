@@ -25,9 +25,9 @@ class gradeinfoServices {
         $teacher = Auth::user();
         if($teacher->acc == "admin")
             $this->gradeinfoRepositories
-                ->getFromYear($year);
+                 ->getFromYear($year);
         else
             $this->gradeinfoRepositories
-                ->getFromTeacherAndYear($teacher->memberno,$year);
+                 ->getFromTeacherAndYear($teacher->memberno,$year);
     }
 } 

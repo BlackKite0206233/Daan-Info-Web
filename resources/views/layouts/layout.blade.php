@@ -8,8 +8,8 @@
     <title>大安高工資訊科專題網</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js 讓 IE8 支援 HTML5 元素與媒體查詢 -->
@@ -19,10 +19,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- jQuery (Bootstrap 所有外掛均需要使用) -->
-    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
     <!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="slidesjs/jquery.slides.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('slidesjs/jquery.slides.min.js')}}"></script>
 
 </head>
 
@@ -31,18 +31,18 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="/" style="color:white;font-size:24px;font-family:微軟正黑體;font-weight: bold;text-align:center;margin-top:-4px;"><img src="img/ic.png"></a>
+                <a class="navbar-brand" href="/"><img src="{{asset('img/ic.png')}}"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/browse.page" style="color:white;">瀏覽專題</a></li>
-                    <li><a href="/browse.teacher" style="color:white;">開課資訊</a></li>
+                    <li><a href="/browse/page" style="color:white;">瀏覽專題</a></li>
+                    <li><a href="/browse/teacher" style="color:white;">開課資訊</a></li>
                     <li><a href="/ref" style="color:white;">參考資料</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right" style="margin-right:5px;">
                     <li>
-                        <form class="navbar-form form-inline" role="search" method="post" action="/browse.search">
+                        <form class="navbar-form form-inline" role="search" method="post" action="/browse/search">
                             <div class="form-group">
                                 <div class="input-group">
                                     <label class="sr-only" for="search">Search</label>
@@ -53,7 +53,7 @@
                         </form>
                     </li>
                     <li>
-                        <a href="/login" style="color:white;"><img src="img/login.png"></a>
+                        <a href="/login" style="color:white;"><img src="{{asset('img/login.png')}}"></a>
                     </li>
                 </ul>
             </div>

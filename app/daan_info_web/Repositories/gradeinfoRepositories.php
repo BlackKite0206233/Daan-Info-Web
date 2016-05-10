@@ -29,8 +29,8 @@ class gradeinfoRepositories
         foreach($gradeinfo as $grade)
         {
             $this->gradeinfo
-                ->where('idno', $grade->id)
-                ->update(['content'=>$grade->content]);
+                 ->where('idno', $grade->id)
+                 ->update(['content'=>$grade->content]);
         }
     }
 

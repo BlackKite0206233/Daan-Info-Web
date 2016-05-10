@@ -14,7 +14,6 @@ use App\Http\Requests;
 
 use daan_info_web\Repositories\questionRepositories;
 
-
 class questionController {
 
     protected $questionRepositories;
@@ -28,14 +27,14 @@ class questionController {
     {
         //新增問題
         $this->questionRepositories
-            ->insert($request['groupno'],$request['question']);
+             ->insert($request['groupno'],$request['question']);
     }
 
     public function update($topic,Request $request)
     {
         //編輯問題
         $this->questionRepositories
-            ->update($request['id'],$request['question']);
+             ->update($request['id'],$request['question']);
     }
 
     public function create()
@@ -47,7 +46,7 @@ class questionController {
     {
         //編輯、刪除問題 頁面
         $question = $this->questionRepositories
-                        ->getQuestionFromGroupno($request['groupno']);
+                         ->getQuestionFromGroupno($request['groupno']);
     }
 
 } 

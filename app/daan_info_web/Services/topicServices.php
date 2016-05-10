@@ -25,7 +25,7 @@ class topicServices
 
     public function upload($id ,$groupno ,Request &$files)
     {
-        $rule = ['file' => 'required | mimes:ppt,pptx,ppts,pdf,zip,rar,7z'];
+        $rule = ['file' => 'required | mimes:jpg,ppt,pptx,ppts,pdf,zip,rar,7z'];
 
         foreach($files as $file)
         {
@@ -41,6 +41,9 @@ class topicServices
 
                     switch($extension)
                     {
+                        case 'jpg':
+                            $field = 'pic';
+                            break;
                         case 'ppt':
                         case 'pptx':
                         case 'ppts':
@@ -50,7 +53,7 @@ class topicServices
                             $field = 'pdf';
                             break;
                         default :
-                            $field = 'dat';
+                            $field = 'data';
                             break;
                     }
 

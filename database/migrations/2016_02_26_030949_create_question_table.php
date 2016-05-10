@@ -13,9 +13,9 @@ class CreateQuestionTable extends Migration
     public function up()
     {
         Schema::create('question', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('groupno',10);
-            $table->string('question',100);
+            $table->increments('idno');
+            $table->string('groupno');
+            $table->string('question');
         });
     }
 

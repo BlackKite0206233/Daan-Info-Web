@@ -2,11 +2,11 @@
 @section('content')
     <div id="mid" class="container">
         <div id="slides">
-            <img src="img/home.jpg">
-            <img src="img/home1.jpg">
-            <img src="img/teacher.jpg">
-            <img src="img/home.jpg">
-            <img src="img/home.jpg">
+            <img src="{{asset('img/home.jpg')}}">
+            <img src="{{asset('img/home1.jpg')}}">
+            <img src="{{asset('img/teacher.jpg')}}">
+            <img src="{{asset('img/home.jpg')}}">
+            <img src="{{asset('img/home.jpg')}}">
         </div>
         <div class="container-fluid">
             <div class="row">

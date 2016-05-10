@@ -8,4 +8,6 @@ class Topicinfo extends Model
 {
     //
     protected $table = 'topicinfo';
+
+    public $timestamps = false;
 }

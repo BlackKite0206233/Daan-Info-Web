@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use daan_info_web\Repositories\teacherRepositories;
 use daan_info_web\Repositories\teacherlistRepositories;
 use daan_info_web\Repositories\userRepositories;
 
@@ -17,7 +16,7 @@ class teacherController extends Controller
     protected $userRepositories;
 
     public function __construct(teacherlistRepositories $teacherlistRepositories,
-                                userRepositories $userRepositories)
+                              userRepositories $userRepositories)
     {
         $this->teacherlistRepositories = $teacherlistRepositories;
         $this->userRepositories = $userRepositories;
@@ -27,11 +26,7 @@ class teacherController extends Controller
     {
         //新增老師
         $this->userRepositories
-            ->insert($request['acc'],$request['acc_id'],$request['password'],$request['memberno'],"t");
-
-        $this->teacherlistRepositories
-            ->insert($request['memberno'],$request['name']);
-
+             ->insert($request['acc'],$request['password'],$request['name'],"t",$request['group']);
     }
 
     public function create()// get teacher/create
@@ -42,5 +37,7 @@ class teacherController extends Controller
     public function index()// get teacher
     {
         //老師列表
+        $teacher = $this->teacherlistRepositories
+                        ->getTeacher();
     }
 }

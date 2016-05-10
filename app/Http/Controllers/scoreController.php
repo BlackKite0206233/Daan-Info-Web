@@ -22,7 +22,7 @@ class scoreController extends Controller
     {
         //修改評分
         $this->stuscoreRepositories
-                ->edit($request['score']);
+             ->edit($request['score']);
     }
 
     public function index()// get score

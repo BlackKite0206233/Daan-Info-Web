@@ -8,4 +8,6 @@ class Topictype extends Model
 {
     //
     protected $table = 'topictype';
+
+    public $timestamps = false;
 }
