@@ -35,8 +35,8 @@ class userRepositories
     {
         //編輯
         $this->user
-            ->where('idno' ,$id)
-            ->update(['password' => Hash::make($password)]);
+             ->where('idno' ,$id)
+             ->update(['password' => Hash::make($password)]);
     }
 
 }

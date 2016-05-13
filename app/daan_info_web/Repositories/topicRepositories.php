@@ -26,32 +26,32 @@ class topicRepositories
     {
         //編輯
         $this->topicinfo
-            ->where('idno' ,$id)
-            ->update(['title' => $title ,'keyword' => $keyword ,
-                        'type' => $type , 'lastdate' => $lastdate ,
-                        'content' => $content , 'video' => $video]);
+             ->where('idno' ,$id)
+             ->update(['title' => $title ,'keyword' => $keyword ,
+                       'type' => $type , 'lastdate' => $lastdate ,
+                       'content' => $content , 'video' => $video]);
     }
 
     public function upload($id,$field,$path)
     {
 
         $this->topicinfo
-            ->where('idno' ,$id)
-            ->update([$field => $path]);
+             ->where('idno' ,$id)
+             ->update([$field => $path]);
     }
 
     public function delete($id)
     {
         //刪除
         $this->topicinfo
-            ->where('idno' ,$id)
-            ->delete();
+             ->where('idno' ,$id)
+             ->delete();
     }
 
     public function getAll()
     {
         return $this->topicinfo
-                    ->get();
+                   ->get();
     }
 
     public function getFromId($id)
@@ -64,8 +64,15 @@ class topicRepositories
     public function getGroupno($id)
     {
         $groupno =  $this->topicinfo
-                        ->where('idno' ,$id)
-                        ->get();
+                         ->where('idno' ,$id)
+                         ->get();
         return $groupno->groupno;
+    }
+
+    public function getTopicFromGroupNo($groupNo)
+    {
+        return $this->topicinfo
+                   ->where('groupno',$groupNo)
+                   ->get();
     }
 }

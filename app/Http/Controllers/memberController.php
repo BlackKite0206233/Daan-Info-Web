@@ -8,20 +8,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\userRepositories;
+use daan_info_web\Repositories\topicRepositories;
 use daan_info_web\Repositories\studentRepositories;
 use daan_info_web\Repositories\stuscoreRepositories;
 
 class memberController extends Controller
 {
     protected $userRepositories;
+    protected $topicRepositories;
     protected $studentRepositories;
     protected $stuscoreRepositories;
     public function __construct(userRepositories $userRepositories ,
+                              topicRepositories $topicRepositories ,
                               studentRepositories $studentRepositories ,
                               stuscoreRepositories $stuscoreRepositories)
     {
         $this->middleware('adminMiddleware',['except'=>['update','edit']]);
         $this->userRepositories = $userRepositories;
+        $this->topicRepositories = $topicRepositories;
         $this->studentRepositories = $studentRepositories;
         $this->stuscoreRepositories = $stuscoreRepositories;
     }
@@ -34,6 +38,12 @@ class memberController extends Controller
 
         $this->stuscoreRepositories
              ->insert($request['acc']);
+
+        $hasTopic = $this->topicRepositories
+                         ->getTopicFromGroupNo($request['group']);
+        if(!isset($hasTopic))
+            $this->topicRepositories
+                 ->insert($request['group']);
         
     }
 

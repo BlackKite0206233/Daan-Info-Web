@@ -34,22 +34,22 @@ class questionRepositories {
     public function update($id,$question)
     {
         $this->question
-            ->where('idno',$id)
-            ->update(['question'=>$question]);
+             ->where('idno',$id)
+             ->update(['question'=>$question]);
 
     }
 
     public function delete($id)
     {
         $this->question
-            ->where('idno',$id)
-            ->delete();
+             ->where('idno',$id)
+             ->delete();
     }
 
     public function getQuestionFromGroupno($groupno)
     {
         return $this->question
-                    ->where('groupno',$groupno)
-                    ->get();
+                   ->where('groupno',$groupno)
+                   ->get();
     }
 } 

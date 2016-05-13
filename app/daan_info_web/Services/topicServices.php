@@ -25,7 +25,7 @@ class topicServices
 
     public function upload($id ,$groupno ,Request &$files)
     {
-        $rule = ['file' => 'required | mimes:jpg,ppt,pptx,ppts,pdf,zip,rar,7z'];
+        $rule = ['file' => 'required | mimes:jpg,png,gif,ppt,pptx,ppts,pdf,zip,rar,7z,apk,exe'];
 
         foreach($files as $file)
         {
@@ -42,6 +42,8 @@ class topicServices
                     switch($extension)
                     {
                         case 'jpg':
+                        case 'png':
+                        case 'gif':
                             $field = 'pic';
                             break;
                         case 'ppt':
@@ -60,7 +62,7 @@ class topicServices
                     $file->move($destinationPath,$fileName);
 
                     $this->topicRepositories
-                        ->upload($id,$field,$destinationPath . '/' . $fileName);
+                         ->upload($id,$field,$destinationPath . '/' . $fileName);
                 }
             }
             else

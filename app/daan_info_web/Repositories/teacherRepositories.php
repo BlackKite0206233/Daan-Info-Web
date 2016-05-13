@@ -24,8 +24,8 @@ class teacherRepositories
     public function getFromYear($year)
     {
         return $this->user
-                    ->where('groupno','like','%'.$year.'%')
-                    ->get();
+                   ->where('groupno','like','%'.$year.'%')
+                   ->get();
     }
 
     public function getFromTeacherAndYear($teacher,$year)

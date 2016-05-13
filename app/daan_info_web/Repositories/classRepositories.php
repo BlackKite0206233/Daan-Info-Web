@@ -25,21 +25,21 @@ class classRepositories
     {
         //編輯
         $this->topictype
-            ->where('idno' ,$id)
-            ->update(['typename'=>$typeName]);
+             ->where('idno' ,$id)
+             ->update(['typename'=>$typeName]);
     }
 
     public function delete($id)
     {
         //刪除
         $this->topictype
-            ->where('idno' ,$id)
-            ->delete();
+             ->where('idno' ,$id)
+             ->delete();
     }
 
     public function getAll()
     {
         return $this->topictype
-                    ->get();
+                   ->get();
     }
 }

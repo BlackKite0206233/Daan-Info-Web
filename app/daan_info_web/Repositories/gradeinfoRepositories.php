@@ -38,23 +38,23 @@ class gradeinfoRepositories
     {
         //刪除
         $this->gradeinfo
-            ->where('idno',$id)
-            ->delete();
+             ->where('idno',$id)
+             ->delete();
     }
 
     public function getFromYear($year)
     {
         return $this->gradeinfo
-                    ->where('gradeno',$year)
-                    ->get();
+                   ->where('gradeno',$year)
+                   ->get();
     }
 
     public function getFromTeacherAndYear($teacherno,$year)
     {
         return $this->gradeinfo
-            ->where('gradeno',$year)
-            ->where('teacherno',$teacherno)
-            ->get();
+                   ->where('gradeno',$year)
+                   ->where('teacherno',$teacherno)
+                   ->get();
     }
 
 

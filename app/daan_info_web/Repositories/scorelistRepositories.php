@@ -26,22 +26,22 @@ class scoreRepositories
     {
         //編輯評分項目
         $this->scorelist
-            ->where('idno' ,$id)
-            ->update(['scorename'=>$scoreName ,'present'=>$present]);
+             ->where('idno' ,$id)
+             ->update(['scorename'=>$scoreName ,'present'=>$present]);
     }
 
     public function deleteScoreList($id)
     {
         //刪除評分項目
         $this->scorelist
-            ->where('idno' ,$id)
-            ->delete();
+             ->where('idno' ,$id)
+             ->delete();
     }
 
     public function getAll()
     {
         return $this->scorelist
-                    ->get();
+                   ->get();
     }
 
 }

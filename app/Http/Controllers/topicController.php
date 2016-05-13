@@ -34,16 +34,16 @@ class topicController extends Controller
     }
 
     //
-    public function store(Request $request)//post topic
-    {
-        //新增專題
-        $studentName = $request['student'];
-        $studentNo = $this->studentRepositories
-                          ->getStunoFromStuName($studentName);
-        $this->topicRepositories
-             ->insert($request['groupno']);
-
-    }
+//    public function store(Request $request)//post topic
+//    {
+//        //新增專題
+//        $studentName = $request['student'];
+//        $studentNo = $this->studentRepositories
+//                          ->getStunoFromStuName($studentName);
+//        $this->topicRepositories
+//             ->insert($request['groupno']);
+//
+//    }
 
     public function update(Request $request)//put topic/{topic}
     {
