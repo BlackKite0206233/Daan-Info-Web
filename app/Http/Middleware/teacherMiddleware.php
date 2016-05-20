@@ -17,7 +17,7 @@ class teacherMiddleware
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if($user->category == "t")
+        if(session('status') == 'teacher')
             return $next($request);
         else
             return redirect()->intended('/');

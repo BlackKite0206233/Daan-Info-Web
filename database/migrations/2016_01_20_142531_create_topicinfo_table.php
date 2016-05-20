@@ -15,6 +15,7 @@ class CreateTopicinfoTable extends Migration
         Schema::create('topicinfo', function (Blueprint $table) {
             $table->increments('idno');
             $table->string('groupno');//user topicgroup
+            $table->string('teacher');//user acc
             $table->integer('postnum');
             $table->string('topictitle');
             $table->string('topickeyword');

@@ -41,7 +41,7 @@ class memberController extends Controller
 
         $hasTopic = $this->topicRepositories
                          ->getTopicFromGroupNo($request['group']);
-        if(!isset($hasTopic))
+        if($hasTopic == NULL)
             $this->topicRepositories
                  ->insert($request['group']);
         

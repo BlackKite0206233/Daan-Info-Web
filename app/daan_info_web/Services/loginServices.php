@@ -10,6 +10,7 @@ namespace daan_info_web\Services;
 
 use Auth;
 
+
 use daan_info_web\User;
 
 class loginServices {
@@ -21,35 +22,31 @@ class loginServices {
         {
             if(Auth::user()->category == "s")
             {
-                //return view('index');
-                session(['status'=>'student']);
+                return 'student';
             }
             else if(Auth::user()->acc == "admin")
             {
-                //return view('index');
-                session(['status'=>'admin']);
+                return 'admin';
             }
             else
             {
-                //return view('index');
-                session(['status'=>'teacher']);
+                return 'teacher';
             }
         }
         else
         {
-            //return 'loginFail';
-            session(['status'=>'guest']);
+            return 'guest';
         }
 
-        return view('index');
     }
 
     public function logout()
     {
         //登出
-        session(['status'=>'guest']);
+
         Auth::logout();
-        return view('index');
+
+        return 'guest';
     }
 
-} 
+}

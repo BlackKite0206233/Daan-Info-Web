@@ -16,8 +16,7 @@ class adminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
-        if($user->acc == "admin")
+        if(session('status') == "admin")
             return $next($request);
         else
             return redirect()->intended('/');

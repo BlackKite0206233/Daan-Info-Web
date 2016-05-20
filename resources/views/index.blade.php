@@ -1,12 +1,14 @@
 @extends('layouts.layout')
 @section('content')
-    <div id="mid" class="container">
+    <div class="container">
+
+        <div class="alert alert-success" role="alert">登出成功</div>
         <div id="slides">
-            <img src="{{asset('img/home.jpg')}}">
-            <img src="{{asset('img/home1.jpg')}}">
             <img src="{{asset('img/teacher.jpg')}}">
             <img src="{{asset('img/home.jpg')}}">
+            <img src="{{asset('img/teacher.jpg')}}">
             <img src="{{asset('img/home.jpg')}}">
+            <img src="{{asset('img/teacher.jpg')}}">
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -39,16 +41,17 @@
 
     </div>
 
+
     <script>
-            $(function () {
-                $('#slides').slidesjs({
-                    width: 940,
-                    height: 528,
-                    play: {
-                        auto: true,
-                        interval: 2000,
-                    }
-                });
+        $(function () {
+            $('#slides').slidesjs({
+                width: 940,
+                height: 528,
+                play: {
+                    auto: true,
+                    interval: 2000,
+                }
             });
-        </script>
+        });
+    </script>
 @endsection

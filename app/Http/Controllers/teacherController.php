@@ -26,7 +26,7 @@ class teacherController extends Controller
     {
         //新增老師
         $this->userRepositories
-             ->insert($request['acc'],$request['password'],$request['name'],"t",$request['group']);
+             ->insert($request['acc'],$request['password'],$request['name'],"t","");
     }
 
     public function create()// get teacher/create

@@ -25,17 +25,12 @@ class browseController extends Controller
         return view('list');
     }
 
-//    public function searchPage()
-//    {
-//        //搜尋 頁面
-//    }
-
     public function search(Request $request)
     {
         //搜尋結果 頁面
         $searchResult = $this->browseRepositories
                              ->search($request['searchWord']);
-        return redirect('');
+        return view('list');
     }
 
     public function year($year,Request $request)

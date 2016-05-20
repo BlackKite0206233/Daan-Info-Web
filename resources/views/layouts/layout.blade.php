@@ -23,20 +23,38 @@
     <!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('slidesjs/jquery.slides.min.js')}}"></script>
-
 </head>
 
 <body>
-    <nav id="top" class="navbar navbar-default navbar-fixed-top" style="background-color:#ff9800!important;" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#ff9800!important;" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="/"><img src="{{asset('img/ic.png')}}"></a>
+                <a class="navbar-brand" href="/" style="margin-top:0px;"><img src="{{asset('img/ic.png')}}"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/browse/page" style="color:white;">瀏覽專題</a></li>
                     <li><a href="/browse/teacher" style="color:white;">開課資訊</a></li>
+
+                    @if(session('status') != 'guest' && session('status') != NULL)
+                        @if(session('status') == 'student')
+                            <li><a href="postmodify.htm" style="color:white;">我的專題</a></li>
+                        @else
+                            @if(session('status') == 'admin')
+                            @endif
+                        @endif
+                            <li><a href="/member/edit" style="color:white;">修改密碼</a></li>
+                    @endif
+                    {{--@if(Auth::check())
+                        @if(Auth::user()->category == "s")
+                            <li><a href="postmodify.htm" style="color:white;">我的專題</a></li>
+                        @else
+                            @if(Auth::user()->acc == "admin")
+                            @endif
+                        @endif
+                            <li><a href="/member/edit" style="color:white;">修改密碼</a></li>
+                    @endif--}}
                     <li><a href="/ref" style="color:white;">參考資料</a></li>
                 </ul>
 
@@ -46,14 +64,24 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <label class="sr-only" for="search">Search</label>
-                                    <input type="text" class="form-control" id="search" placeholder="Search" name="searchWord">
+                                    <input type="text" class="form-control" id="search" placeholder="Search">
                                     <div class="input-group-addon"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
+                                    {{ csrf_field() }}
                                 </div>
                             </div>
                         </form>
                     </li>
                     <li>
-                        <a href="/login" style="color:white;"><img src="{{asset('img/login.png')}}"></a>
+                        @if(session('status') == 'guest' || session('status') == NULL)
+                            <a href="/login" style="color:white;"><img src="{{asset('img/login.png')}}"></a>
+                        @else
+                            <a href="/logout" style="color:white;">登出</a>
+                        @endif
+                        {{--@if(!Auth::check())
+                            <a href="/login" style="color:white;"><img src="{{asset('img/login.png')}}"></a>
+                        @else
+                            <a href="/logout" style="color:white;">登出</a>
+                        @endif--}}
                     </li>
                 </ul>
             </div>
@@ -62,7 +90,7 @@
 
     @yield('content')
 
-    <nav id="bot" class="navbar navbar-default navbar-fixed-bottom" style="background-color:#ff9800!important;" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color:#ff9800!important;" role="navigation">
         <center>
             <h7 style="color:white;">校址：(10664)臺北市大安區復興南路2段52號．總機：(02)27091630 ．
                 <br /> No. 52, Sec. 2, Fusing S. Rd., Taipei City, Taiwan 10664, R.O.C. TEL: (02)27091630 FAX: (02) 27090635

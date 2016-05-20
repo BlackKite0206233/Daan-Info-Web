@@ -15,7 +15,7 @@ class userMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check())
+        if(session('status') != 'guest' && session('status') != NULL)
             return $next($request);
         else
             return redirect()->intended('/');
