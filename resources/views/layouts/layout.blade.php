@@ -33,28 +33,11 @@
                 <a class="navbar-brand" href="/" style="margin-top:0px;"><img src="{{asset('img/ic.png')}}"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                @inject('ctrlbarPresenter','daan_info_web\Presenters\ctrlbarPresenter')
                 <ul class="nav navbar-nav">
                     <li><a href="/browse/page" style="color:white;">瀏覽專題</a></li>
                     <li><a href="/browse/teacher" style="color:white;">開課資訊</a></li>
-
-                    @if(session('status') != 'guest' && session('status') != NULL)
-                        @if(session('status') == 'student')
-                            <li><a href="postmodify.htm" style="color:white;">我的專題</a></li>
-                        @else
-                            @if(session('status') == 'admin')
-                            @endif
-                        @endif
-                            <li><a href="/member/edit" style="color:white;">修改密碼</a></li>
-                    @endif
-                    {{--@if(Auth::check())
-                        @if(Auth::user()->category == "s")
-                            <li><a href="postmodify.htm" style="color:white;">我的專題</a></li>
-                        @else
-                            @if(Auth::user()->acc == "admin")
-                            @endif
-                        @endif
-                            <li><a href="/member/edit" style="color:white;">修改密碼</a></li>
-                    @endif--}}
+                    {!! $ctrlbarPresenter->ctrlbar(session('status')) !!}
                     <li><a href="/ref" style="color:white;">參考資料</a></li>
                 </ul>
 
@@ -72,16 +55,7 @@
                         </form>
                     </li>
                     <li>
-                        @if(session('status') == 'guest' || session('status') == NULL)
-                            <a href="/login" style="color:white;"><img src="{{asset('img/login.png')}}"></a>
-                        @else
-                            <a href="/logout" style="color:white;">登出</a>
-                        @endif
-                        {{--@if(!Auth::check())
-                            <a href="/login" style="color:white;"><img src="{{asset('img/login.png')}}"></a>
-                        @else
-                            <a href="/logout" style="color:white;">登出</a>
-                        @endif--}}
+                        {!! $ctrlbarPresenter->loginOrLogout(session('status')) !!}
                     </li>
                 </ul>
             </div>
