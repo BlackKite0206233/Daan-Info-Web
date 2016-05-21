@@ -46,7 +46,7 @@ class userController extends Controller
                        ->logout();
 
         session(['status'=>$logout]);
-        return redirect('/');
+        return redirect('/')->with('logout',true);
     }
 
 }

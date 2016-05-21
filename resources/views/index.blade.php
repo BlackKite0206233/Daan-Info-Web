@@ -1,8 +1,15 @@
 @extends('layouts.layout')
 @section('content')
     <div class="container">
-
-        <div class="alert alert-success" role="alert">登出成功</div>
+        <script>
+            if({{session('logout')}})
+            {
+                $('.container').append('<div id="alert" class="alert alert-success" role="alert">登出成功</div>');
+                setTimeout(function(){
+                    $('#alert').remove();
+                },2000);
+            }
+        </script>
         <div id="slides">
             <img src="{{asset('img/teacher.jpg')}}">
             <img src="{{asset('img/home.jpg')}}">
@@ -43,6 +50,11 @@
 
 
     <script>
+
+        function logout()
+        {
+
+        }
         $(function () {
             $('#slides').slidesjs({
                 width: 940,

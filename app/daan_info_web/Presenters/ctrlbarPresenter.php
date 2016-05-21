@@ -25,7 +25,7 @@ class ctrlbarPresenter
 
                 }
             }
-                $bar .= '<li><a href="postmodify.htm" style="color:white;">我的專題</a></li>';
+                $bar .= '<li><a href="postmodify.htm" style="color:white;">修改密碼</a></li>';
         }
 
         return $bar;
