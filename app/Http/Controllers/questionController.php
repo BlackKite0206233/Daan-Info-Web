@@ -9,12 +9,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
 use daan_info_web\Repositories\questionRepositories;
 
-class questionController {
+class questionController extends Controller {
 
     protected $questionRepositories;
 

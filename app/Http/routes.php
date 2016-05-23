@@ -16,6 +16,7 @@ Route::group(['middleware'=>['web']],function(){
     Route::get('/', function () {   return view('index');   });
     Route::get('ref',function () {  return view('ref'); });
 
+
     Route::group(['prefix'=>'browse'],function(){
         Route::get('page','browseController@Pagination');
         //Route::get('/search','browseController@searchPage');
@@ -27,11 +28,19 @@ Route::group(['middleware'=>['web']],function(){
     });
 
     Route::group(['middleware'=>'userMiddleware'],function(){
-        Route::get('upload','topicController@upload');
+        Route::get('changePwd','memberController@changePwd');
         Route::get('logout','userController@logout');
-        Route::resource('{topicNo}/question','questionController',['except'=>['destroy','edit']]);
-        Route::resource('topic','topicController',['except'=>['destroy']]);
-        Route::resource('member','memberController',['except'=>['destroy']]);
+
+        Route::group(['prefix'=>'topic'],function() {
+            Route::get('editTopic', 'topicController@editTopic');
+            Route::get('showTopic', 'topicController@showTopic');
+            Route::post('upload', 'topicController@upload');
+        });
+
+        Route::resource('question','questionController',['except'=>['destroy','edit']]);
+        Route::resource('topic','topicController',['except'=>['destroy','show','edit']]);
+        Route::resource('member','memberController',['except'=>['destroy','edit']]);
+
     });
 
     Route::group(['middleware'=>'teacherMiddleware'],function(){

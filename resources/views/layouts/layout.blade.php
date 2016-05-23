@@ -37,8 +37,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/browse/page" style="color:white;">瀏覽專題</a></li>
                     <li><a href="/browse/teacher" style="color:white;">開課資訊</a></li>
-                    {!! $ctrlbarPresenter->ctrlbar(session('status')) !!}
+                    {!! $ctrlbarPresenter->ctrlbar(session('status'),session('memID')) !!}
                     <li><a href="/ref" style="color:white;">參考資料</a></li>
+
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right" style="margin-right:5px;">

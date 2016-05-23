@@ -22,20 +22,20 @@ class loginServices {
         {
             if(Auth::user()->category == "s")
             {
-                return 'student';
+                return array('status'=>'student','memID'=>Auth::user()->idno);
             }
             else if(Auth::user()->acc == "admin")
             {
-                return 'admin';
+                return array('status'=>'admin','memID'=>Auth::user()->idno);
             }
             else
             {
-                return 'teacher';
+                return array('status'=>'teacher','memID'=>Auth::user()->idno);
             }
         }
         else
         {
-            return 'guest';
+            return array('status'=>'guest','memID'=>'');
         }
 
     }

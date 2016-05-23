@@ -39,4 +39,11 @@ class userRepositories
              ->update(['password' => Hash::make($password)]);
     }
 
+    public function getPwd($id)
+    {
+        return $this->user
+                   ->where('idno' ,$id)
+                   ->get('password');
+    }
+
 }

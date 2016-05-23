@@ -11,13 +11,13 @@ namespace daan_info_web\Presenters;
 
 class ctrlbarPresenter
 {
-    public function ctrlbar($status)
+    public function ctrlbar($status,$memID)
     {
         $bar = '';
         if($status != 'guest' && $status != NULL)
         {
             if($status == 'student')
-                $bar .= '<li><a href="postmodify.htm" style="color:white;">我的專題</a></li>';
+                $bar .= '<li><a href="/topic/showTopic" style="color:white;">我的專題</a></li>';
             else
             {
                 if($status == 'admin')
@@ -25,7 +25,7 @@ class ctrlbarPresenter
 
                 }
             }
-                $bar .= '<li><a href="postmodify.htm" style="color:white;">修改密碼</a></li>';
+                $bar .= '<li><a href="/changePwd" style="color:white;">修改密碼</a></li>';
         }
 
         return $bar;

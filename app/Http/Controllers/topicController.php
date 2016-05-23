@@ -54,11 +54,12 @@ class topicController extends Controller
                     $request['video']);
     }
 
-    public function show(Request $request)// get topic/{topic}
+    public function showTopic(Request $request)
     {
         //顯示指定專題 頁面
-        $topic = $this->topicRepositories
-                      ->getFromId($request['id']);
+//        $topic = $this->topicRepositories
+//                      ->getFromId($request['id']);
+        return view('postmodify');
     }
 
     public function create()// get topic/create
@@ -66,7 +67,7 @@ class topicController extends Controller
         //新增專題 頁面
     }
 
-    public function edit(Request $request)// get topic/{topic}/edit
+    public function editTopic(Request $request)
     {
         //編輯專題 頁面
         $topic = $this->topicRepositories

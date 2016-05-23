@@ -7,7 +7,7 @@
                 $('.container').append('<div id="alert" class="alert alert-success" role="alert">登出成功</div>');
                 setTimeout(function(){
                     $('#alert').remove();
-                },2000);
+                },1000);
             }
         </script>
         <div id="slides">

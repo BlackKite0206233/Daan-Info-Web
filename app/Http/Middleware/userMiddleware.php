@@ -18,6 +18,6 @@ class userMiddleware
         if(session('status') != 'guest' && session('status') != NULL)
             return $next($request);
         else
-            return redirect()->intended('/');
+            return redirect('login');
     }
 }

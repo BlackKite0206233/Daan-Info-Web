@@ -31,12 +31,13 @@ class userController extends Controller
         $login = $this->loginServices
                       ->login($request['ID'],$request['password']);
 
-        session(['status'=>$login]);
+        session(['status'=>$login['status']]);
+        session(['memID'=>$login['memID']]);
 
-        if($login == 1)
+        if($login['status'] == 'guest')
             return redirect('/login');
 
-        return redirect('/');
+        return redirect('/topic/showTopic');
     }
 
     public function logout()
