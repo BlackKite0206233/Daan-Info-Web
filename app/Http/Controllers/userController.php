@@ -36,8 +36,10 @@ class userController extends Controller
 
         if($login['status'] == 'guest')
             return redirect('/login');
-
-        return redirect('/topic/showTopic');
+        else if($login['status'] == 'student')
+            return redirect('/topic/showTopic');
+        else
+            return redirect('/');
     }
 
     public function logout()

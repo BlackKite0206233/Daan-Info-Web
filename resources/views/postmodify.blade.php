@@ -12,6 +12,7 @@
 
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="bro">
+                @inject('topicPresenters','daan_info_web\Presenters\topicPresenters')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">專題簡介</h4></div>
@@ -19,15 +20,15 @@
                             <tr>
                                 <td rowspan="8" width="50%"><img class="img-responsive" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data1.png"></td>
                                 <td>組別編號</td>
-                                <td>G105C04</td>
+                                <td>{{ $topic->groupno }}</td>
                             </tr>
                             <tr>
                                 <td>專題名稱</td>
-                                <td>木棉手札</td>
+                                <td>{{ $topic->topictitle }}</td>
                             </tr>
                             <tr>
                                 <td>專題類別</td>
-                                <td></td>
+                                <td>{{ $topic->topictype }}</td>
                             </tr>
                             <tr>
                                 <td>關鍵字</td>

@@ -35,11 +35,9 @@ class memberServices {
     {
         if($this->matchPwd($memberID,$oldPwd))
             if($newPwd == $retypePwd)
-            {
-                $this->userRepositories
-                     ->edit($memberID, $newPwd);
-                return true;
-            }
+                if($this->userRepositories
+                       ->edit($memberID, $newPwd))
+                    return true;
         return false;
     }
 } 

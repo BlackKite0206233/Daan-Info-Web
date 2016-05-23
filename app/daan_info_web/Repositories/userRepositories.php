@@ -22,7 +22,6 @@ class userRepositories
         //新增
         $member = new User;
         $member->acc = $acc;
-        //$member->acc_id = $acc_id;
         $member->password = Hash::make($password);
         $member->name = $name;
         $member->category = $category;
@@ -31,19 +30,30 @@ class userRepositories
 
     }
 
-    public function edit($id  ,$password)
+    public function edit($id ,$password)
     {
         //編輯
         $this->user
              ->where('idno' ,$id)
              ->update(['password' => Hash::make($password)]);
+
+        return true;
     }
 
     public function getPwd($id)
     {
-        return $this->user
-                   ->where('idno' ,$id)
-                   ->get('password');
+        $pwd =  $this->user
+                     ->where('idno' ,$id)
+                     ->first();
+        return $pwd->password;
+    }
+
+    public function getGroup($id)
+    {
+        $group = $this->user
+                      ->where('idno' ,$id)
+                      ->first();
+        return $group->groupno;
     }
 
 }

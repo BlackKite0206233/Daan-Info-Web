@@ -25,7 +25,7 @@ class memberController extends Controller
     public function __construct(userRepositories $userRepositories ,
                               topicRepositories $topicRepositories ,
                               studentRepositories $studentRepositories ,
-                              stuscoreRepositories $stuscoreRepositories,
+                              stuscoreRepositories $stuscoreRepositories ,
                               memberServices $memberServices)
     {
         $this->middleware('adminMiddleware',['except'=>['update','changePwd']]);
@@ -54,12 +54,12 @@ class memberController extends Controller
 
     }
 
-    public function update(Request $request)//put member/{member}
+    public function update(Request $request,$member)//put member/{member}
     {
         //修改密碼
         if($this->memberServices
-               ->updatePwd($request['member'],$request['oldPwd'],$request['newPwd'],$request['retypePwd']))
-            return redirect('topic/showTopic');
+               ->updatePwd($member,$request['oldPwd'],$request['newPwd'],$request['retypePwd']))
+            return redirect('logout');
 
         return redirect('changePwd');
     }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\topicRepositories;
 use daan_info_web\Repositories\teacherRepositories;
 use daan_info_web\Repositories\studentRepositories;
+use daan_info_web\Repositories\userRepositories;
 
 use daan_info_web\Services\topicServices;
 
@@ -17,17 +18,20 @@ class topicController extends Controller
     protected $topicRepositories;
     protected $teacherRepositories;
     protected $studentRepositories;
+    protected $userRepositories;
 
     protected $topicServices;
 
-    public function __construct(topicRepositories $topicRepositories,
-                              teacherRepositories $teacherRepositories,
-                              studentRepositories $studentRepositories,
+    public function __construct(topicRepositories $topicRepositories ,
+                              teacherRepositories $teacherRepositories ,
+                              studentRepositories $studentRepositories ,
+                              userRepositories $userRepositories ,
                               topicServices $topicServices)
     {
         $this->topicRepositories = $topicRepositories;
         $this->teacherRepositories = $teacherRepositories;
         $this->studentRepositories = $studentRepositories;
+        $this->userRepositories = $userRepositories;
 
         $this->topicServices = $topicServices;
         $this->middleware('adminMiddleware',['only'=>['store','create']]);
@@ -54,12 +58,14 @@ class topicController extends Controller
                     $request['video']);
     }
 
-    public function showTopic(Request $request)
+    public function showTopic()
     {
         //顯示指定專題 頁面
-//        $topic = $this->topicRepositories
-//                      ->getFromId($request['id']);
-        return view('postmodify');
+        $groupNo = $this->userRepositories
+                        ->getGroup(session('memID'));
+        $topic = $this->topicRepositories
+                      ->getTopicFromGroupNo($groupNo);
+        return view('postmodify',$topic);
     }
 
     public function create()// get topic/create
