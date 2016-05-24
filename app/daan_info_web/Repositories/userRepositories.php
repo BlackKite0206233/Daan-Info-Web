@@ -53,7 +53,15 @@ class userRepositories
         $group = $this->user
                       ->where('idno' ,$id)
                       ->first();
-        return $group->groupno;
+        return $group->topicgroup;
+    }
+
+    public function getTeacher($acc)
+    {
+        $teacher = $this->user
+                        ->where('acc',$acc)
+                        ->first();
+        return $teacher->name;
     }
 
 }

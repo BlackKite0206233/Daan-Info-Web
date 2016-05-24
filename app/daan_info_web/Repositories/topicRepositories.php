@@ -73,6 +73,7 @@ class topicRepositories
     {
         return $this->topicinfo
                    ->where('groupno',$groupNo)
-                   ->first;
+                   ->first();
+
     }
 }

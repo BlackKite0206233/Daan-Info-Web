@@ -65,7 +65,7 @@ class topicController extends Controller
                         ->getGroup(session('memID'));
         $topic = $this->topicRepositories
                       ->getTopicFromGroupNo($groupNo);
-        return view('postmodify',$topic);
+        return view('postmodify', ['topic' => $topic]);
     }
 
     public function create()// get topic/create
