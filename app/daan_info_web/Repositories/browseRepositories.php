@@ -38,6 +38,8 @@ class browseRepositories
 
     public function getTopicinfoFromTeacher($teacherno)
     {
-
+        return $this->topicinfo
+                   ->where('teacher',$teacherno)
+                   ->get();
     }
 }

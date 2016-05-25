@@ -57,5 +57,16 @@ class gradeinfoRepositories
                    ->get();
     }
 
+    public function getFromTeacherAndLatestYear($teacherno)
+    {
+        $year = $this->gradeinfo
+                     ->max('gradeno');
+        $grafeinfo = $this->gradeinfo
+                          ->where('teacherno',$teacherno)
+                          ->where('gradeno',$year)
+                          ->first();
+        return $grafeinfo->content;
+    }
+
 
 }

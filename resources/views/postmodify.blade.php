@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 @section('content')
     <div class="container">
+    @inject('topicPresenters','daan_info_web\Presenters\topicPresenters')
         <div role="tabpanel">
 
             <ul class="nav nav-tabs" role="tablist" id="myTab">
@@ -12,7 +13,6 @@
 
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="bro">
-                @inject('topicPresenters','daan_info_web\Presenters\topicPresenters')
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">專題簡介</h4></div>
@@ -28,11 +28,11 @@
                             </tr>
                             <tr>
                                 <td>專題類別</td>
-                                <td>{{ $topic->topictype }}</td>
+                                <td>{{ $topicPresenters->getTopictype($topic->topictype) }}</td>
                             </tr>
                             <tr>
                                 <td>關鍵字</td>
-                                <td>{!! $topic->topickeyword !!}</td>
+                                <td>{!! $topicPresenters->keyword($topic->topickeyword) !!}</td>
                             </tr>
                             <tr>
                                 <td>組員名單</td>

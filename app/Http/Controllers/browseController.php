@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 
 use daan_info_web\Repositories\browseRepositories;
 
+use Crypt;
+
 class browseController extends Controller
 {
     protected $browseRepositories;
@@ -42,6 +44,7 @@ class browseController extends Controller
     public function topic($topic,Request $request)
     {
         //顯示指定專題
+        return view('post',['groupno'=>$topic]);
     }
 
     public function teacherPage()
@@ -53,5 +56,10 @@ class browseController extends Controller
     public function teacher($teacher,Request $request)
     {
         //依老師顯示
+//        $acc = Crypt::decrypt($teacher);
+        //$acc = $teacher;
+
+        return view('list_teacher',['acc'=>$teacher]);
+
     }
 }

@@ -32,5 +32,6 @@ class teacherlistRepositories
         return $this->user
                    ->where('category','t')
                    ->get();
+
     }
 } 
