@@ -32,9 +32,12 @@ Route::group(['middleware'=>['web']],function(){
         Route::get('logout','userController@logout');
 
         Route::group(['prefix'=>'topic'],function() {
-            Route::get('editTopic', 'topicController@editTopic');
+            Route::get('editTopicinfo', 'topicController@editTopicinfo');
+            Route::get('editTopiccontent', 'topicController@editTopiccontent');
             Route::get('showTopic', 'topicController@showTopic');
+            Route::get('upload', 'topicController@uploadPage');
             Route::post('upload', 'topicController@upload');
+            Route::put('{topic}/info', 'topicController@updateinfo');
         });
 
         Route::resource('question','questionController',['except'=>['destroy','edit']]);

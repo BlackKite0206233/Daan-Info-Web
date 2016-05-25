@@ -51,11 +51,20 @@ class topicController extends Controller
 
     public function update(Request $request)//put topic/{topic}
     {
-        //編輯專題
+        //編輯專題內容
         $this->topicRepositories
              ->edit($request['id'],$request['title'],$request['keyword'],
                     $request['type'],$request['lastdate'],$request['content'],
                     $request['video']);
+    }
+
+    public function updateinfo(Request $request)//put topic/{topic}/info
+    {
+        //編輯專題資訊
+        $this->topicRepositories
+            ->edit($request['id'],$request['title'],$request['keyword'],
+                $request['type'],$request['lastdate'],$request['content'],
+                $request['video']);
     }
 
     public function showTopic()
@@ -73,14 +82,25 @@ class topicController extends Controller
         //新增專題 頁面
     }
 
-    public function editTopic(Request $request)
+    public function editTopicinfo()
     {
-        //編輯專題 頁面
+        //編輯專題資訊 頁面
         $topic = $this->topicRepositories
-                      ->getFromId($request['id']);
+                      ->getFromId(session('memID'));
+    }
+    public function editTopiccontent()
+    {
+        //編輯內容 頁面
+        $topic = $this->topicRepositories
+            ->getFromId(session('memID'));
     }
 
-    public function upload(Request $request)// get topic/{topic}/upload
+    public function uploadPage()
+    {
+
+    }
+
+    public function upload(Request $request)// post topic/{topic}/upload
     {
         //上傳檔案
         $file = $request->file('file');

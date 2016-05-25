@@ -511,8 +511,37 @@
 
             <script>
                 $('#myTab a').click(function (e) {
-                    e.preventDefault()
-                    $(this).tab('show')
+                    e.preventDefault();
+                    $(this).tab('show');
+
+                    var url = "";
+                    switch(e.href)
+                    {
+                        case '#bro':
+                            url = 'topic/showTopic';
+                            break;
+                        case '#modify1':
+                            url = 'topic/editTopicinfo';
+                            break;
+                        case '#modify2':
+                            url = 'topic/editTopiccontent';
+                            break;
+                        case '#modify3':
+                            url = 'topic/upload';
+                            break;
+                        default :
+                            url = 'topic/showTopic';
+                            break;
+                    }
+
+                    $.ajax({type:'get',
+                            url:url,
+                            success:function()
+                            {
+
+                            }
+                    });
+
                 })
             </script>
         </div>
