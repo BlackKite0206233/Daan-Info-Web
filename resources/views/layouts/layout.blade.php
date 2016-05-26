@@ -23,6 +23,12 @@
     <!-- 依需要參考已編譯外掛版本（如下），或各自獨立的外掛版本 -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('slidesjs/jquery.slides.min.js')}}"></script>
+
+    <link rel="stylesheet" href="{{asset('lightbox/lightbox.css')}}" type="text/css" />
+    <script type="text/javascript" src="{{asset('lightbox/lightbox.js')}}"></script>
+    <script src="{{asset('tinymce/js/tinymce/tinymce.min.js')}}"></script>
+    <link href="{{asset('kartik-v-bootstrap-fileinput/css/fileinput.css')}}" media="all" rel="stylesheet" type="text/css" />
+    <script src="{{asset('kartik-v-bootstrap-fileinput/js/fileinput.js')}}" type="text/javascript"></script>
 </head>
 
 <body>
@@ -48,7 +54,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <label class="sr-only" for="search">Search</label>
-                                    <input type="text" class="form-control" id="search" placeholder="Search">
+                                    <input type="text" class="form-control" id="search" placeholder="Search" name="Search">
                                     <div class="input-group-addon"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
                                     {{ csrf_field() }}
                                 </div>

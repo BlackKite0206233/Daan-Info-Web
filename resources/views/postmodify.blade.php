@@ -132,7 +132,7 @@
                             </tr>
                         </table>
                     </div>
-                    {!! $topic->topiccontent !!}
+                    {!! $topicPresenters->getContent($topic->topiccontent) !!}
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -235,7 +235,9 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">編輯專題資訊</h4></div>
-                        <form method="post">
+                        <form method="post" action="/topic/{{$topic->groupno}}/info">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <table class="table rows table-hover hidden-xs" style="text-align:center;">
                                 <tr>
                                     <td rowspan="7" width="50%"><img class="img-responsive blah">
@@ -389,7 +391,7 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="modify2">
                     <form method="post" class="form-horizontal">
-                        {{$topic->topiccontent}}
+                        {!! $topicPresenters->updateContent($topic->topiccontent) !!}
 
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -461,15 +463,15 @@
                             selector: 'textarea',
                             language: 'zh_TW',
                             plugins: [
-      'advlist autolink link lists charmap print preview hr anchor',
-      'searchreplace visualblocks visualchars fullscreen insertdatetime nonbreaking',
-      'save table directionality emoticons template paste textcolor autoresize'
-    ]
+                                      'advlist autolink link lists charmap print preview hr anchor',
+                                      'searchreplace visualblocks visualchars fullscreen insertdatetime nonbreaking',
+                                      'save table directionality emoticons template paste textcolor autoresize'
+                                    ]
                         });
                     </script>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="modify3">
-                    <form method="post">
+                    <form method="post" action="topic/upload">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 style="margin:5px;">上傳資料</h4></div>
@@ -514,33 +516,34 @@
                     e.preventDefault();
                     $(this).tab('show');
 
-                    var url = "";
-                    switch(e.href)
-                    {
-                        case '#bro':
-                            url = 'topic/showTopic';
-                            break;
-                        case '#modify1':
-                            url = 'topic/editTopicinfo';
-                            break;
-                        case '#modify2':
-                            url = 'topic/editTopiccontent';
-                            break;
-                        case '#modify3':
-                            url = 'topic/upload';
-                            break;
-                        default :
-                            url = 'topic/showTopic';
-                            break;
-                    }
+//                    var url = "";
+//                    switch(e.href)
+//                    {
+//                        case '#bro':
+//                            url = 'topic/showTopic';
+//                            break;
+//                        case '#modify1':
+//                            url = 'topic/editTopicinfo';
+//                            break;
+//                        case '#modify2':
+//                            url = 'topic/editTopiccontent';
+//                            break;
+//                        case '#modify3':
+//                            url = 'topic/upload';
+//                            break;
+//                        default :
+//                            url = 'topic/showTopic';
+//                            break;
+//                    }
+//                    console.log(rul);
 
-                    $.ajax({type:'get',
-                            url:url,
-                            success:function()
-                            {
-
-                            }
-                    });
+//                    $.ajax({type:'get',
+//                            url:url,
+//                            success:function()
+//                            {
+//
+//                            }
+//                    });
 
                 })
             </script>

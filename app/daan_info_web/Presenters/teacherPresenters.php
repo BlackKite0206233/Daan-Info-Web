@@ -44,11 +44,12 @@ class teacherPresenters {
             $gradeinfo[$key] = $this->gradeinfoRepositories
                                     ->getFromTeacherAndLatestYear($teacher->acc);
 
+
             $result .= '<div class="col-md-3" style="float:none;display:inline-block;">
-                            <a href="teacher/'.$teacher->acc.'" style="text-decoration:none">
-                                <img class="img-circle" src="'.asset($pic[$key]).'" alt="Generic placeholder image" style="width:280px;height:280px">
-                                <h4 style="font-weight:bold;margin:15px;">'.$teacher->name.'</h4>
-                                <h5 style="margin-top:-15px;color:rgb(181, 181, 181);">'.$gradeinfo[$key].'</h5>
+                            <a href="teacher/' . $teacher->acc . '" style="text-decoration:none">
+                                <img class="img-circle" src="' . asset($pic[$key]) . '" alt="Generic placeholder image" style="width:280px;height:280px">
+                                <h4 style="font-weight:bold;margin:15px;">' . $teacher->name . '</h4>
+                                <h5 style="margin-top:-15px;color:rgb(181, 181, 181);">' . $gradeinfo[$key] . '</h5>
                             </a>
                         </div>';
         }

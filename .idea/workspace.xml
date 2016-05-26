@@ -25,31 +25,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="postmodify.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
+      <file leaf-file-name="topicPresenters.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.204517" vertical-offset="14443" max-vertical-offset="16650">
-              <caret line="540" column="0" selection-start-line="540" selection-start-column="0" selection-end-line="540" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.3" vertical-offset="1152" max-vertical-offset="2883">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <marker date="1464232246808" expanded="true" signature="1473:1760" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1525:1593" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1566:1577" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1642:1733" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1815:2068" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1867:1941" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1908:1919" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="1990:2041" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2257:2638" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2309:2377" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2350:2361" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2426:2611" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2480:2580" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2490:2572" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2693:2945" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2693:3011" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2745:2819" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2786:2797" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2868:2945" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2868:2984" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2921:2922" placeholder="..." />
+                <marker date="1464232246808" expanded="true" signature="2921:2923" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="browseController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/browseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.95" vertical-offset="687" max-vertical-offset="2325">
+              <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.85" vertical-offset="1302" max-vertical-offset="2821">
+              <caret line="56" column="121" selection-start-line="56" selection-start-column="121" selection-end-line="56" selection-end-column="121" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacher.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/teacher.blade.php">
+      <file leaf-file-name="searchResult.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/searchResult.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6470587" vertical-offset="0" max-vertical-offset="750">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+            <state vertical-scroll-proportion="-5.425" vertical-offset="0" max-vertical-offset="496">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topicController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/topicController.php">
+      <file leaf-file-name="browseRepositories.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0588236" vertical-offset="1080" max-vertical-offset="3690">
-              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.41947564" vertical-offset="501" max-vertical-offset="1581">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -58,41 +103,36 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.882353" vertical-offset="360" max-vertical-offset="2280">
-              <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+            <state vertical-scroll-proportion="-11.625" vertical-offset="93" max-vertical-offset="2356">
+              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="browseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/browseController.php">
+      <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="2130">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="-37.525" vertical-offset="638" max-vertical-offset="2542">
+              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="browsePresenters.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/browsePresenters.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-26.35" vertical-offset="0" max-vertical-offset="1302">
+              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
               <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
+                <marker date="1464243108340" expanded="true" signature="1039:1072" placeholder="..." />
+                <marker date="1464243108340" expanded="true" signature="1106:1156" placeholder="..." />
+                <marker date="1464243108340" expanded="true" signature="1196:1250" placeholder="..." />
+                <marker date="1464243108340" expanded="true" signature="1299:1321" placeholder="..." />
+                <marker date="1464243108340" expanded="true" signature="1374:1409" placeholder="..." />
+                <marker date="1464243108340" expanded="true" signature="1642:1669" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/post.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="9330">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="browseRepositories.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="1500">
-              <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -107,8 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/studentRepositories.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/classRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/questionRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/scorelistRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/topicServices.php" />
@@ -124,13 +162,11 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/teacherMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/adminMiddleware.php" />
-        <option value="$PROJECT_DIR$/resources/views/list.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_teacherpic_table.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Teacherpic.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/layoutPresenter.php" />
         <option value="$PROJECT_DIR$/public/css/function.css" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/loginServices.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/userMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionController.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/ctrlbarPresenter.php" />
@@ -145,19 +181,23 @@
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/userRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/topictypeRepositories.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/teacherlistRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/teacherRepositories.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/gradeinfoRepositories.php" />
-        <option value="$PROJECT_DIR$/resources/views/teacher.blade.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/teacherPresenters.php" />
-        <option value="$PROJECT_DIR$/resources/views/list_teacher.blade.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/browsePresenters.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/browseController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/topicController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php" />
         <option value="$PROJECT_DIR$/resources/views/postmodify.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/list_teacher.blade.php" />
+        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/browsePresenters.php" />
+        <option value="$PROJECT_DIR$/resources/views/teacher.blade.php" />
+        <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/gradeinfoRepositories.php" />
+        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/teacherPresenters.php" />
+        <option value="$PROJECT_DIR$/resources/views/searchResult.php" />
+        <option value="$PROJECT_DIR$/resources/views/searchResult.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/browseController.php" />
+        <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php" />
+        <option value="$PROJECT_DIR$/resources/views/list.blade.php" />
       </list>
     </option>
   </component>
@@ -171,10 +211,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -202,6 +242,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -514,7 +555,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -545,15 +585,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -592,7 +632,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -602,7 +642,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30385852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30748662" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33813748" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -634,9 +674,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24545455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -694,40 +734,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2190">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/browseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="1890">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/post.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9330">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="1440">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/classRepositories.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2617612" vertical-offset="256" max-vertical-offset="1550">
@@ -791,7 +797,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/gradeinfo.php">
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Gradeinfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.325" vertical-offset="0" max-vertical-offset="589">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="39" />
@@ -893,14 +899,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pwd.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1709741" vertical-offset="0" max-vertical-offset="961">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/topictype.php">
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Topictype.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1548065" vertical-offset="0" max-vertical-offset="801">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="39" />
@@ -968,65 +967,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.0" vertical-offset="627" max-vertical-offset="2635">
-          <caret line="37" column="81" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
+        <state vertical-scroll-proportion="1.3012346" vertical-offset="1196" max-vertical-offset="2520">
+          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/teacherlistRepositories.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/topicController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.95" vertical-offset="279" max-vertical-offset="1147">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/teacherRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.475" vertical-offset="129" max-vertical-offset="1147">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1984" max-vertical-offset="3813">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pwd.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4706616" vertical-offset="0" max-vertical-offset="1581">
-          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1705">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/gradeinfoRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.05" vertical-offset="1524" max-vertical-offset="2387">
-          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="1500">
-          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+        <state vertical-scroll-proportion="-14.725" vertical-offset="0" max-vertical-offset="961">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/browseController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="2130">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-47.275" vertical-offset="13206" max-vertical-offset="17298">
+          <caret line="487" column="59" selection-start-line="487" selection-start-column="59" selection-end-line="487" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,42 +1007,146 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/teacherRepositories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0" vertical-offset="67" max-vertical-offset="1147">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/teacherlistRepositories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.725" vertical-offset="279" max-vertical-offset="1147">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/gradeinfoRepositories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.690387" vertical-offset="1524" max-vertical-offset="2480">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/teacherPresenters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7639594" vertical-offset="731" max-vertical-offset="1674">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding>
+            <marker date="1464244252329" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1464244252329" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464244252329" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1464244252329" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1464244252329" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1464244252329" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1464244252329" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/teacher.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6470587" vertical-offset="0" max-vertical-offset="750">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3012346" vertical-offset="1196" max-vertical-offset="2520">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/topicController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0588236" vertical-offset="1080" max-vertical-offset="3690">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.27091137" vertical-offset="0" max-vertical-offset="801">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.882353" vertical-offset="360" max-vertical-offset="2280">
-          <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+        <state vertical-scroll-proportion="-11.625" vertical-offset="93" max-vertical-offset="2356">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.204517" vertical-offset="14443" max-vertical-offset="16650">
-          <caret line="540" column="0" selection-start-line="540" selection-start-column="0" selection-end-line="540" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.85" vertical-offset="1302" max-vertical-offset="2821">
+          <caret line="56" column="121" selection-start-line="56" selection-start-column="121" selection-end-line="56" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/browsePresenters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.35" vertical-offset="0" max-vertical-offset="1302">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <marker date="1464243108340" expanded="true" signature="1039:1072" placeholder="..." />
+            <marker date="1464243108340" expanded="true" signature="1106:1156" placeholder="..." />
+            <marker date="1464243108340" expanded="true" signature="1196:1250" placeholder="..." />
+            <marker date="1464243108340" expanded="true" signature="1299:1321" placeholder="..." />
+            <marker date="1464243108340" expanded="true" signature="1374:1409" placeholder="..." />
+            <marker date="1464243108340" expanded="true" signature="1642:1669" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/browseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.95" vertical-offset="687" max-vertical-offset="2325">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.525" vertical-offset="638" max-vertical-offset="2542">
+          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/searchResult.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.425" vertical-offset="0" max-vertical-offset="496">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3" vertical-offset="1152" max-vertical-offset="2883">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <marker date="1464232246808" expanded="true" signature="1473:1760" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1525:1593" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1566:1577" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1642:1733" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1815:2068" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1867:1941" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1908:1919" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="1990:2041" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2257:2638" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2309:2377" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2350:2361" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2426:2611" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2480:2580" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2490:2572" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2693:2945" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2693:3011" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2745:2819" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2786:2797" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2868:2945" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2868:2984" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2921:2922" placeholder="..." />
+            <marker date="1464232246808" expanded="true" signature="2921:2923" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/browseRepositories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41947564" vertical-offset="501" max-vertical-offset="1581">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
           <folding />
         </state>
       </provider>

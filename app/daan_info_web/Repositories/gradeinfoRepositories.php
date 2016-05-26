@@ -61,11 +61,14 @@ class gradeinfoRepositories
     {
         $year = $this->gradeinfo
                      ->max('gradeno');
-        $grafeinfo = $this->gradeinfo
+        $gradeinfo = $this->gradeinfo
                           ->where('teacherno',$teacherno)
                           ->where('gradeno',$year)
                           ->first();
-        return $grafeinfo->content;
+        if($gradeinfo != Null)
+            return $gradeinfo->content;
+        else
+            return 0;
     }
 
 
