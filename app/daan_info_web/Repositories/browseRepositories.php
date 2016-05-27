@@ -43,4 +43,11 @@ class browseRepositories
                    ->where('teacher',$teacherno)
                    ->paginate(8);
     }
+
+    public function getTopicFromGroupno($groupno)
+    {
+        return $this->topicinfo
+                   ->where('groupno',$groupno)
+                   ->first();
+    }
 }

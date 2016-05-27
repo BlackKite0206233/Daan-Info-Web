@@ -64,4 +64,12 @@ class userRepositories
         return $teacher->name;
     }
 
+    public function getStudent($groupno)
+    {
+        $student = $this->user
+                        ->where('topicgroup',$groupno)
+                        ->get();
+        return $student;
+    }
+
 }

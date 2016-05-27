@@ -18,58 +18,9 @@
                             <h4 style="margin:5px;">專題簡介</h4></div>
                         <table class="table rows table-hover hidden-xs" style="text-align:center;">
                             <tr>
-                                <td rowspan="8" width="50%"><img class="img-responsive" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data1.png"></td>
-                                <td>組別編號</td>
-                                <td>{{ $topic->groupno }}</td>
-                            </tr>
-                            <tr>
-                                <td>專題名稱</td>
-                                <td>{{ $topic->topictitle }}</td>
-                            </tr>
-                            <tr>
-                                <td>專題類別</td>
-                                <td>{{ $topicPresenters->getTopictype($topic->topictype) }}</td>
-                            </tr>
-                            <tr>
-                                <td>關鍵字</td>
-                                <td>{!! $topicPresenters->keyword($topic->topickeyword) !!}</td>
-                            </tr>
-                            <tr>
-                                <td>組員名單</td>
-                                <td>洪偉宸、連永立、陳典佑、陳俊廷</td>
-                            </tr>
-                            <tr>
-                                <td>指導老師</td>
-                                <td>{{$topicPresenters->getTeacher($topic->teacher)}}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">下載</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
+                                <td rowspan="8" width="50%"><img class="img-responsive" src="{{asset($topic->pic)}}"></td>
+                                {!! $topicPresenters->outputTopic($topic,0) !!}
 
-                                    <div class="rows">
-                                        <div class="col-md-4 col-xs-4">
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{asset('img/word.png')}}">
-                                                <p>報告下載</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 col-xs-4">
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{asset('img/powerpoint.png')}}">
-                                                <p>簡報下載</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 col-xs-4">
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{asset('img/file.png')}}">
-                                                <p>檔案下載</p>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </td>
                             </tr>
                         </table>
 
@@ -78,57 +29,7 @@
                                 <td colspan="2"><img class="img-responsive" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data1.png"></td>
                             </tr>
                             <tr>
-                                <td>組別編號</td>
-                                <td>{{ $topic->groupno }}</td>
-                            </tr>
-                            <tr>
-                                <td>專題名稱</td>
-                                <td>{{ $topic->topictype }}</td>
-                            </tr>
-                            <tr>
-                                <td>專題類別</td>
-                                <td>{{ $topic->topictype }}</td>
-                            </tr>
-                            <tr>
-                                <td>關鍵字</td>
-                                <td>{!! $topic->topickeyword !!}</td>
-                            </tr>
-                            <tr>
-                                <td>組員名單</td>
-                                <td>洪偉宸、連永立、陳典佑、陳俊廷</td>
-                            </tr>
-                            <tr>
-                                <td>指導老師</td>
-                                <td>{{$topicPresenters->getTeacher($topic->teacher)}}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">下載</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-
-                                    <div class="rows">
-                                        <div class="col-md-4 col-xs-4">
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{asset('img/word.png')}}">
-                                                <p>報告下載</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 col-xs-4">
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{asset('img/powerpoint.png')}}">
-                                                <p>簡報下載</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 col-xs-4">
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{asset('img/file.png')}}">
-                                                <p>檔案下載</p>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </td>
+                                {!! $topicPresenters->outputTopic($topic,1) !!}
                             </tr>
                         </table>
                     </div>
@@ -138,22 +39,7 @@
                         <div class="panel-heading">
                             <h4 style="margin:5px;">組員照片</h4></div>
                         <div class="panel-body rows">
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png"></a>
-                            </div>
+                            {!! $topicPresenters->getPic($topic->groupno,'memberpic') !!}
                         </div>
                     </div>
 
@@ -161,22 +47,7 @@
                         <div class="panel-heading">
                             <h4 style="margin:5px;">系統架構圖</h4></div>
                         <div class="panel-body rows">
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data4.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data5.png"></a>
-                            </div>
+                            {!! $topicPresenters->getPic($topic->groupno,'structurepic') !!}
                         </div>
                     </div>
 
@@ -184,22 +55,7 @@
                         <div class="panel-heading">
                             <h4 style="margin:5px;">成品照片</h4></div>
                         <div class="panel-body rows">
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png"></a>
-                            </div>
-                            <div class="col-md-4 col-sm-6" style="padding:5px;">
-                                <a href="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png" rel="lightbox">
-                                    <img class="img-responsive img-thumbnail" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data6.png"></a>
-                            </div>
+                            {!! $topicPresenters->getPic($topic->groupno,'productpic') !!}
                         </div>
                     </div>
 
@@ -207,26 +63,7 @@
                         <div class="panel-heading">
                             <h4 style="margin:5px;">成品影片</h4></div>
                         <div class="panel-body rows">
-                            <div class="col-md-6 col-sm-6" style="padding:5px;">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/thkSiBPVwSM" frameborder="0" allowfullscreen=""></iframe>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6" style="padding:5px;">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/thkSiBPVwSM" frameborder="0" allowfullscreen=""></iframe>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6" style="padding:5px;">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/thkSiBPVwSM" frameborder="0" allowfullscreen=""></iframe>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6" style="padding:5px;">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/thkSiBPVwSM" frameborder="0" allowfullscreen=""></iframe>
-                                </div>
-                            </div>
+                            {!! $topicPresenters->getVideo($topic->video) !!}
                         </div>
                     </div>
                 </div>
@@ -244,24 +81,24 @@
                                         <input type="file" onchange="readURL(this);" />
                                     </td>
                                     <td>組別編號</td>
-                                    <td>G105C04</td>
+                                    <td>{{$topic->groupno}}</td>
                                 </tr>
                                 <tr>
                                     <td>報告序號</td>
-                                    <td>7</td>
+                                    <td>{{$topic->postnum}}</td>
                                 </tr>
                                 <tr>
                                     <td>專題名稱</td>
                                     <td>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="{{$topic->topictitle}}">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>專題類別</td>
                                     <td>
                                         <select name="topictype" class="form-control">
-                                            <option value="3">自然環境類</option>
-                                            <option selected="selected" value="4">應用實務類</option>
+                                            {{$topicPresenters->selectTopictype($topic->topictype)}}
+
                                         </select>
                                     </td>
                                 </tr>
@@ -269,12 +106,12 @@
                                     <td>關鍵字
                                         <br>(用、分割)</td>
                                     <td>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="{{$topic->topickeyword}}">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>組員名單</td>
-                                    <td>洪偉宸、連永立、陳典佑、陳俊廷</td>
+                                    <td>{{$topicPresenters->getStudentName($topic->groupno)}}</td>
                                 </tr>
                                 <tr>
                                     <td>指導老師</td>

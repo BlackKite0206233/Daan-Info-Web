@@ -32,4 +32,11 @@ class topictypeRepositories {
                           ->first();
         return $topictype->typename;
     }
+
+    public function all()
+    {
+        $topictype = $this->topictype
+                          ->all();
+        return $topictype;
+    }
 } 

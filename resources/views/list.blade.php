@@ -60,8 +60,6 @@
                             break;
                     }
 
-                    console.log(url);
-
                     $.ajax({
                         type:'get',
                         url:url,

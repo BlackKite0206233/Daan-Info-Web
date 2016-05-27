@@ -47,7 +47,10 @@ class browseController extends Controller
     public function topic($topic,Request $request)
     {
         //顯示指定專題
-        return view('post',['groupno'=>$topic]);
+        $Topic = $this->browseRepositories
+                      ->getTopicFromGroupno($topic);
+
+        return view('post',['topic'=>$Topic]);
     }
 
     public function teacherPage()
