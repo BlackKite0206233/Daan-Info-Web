@@ -19,6 +19,19 @@ class browsePresenters {
         $this->browseRepositories = $browseRepositories;
     }
 
+    public function topicList($year)
+    {
+        $Topic = "";
+        if($year == 'All')
+            $Topic = $this->browseRepositories
+                          ->Pagination();
+        else
+            $Topic = $this->browseRepositories
+                          ->getTopicinfoFromYear($year);
+
+        return $this->brief($Topic);
+    }
+
     public function brief($Topic)
     {
 //        $Topic = $this->browseRepositories

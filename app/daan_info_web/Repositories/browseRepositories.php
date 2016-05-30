@@ -24,7 +24,7 @@ class browseRepositories
     {
         //搜尋
         return $this->topicinfo
-                   ->whereRaw("`topictitle` like '%?%'",[$searchWord])
+                   ->where('topictitle','like','%'.$searchWord.'%')
                    ->paginate(8);
     }
 
@@ -32,7 +32,7 @@ class browseRepositories
     {
         //搜尋年份
         return $this->topicinfo
-                   ->whereRaw("`groupno` like '%?%'",[$year])
+                   ->where('groupno','like','%'.$year.'%')
                    ->paginate(8);
 
     }

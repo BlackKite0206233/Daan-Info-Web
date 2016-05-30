@@ -33,7 +33,7 @@
 
             <script>
                 $('#myTab a').click(function (e) {
-                    $(".active.tab-pane").empty();
+                    //$(".active.tab-pane").empty();
                     e.preventDefault();
                     $(this).tab('show');
                     var url = "";
@@ -41,7 +41,7 @@
                     switch (this.href.substr(-5))
                     {
                         case "#pAll":
-                            url = "page";
+                            url = "year";
                             break;
                         case "#p105":
                             url = "year/105";
@@ -56,7 +56,7 @@
                             url = "year/102";
                             break;
                         default :
-                            url = "page";
+                            url = "year";
                             break;
                     }
 

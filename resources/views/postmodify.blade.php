@@ -97,9 +97,10 @@
                                     <td>專題類別</td>
                                     <td>
                                         <select name="topictype" class="form-control">
-                                            {{$topicPresenters->selectTopictype($topic->topictype)}}
+                                            {!!$topicPresenters->selectTopictype($topic->topictype)!!}
 
                                         </select>
+
                                     </td>
                                 </tr>
                                 <tr>
@@ -117,16 +118,7 @@
                                     <td>指導老師</td>
                                     <td>
                                         <select name="teacherno" class="form-control">
-                                            <option value="1">楊敏男</option>
-                                            <option value="2">王敏男</option>
-                                            <option value="3">徐慶堂</option>
-                                            <option value="4">黃博原</option>
-                                            <option value="5">陳龍昇</option>
-                                            <option value="6">沈彥良</option>
-                                            <option value="7">侯士東</option>
-                                            <option value="8">葉明恭</option>
-                                            <option selected="selected" value="9">張佩琪</option>
-                                            <option value="10">廖啟良</option>
+                                            {!!$topicPresenters->selectTeacher($topic->teacher)!!}
                                         </select>
                                     </td>
                                 </tr>

@@ -36,7 +36,7 @@ class browseController extends Controller
         return view('searchResult',['topic'=>$searchResult]);
     }
 
-    public function year($year,Request $request)
+    public function year($year ,Request $request)
     {
         //依年度顯示
         $Pagination = $this->browseRepositories

@@ -11,20 +11,24 @@ namespace daan_info_web\Presenters;
 use daan_info_web\Repositories\userRepositories;
 use daan_info_web\Repositories\topictypeRepositories;
 use daan_info_web\Repositories\topicpicRepositories;
+use daan_info_web\Repositories\teacherlistRepositories;
 
 class topicPresenters {
 
     protected $userRepositories;
     protected $topictypeRepositories;
     protected $topictpicRepositories;
+    protected $teacherlistRepositories;
 
     public function __construct(userRepositories $userRepositories ,
                               topictypeRepositories $topictypeRepositories ,
-                              topicpicRepositories $topicpicRepositories)
+                              topicpicRepositories $topicpicRepositories ,
+                              teacherlistRepositories $teacherlistRepositories)
     {
         $this->userRepositories = $userRepositories;
         $this->topictypeRepositories = $topictypeRepositories;
         $this->topicpicRepositories = $topicpicRepositories;
+        $this->teacherlistRepositories = $teacherlistRepositories;
     }
 
     public function getTeacher($acc)
@@ -67,8 +71,7 @@ class topicPresenters {
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">遇到的問題與解決辦法</h4></div>
-                        <div class="panel-body">'.$topicContent[1].'
-                        </div>
+                        <div class="panel-body">'.$topicContent[1].'</div>
                     </div>';
         return $result;
     }
@@ -217,10 +220,8 @@ class topicPresenters {
 
     public function selectTopictype($topictype)
     {
-
         $Object = $this->topictypeRepositories
                        ->all();
-
 
         $result = "";
         foreach($Object as $object)
@@ -229,6 +230,22 @@ class topicPresenters {
                 $result.= '<option selected="selected" value= "'.$object->idno.'">'.$object->typename.'</option>';
             else
                 $result.= '<option value="'.$object->idno.'">'.$object->typename.'</option>';
+        }
+        return $result;
+    }
+
+    public function selectTeacher($teacher)
+    {
+        $Object = $this->teacherlistRepositories
+                       ->getTeacher();
+
+        $result = "";
+        foreach($Object as $object)
+        {
+            if($teacher == $object->acc)
+                $result.= '<option selected="selected" value= "'.$object->acc.'">'.$object->name.'</option>';
+            else
+                $result.= '<option value="'.$object->acc.'">'.$object->name.'</option>';
         }
         return $result;
     }
