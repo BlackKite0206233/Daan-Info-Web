@@ -12,54 +12,60 @@
 */
 
 Route::group(['middleware'=>['web']],function(){
+                                                                                          ////以下所有人都可以進入
 
-    Route::get('/', function () {   return view('index');   });
-    Route::get('ref',function () {  return view('ref'); });
-
+    Route::get('/', function () {   return view('index');   });                             //首頁
+    Route::get('ref',function () {  return view('ref'); });                                 //參考資料頁面
 
     Route::group(['prefix'=>'browse'],function(){
-        Route::get('page','browseController@Pagination');
-        //Route::get('/search','browseController@searchPage');
-        Route::get('year/{year}','browseController@year');
-        Route::get('topic/{topic}','browseController@topic');
-        Route::get('teacher','browseController@teacherPage');
-        Route::get('teacher/{teacher}','browseController@teacher');
-        Route::post('search','browseController@search');
+        Route::get('page','browseController@Pagination');                                  //顯示所有專題
+        Route::get('year/{year}','browseController@year');                                 //依年度顯示專題
+        Route::get('topic/{topic}','browseController@topic');                              //顯示專題詳細資訊
+        Route::get('teacher','browseController@teacherPage');                              //開課資訊頁面
+        Route::get('teacher/{teacher}','browseController@teacher');                        //依老師顯示專題
+        Route::post('search','browseController@search');                                   //搜尋專題
     });
 
-    Route::group(['middleware'=>'userMiddleware'],function(){
-        Route::get('changePwd','memberController@changePwd');
-        Route::get('logout','userController@logout');
+
+    Route::group(['middleware'=>'userMiddleware'],function(){                              ////以下必須登入才可以進入
+
+        Route::get('changePwd','memberController@changePwd');                              //變更密碼頁面
+        Route::get('logout','userController@logout');                                      //登出
 
         Route::group(['prefix'=>'topic'],function() {
-            Route::get('editTopicinfo', 'topicController@editTopicinfo');
-            Route::get('editTopiccontent', 'topicController@editTopiccontent');
-            Route::get('showTopic', 'topicController@showTopic');
-            Route::get('upload', 'topicController@uploadPage');
-            Route::post('upload', 'topicController@upload');
-            Route::put('{topic}/info', 'topicController@updateinfo');
+            Route::get('editTopicinfo', 'topicController@editTopicinfo');                  //編輯專題資訊
+            Route::get('editTopiccontent', 'topicController@editTopiccontent');            //編輯專題內容
+            Route::get('showTopic', 'topicController@showTopic');                          //預覽專題
+            Route::get('upload', 'topicController@uploadPage');                            //上傳檔案
+            Route::post('upload', 'topicController@upload');                               //上傳檔案
+            Route::put('{topic}/info', 'topicController@updateinfo');                      //編輯專題
         });
 
-        Route::resource('question','questionController',['except'=>['destroy','edit']]);
-        Route::resource('topic','topicController',['except'=>['destroy','show','edit']]);
-        Route::resource('member','memberController',['except'=>['destroy','edit']]);
-
+        Route::resource('question','questionController',['except'=>['destroy','edit']]);    //管理自評問題
+        Route::resource('topic','topicController',['except'=>['destroy','show','edit']]);   //管理專題
+        Route::resource('member','memberController',['except'=>['destroy','edit']]);        //管理學生
     });
 
-    Route::group(['middleware'=>'teacherMiddleware'],function(){
-        Route::get('topic/edit','topicController@teacherEdit');
-        Route::get('download','downloadController@index');
-        Route::resource('score','scoreController',['only'=>['index','update','edit']]);
-        Route::resource('gradeinfo','gradeinfoController');
+
+    Route::group(['middleware'=>'teacherMiddleware'],function(){                            ////以下只有老師可以進入
+
+        Route::get('topic/edit','topicController@teacherEdit');                             //編輯專題
+        Route::get('download','downloadController@index');                                  //下載表格
+        Route::resource('score','scoreController',['only'=>['index','update','edit']]);      //管理評分
+        Route::resource('gradeinfo','gradeinfoController');                                  //管裡開課資訊
     });
 
-    Route::group(['middleware'=>'adminMiddleware'],function(){
-        Route::resource('teacher','teacherController',['only'=>['index','store','create']]);
-        Route::resource('class','classController',['except'=>['edit','update']]);
-        Route::resource('scorelist','scorelistController',['except'=>['edit']]);
+    Route::group(['middleware'=>'adminMiddleware'],function(){                               ////以下只有系統管理元可以進入
+
+        Route::resource('teacher','teacherController',['only'=>['index','store','create']]); //管理老師
+        Route::resource('class','classController',['except'=>['edit','update']]);            //管理專題類別
+        Route::resource('scorelist','scorelistController',['except'=>['edit']]);             //管理評分項目
     });
 
-    Route::resource('login','userController',['only'=>['index','store']]);
+
+                                                                                            ////以下所有人都可以進入
+
+    Route::resource('login','userController',['only'=>['index','store']]);                   //登入
 });
 
 
