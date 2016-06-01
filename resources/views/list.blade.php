@@ -41,32 +41,37 @@
                     switch (this.href.substr(-5))
                     {
                         case "#pAll":
-                            url = "year";
+                            url = 'year/all';
                             break;
                         case "#p105":
-                            url = "year/105";
+                            url = 'year/105';
                             break;
                         case "#p104":
-                            url = "year/104";
+                            url = 'year/104';
                             break;
                         case "#p103":
-                            url = "year/103";
+                            url = 'year/103';
                             break;
                         case "#p102":
-                            url = "year/102";
+                            url = 'year/102';
                             break;
                         default :
-                            url = "year";
+                            url = 'year/all';
                             break;
                     }
 
                     $.ajax({
                         type:'get',
                         url:url,
-                        success:function(){
-                            $(".active.tab-pane").html('{!!$browsePresenters->brief($topic)!!}');
+                        dataType:'html',
+                        success:function(data){
+
+                            $(".active.tab-pane").html(data);
+
                         }
                     });
+
+
                 })
             </script>
         </div>

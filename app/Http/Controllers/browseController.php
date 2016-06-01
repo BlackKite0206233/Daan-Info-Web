@@ -8,16 +8,20 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use daan_info_web\Repositories\browseRepositories;
+use daan_info_web\Presenters\browsePresenters;
 
 use Crypt;
 
 class browseController extends Controller
 {
     protected $browseRepositories;
+    protected $browsePresenters;
 
-    public function __construct(browseRepositories $browseRepositories)
+    public function __construct(browseRepositories $browseRepositories ,
+                              browsePresenters $browsePresenters)
     {
         $this->browseRepositories = $browseRepositories;
+        $this->browsePresenters = $browsePresenters;
     }
     //
     public function Pagination()
@@ -39,9 +43,17 @@ class browseController extends Controller
     public function year($year ,Request $request)
     {
         //依年度顯示
-        $Pagination = $this->browseRepositories
-                           ->getTopicinfoFromYear($year);
-        return ['topic'=>$Pagination];
+        if($year != 'all')
+            $Pagination = $this->browseRepositories
+                               ->getTopicinfoFromYear($year);
+        else
+            $Pagination = $this->browseRepositories
+                ->Pagination();
+        if($Pagination != NULL)
+            $data = $this->browsePresenters
+                         ->brief($Pagination);
+        else $data = "";
+        return $data;
     }
 
     public function topic($topic,Request $request)
