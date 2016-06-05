@@ -22,21 +22,26 @@ class topicRepositories
         $topic->save();
     }
 
-    public function edit($id,$title,$keyword,$type,$lastdate,$content,$video)
+    public function edit($id,$title,$keyword,$type)
     {
         //編輯
         $this->topicinfo
-             ->where('idno' ,$id)
-             ->update(['title' => $title ,'keyword' => $keyword ,
-                       'type' => $type , 'lastdate' => $lastdate ,
-                       'content' => $content , 'video' => $video]);
+             ->where('groupno' ,$id)
+             ->update(['topictitle' => $title ,'topickeyword' => $keyword ,'topictype' => $type]);
+    }
+
+    public function editcontent($id,$content,$video)
+    {
+        $this->topicinfo
+             ->where('groupno',$id)
+             ->update(['topiccontent'=>$content,'video'=>$video]);
     }
 
     public function upload($id,$field,$path)
     {
 
         $this->topicinfo
-             ->where('idno' ,$id)
+             ->where('groupno' ,$id)
              ->update([$field => $path]);
     }
 
@@ -65,7 +70,7 @@ class topicRepositories
     {
         $groupno =  $this->topicinfo
                          ->where('idno' ,$id)
-                         ->get();
+                         ->first();
         return $groupno->groupno;
     }
 

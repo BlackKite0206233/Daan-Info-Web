@@ -23,9 +23,15 @@ class topicServices
         $this->topicRepositories = $topicRepositories;
     }
 
-    public function upload($id ,$groupno ,Request &$files)
+    public function upload($groupno ,Request &$files,$rules,$local)
     {
-        $rule = ['file' => 'required | mimes:jpg,png,gif,ppt,pptx,ppts,pdf,zip,rar,7z,apk,exe'];
+        $list = "";
+        foreach($rules as $rul)
+        {
+            $list .= $rul.',';
+        }
+        $list = substr($list,0,-1);
+        $rule = ['file' => 'required | mimes:'.$list];
 
         foreach($files as $file)
         {
@@ -36,7 +42,7 @@ class topicServices
                 {
                     $year = substr($groupno,1,3);
                     $extension = $file->getClientOriginalExtension();
-                    $destinationPath = base_path() . '/file/upload/' . $year . '/' . $groupno;
+                    $destinationPath = base_path() . '/upload/' . $year . '/' . $groupno;
                     $fileName = $file->getClientOriginaName() . '.' . $extension;
 
                     switch($extension)
@@ -48,7 +54,8 @@ class topicServices
                             break;
                         case 'ppt':
                         case 'pptx':
-                        case 'ppts':
+                        case 'pps':
+                        case 'ppsx':
                             $field = 'ppt';
                             break;
                         case 'pdf':
@@ -62,7 +69,7 @@ class topicServices
                     $file->move($destinationPath,$fileName);
 
                     $this->topicRepositories
-                         ->upload($id,$field,$destinationPath . '/' . $fileName);
+                         ->upload($groupno,$field,$destinationPath . '/' . $fileName);
                 }
             }
             else

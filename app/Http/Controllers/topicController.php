@@ -49,25 +49,36 @@ class topicController extends Controller
 //
 //    }
 
-    public function update(Request $request)//put topic/{topic}
+    public function update($topic,Request $request)                                          //put topic/{topic}
     {
         //編輯專題內容
+        $content = $request['editor1']."#spilt#".$request['editor2'];
+
+        $memPic = $request->file('memPic');
+        $strPic = $request->file('strPic');
+        $proPic = $request->file('proPic');
+
         $this->topicRepositories
-             ->edit($request['id'],$request['title'],$request['keyword'],
-                    $request['type'],$request['lastdate'],$request['content'],
-                    $request['video']);
+             ->editcontent($topic,$content,$request['video']);
+
+
+        return view('postmodify', ['topic' => $topic]);
     }
 
-    public function updateinfo(Request $request)//put topic/{topic}/info
+    public function updateinfo($topic,Request $request)                                      //put topic/{topic}/info
     {
         //編輯專題資訊
+
+        $file = $request->file('pic');
+
         $this->topicRepositories
-            ->edit($request['id'],$request['title'],$request['keyword'],
-                $request['type'],$request['lastdate'],$request['content'],
-                $request['video']);
+             ->edit($topic,$request['title'],$request['keyword'],$request['type']);
+
+
+        return view('postmodify', ['topic' => $topic]);
     }
 
-    public function showTopic()
+    public function showTopic()                                                               //get topic/showTopic
     {
         //顯示指定專題 頁面
         $groupNo = $this->userRepositories
@@ -77,39 +88,26 @@ class topicController extends Controller
         return view('postmodify', ['topic' => $topic]);
     }
 
-    public function create()// get topic/create
+    public function create()                                                                  //get topic/create
     {
         //新增專題 頁面
     }
 
-    public function editTopicinfo()
-    {
-        //編輯專題資訊 頁面
-        $topic = $this->topicRepositories
-                      ->getFromId(session('memID'));
-    }
-    public function editTopiccontent()
-    {
-        //編輯內容 頁面
-        $topic = $this->topicRepositories
-            ->getFromId(session('memID'));
-    }
-
-    public function uploadPage()
-    {
-
-    }
-
-    public function upload(Request $request)// post topic/{topic}/upload
+    public function upload($topic,Request $request)                                           //post topic/{topic}/upload
     {
         //上傳檔案
-        $file = $request->file('file');
-        $groupno = $this->topicRepositories
-                        ->getGroupno($request['id']);
-        $isSuccess = $this->topicServices
-                          ->upload($request['id'],$groupno,$file);
+        $ppt = $request->file('ppt');
+        $pdf = $request->file('pdf');
+        $data = $request->file('data');
 
-        return $isSuccess;
+        $isSuccessPPT = $this->topicServices
+                          ->upload($topic,$ppt,['ppt','pptx','pps','ppsx'],'info');
+        $isSuccessPDF = $this->topicServices
+                          ->upload($topic,$pdf,['pdf'],'info');
+        $isSuccessDATA = $this->topicServices
+                          ->upload($topic,$data,['7z','rar','zip','apk','exe'],'info');
+
+        return view('postmodify', ['topic' => $topic])->with($isSuccessPPT,$isSuccessPDF,$isSuccessDATA);
     }
 
     public function index()

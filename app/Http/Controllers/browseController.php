@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\browseRepositories;
 use daan_info_web\Presenters\browsePresenters;
 
-use Crypt;
 
 class browseController extends Controller
 {
@@ -24,15 +23,15 @@ class browseController extends Controller
         $this->browsePresenters = $browsePresenters;
     }
     //
-    public function Pagination()
+    public function Pagination()                                               //get browse/page
     {
-        //分頁顯示
+        //分頁顯示專題
         $Pagination = $this->browseRepositories
                            ->Pagination();
         return view('list',['topic'=>$Pagination]);
     }
 
-    public function search(Request $request)
+    public function search(Request $request)                                    //post browse/search
     {
         //搜尋結果 頁面
         $searchResult = $this->browseRepositories
@@ -40,7 +39,7 @@ class browseController extends Controller
         return view('searchResult',['topic'=>$searchResult]);
     }
 
-    public function year($year ,Request $request)
+    public function year($year ,Request $request)                               //get browse/year/{year}
     {
         //依年度顯示
         if($year != 'all')
@@ -52,11 +51,12 @@ class browseController extends Controller
         if($Pagination != NULL)
             $data = $this->browsePresenters
                          ->brief($Pagination);
-        else $data = "";
+        else
+            $data = "";
         return $data;
     }
 
-    public function topic($topic,Request $request)
+    public function topic($topic,Request $request)                               //get browse/topic/{topic}
     {
         //顯示指定專題
         $Topic = $this->browseRepositories
@@ -65,16 +65,15 @@ class browseController extends Controller
         return view('post',['topic'=>$Topic]);
     }
 
-    public function teacherPage()
+    public function teacherPage()                                                 //get browse/teacher
     {
         //老師開課資訊
         return view('teacher');
     }
 
-    public function teacher($teacher,Request $request)
+    public function teacher($teacher,Request $request)                            //get browse/teacher/{teacher}
     {
         //依老師顯示
-//        $acc = Crypt::decrypt($teacher);
         $topic = $this->browseRepositories
                       ->getTopicinfoFromTeacher($teacher);
 

@@ -93,7 +93,7 @@ class topicPresenters {
                         <div class="panel-heading">
                             <h4 style="margin:5px;">遇到的問題與解決辦法</h4></div>
                         <div class="panel-body">
-                            <textarea name="editor1">'.$topicContent[1].'</textarea>
+                            <textarea name="editor2">'.$topicContent[1].'</textarea>
                         </div>
                     </div>';
         return $result;

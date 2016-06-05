@@ -33,12 +33,10 @@ Route::group(['middleware'=>['web']],function(){
         Route::get('logout','userController@logout');                                      //登出
 
         Route::group(['prefix'=>'topic'],function() {
-            Route::get('editTopicinfo', 'topicController@editTopicinfo');                  //編輯專題資訊
-            Route::get('editTopiccontent', 'topicController@editTopiccontent');            //編輯專題內容
-            Route::get('showTopic', 'topicController@showTopic');                          //預覽專題
+            Route::get('showTopic', 'topicController@showTopic');                          //個人專題頁面
             Route::get('upload', 'topicController@uploadPage');                            //上傳檔案
             Route::post('upload', 'topicController@upload');                               //上傳檔案
-            Route::put('{topic}/info', 'topicController@updateinfo');                      //編輯專題
+            Route::put('{topic}/info', 'topicController@updateinfo');                      //編輯專題資訊
         });
 
         Route::resource('question','questionController',['except'=>['destroy','edit']]);    //管理自評問題

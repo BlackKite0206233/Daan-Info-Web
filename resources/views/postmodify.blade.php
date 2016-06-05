@@ -18,7 +18,7 @@
                             <h4 style="margin:5px;">專題簡介</h4></div>
                         <table class="table rows table-hover hidden-xs" style="text-align:center;">
                             <tr>
-                                <td rowspan="8" width="50%"><img class="img-responsive" src="{{asset($topic->pic)}}"></td>
+                                <td rowspan="8" width="50%"><img class="img-responsive" src="{{asset('upload/'.substr($topic->groupno,1,3).'/'.$topic->groupno.'/'.$topic->pic)}}"></td>
                                 {!! $topicPresenters->outputTopic($topic,0) !!}
 
                             </tr>
@@ -72,13 +72,13 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">編輯專題資訊</h4></div>
-                        <form method="post" action="/topic/{{$topic->groupno}}/info">
+                        <form method="post" enctype="multipart/form-data" action="/topic/{{$topic->groupno}}/info">
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
                             <table class="table rows table-hover hidden-xs" style="text-align:center;">
                                 <tr>
                                     <td rowspan="7" width="50%"><img class="img-responsive blah">
-                                        <input type="file" onchange="readURL(this);" />
+                                        <input type="file" name="pic" onchange="readURL(this);" />
                                     </td>
                                     <td>組別編號</td>
                                     <td>{{$topic->groupno}}</td>
@@ -90,7 +90,7 @@
                                 <tr>
                                     <td>專題名稱</td>
                                     <td>
-                                        <input type="text" class="form-control" value="{{$topic->topictitle}}">
+                                        <input type="text" class="form-control" name="topicname"  value="{{$topic->topictitle}}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -107,7 +107,7 @@
                                     <td>關鍵字
                                         <br>(用、分割)</td>
                                     <td>
-                                        <input type="text" class="form-control" value="{{$topic->topickeyword}}">
+                                        <input type="text" name="topickeyword" class="form-control" value="{{$topic->topickeyword}}">
                                     </td>
                                 </tr>
                                 <tr>
@@ -117,9 +117,7 @@
                                 <tr>
                                     <td>指導老師</td>
                                     <td>
-                                        <select name="teacherno" class="form-control">
-                                            {!!$topicPresenters->selectTeacher($topic->teacher)!!}
-                                        </select>
+                                        {{$topicPresenters->getTeacher($topic->teacher)}}
                                     </td>
                                 </tr>
                                 <tr>
@@ -132,12 +130,13 @@
                             </table>
                         </form>
 
-
-                        <form method="post">
+                        <form method="post"  enctype="multipart/form-data" action="/topic/{{$topic->groupno}}/info">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <table class="table table-hover visible-xs-block" style="text-align:center;">
                                 <tr>
                                     <td colspan="2"><img class="img-responsive blah">
-                                        <input type="file" onchange="readURL(this);" />
+                                        <input type="file"  name="pic"  onchange="readURL(this);" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -151,15 +150,15 @@
                                 <tr>
                                     <td>專題名稱</td>
                                     <td>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="topicname" value="{{$topic->topictitle}}">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>專題類別</td>
                                     <td>
                                         <select name="topictype" class="form-control">
-                                            <option value="3">自然環境類</option>
-                                            <option selected="selected" value="4">應用實務類</option>
+                                            {!!$topicPresenters->selectTopictype($topic->topictype)!!}
+
                                         </select>
                                     </td>
                                 </tr>
@@ -167,28 +166,19 @@
                                     <td>關鍵字
                                         <br>(用、分割)</td>
                                     <td>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="topickeyword" class="form-control" value="{{$topic->topickeyword}}">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>組員名單</td>
-                                    <td>洪偉宸、連永立、陳典佑、陳俊廷</td>
+                                    <td>{{$topicPresenters->getStudentName($topic->groupno)}}</td>
                                 </tr>
                                 <tr>
                                     <td>指導老師</td>
                                     <td>
-                                        <select name="teacherno" class="form-control">
-                                            <option value="1">楊敏男</option>
-                                            <option value="2">王敏男</option>
-                                            <option value="3">徐慶堂</option>
-                                            <option value="4">黃博原</option>
-                                            <option value="5">陳龍昇</option>
-                                            <option value="6">沈彥良</option>
-                                            <option value="7">侯士東</option>
-                                            <option value="8">葉明恭</option>
-                                            <option selected="selected" value="9">張佩琪</option>
-                                            <option value="10">廖啟良</option>
-                                        </select>
+                                        <td>
+                                            {{$topicPresenters->getTeacher($topic->teacher)}}
+                                        </td>
                                     </td>
                                 </tr>
                                 <tr>
@@ -202,7 +192,6 @@
                         </form>
 
                     </div>
-
 
                     <script type="text/javascript">
                         function readURL(input) {
@@ -219,7 +208,9 @@
                     </script>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="modify2">
-                    <form method="post" class="form-horizontal">
+                    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
                         {!! $topicPresenters->updateContent($topic->topiccontent) !!}
 
                         <div class="panel panel-primary">
@@ -228,7 +219,7 @@
                                 <h5 style="margin:5px;">注意:如無任何改動，請不要更動此處；若修改請注意將會把舊的取代而不是增加。</h5></div>
                             <div class="panel-body rows">
                                 <div class="form-group">
-                                    <input id="file-1" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-allowed-file-extensions='["jpg", "png","gif"]' data-min-file-count="1">
+                                    <input id="file-1" class="file" name="memPic" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-allowed-file-extensions='["jpg", "png","gif"]' data-min-file-count="1">
                                 </div>
                             </div>
                         </div>
@@ -239,7 +230,7 @@
                                 <h5 style="margin:5px;">注意:如無任何改動，請不要更動此處；若修改請注意將會把舊的取代而不是增加。</h5></div>
                             <div class="panel-body rows">
                                 <div class="form-group">
-                                    <input id="file-5" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-allowed-file-extensions='["jpg", "png","gif"]' data-min-file-count="1">
+                                    <input id="file-5" class="file" name="strPic" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-allowed-file-extensions='["jpg", "png","gif"]' data-min-file-count="1">
                                 </div>
                             </div>
                         </div>
@@ -250,7 +241,7 @@
                                 <h5 style="margin:5px;">注意:如無任何改動，請不要更動此處；若修改請注意將會把舊的取代而不是增加。</h5></div>
                             <div class="panel-body rows">
                                 <div class="form-group">
-                                    <input id="file-3" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-allowed-file-extensions='["jpg", "png","gif"]' data-min-file-count="2">
+                                    <input id="file-3" class="file" name="proPic" type="file" multiple data-preview-file-type="any" data-upload-url="#" data-allowed-file-extensions='["jpg", "png","gif"]' data-min-file-count="2">
                                 </div>
                             </div>
                         </div>
@@ -262,7 +253,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3">影片YOUTUBE ID：</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="video" class="form-control" value="{{$topic->video}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -288,7 +279,7 @@
 
 
                     <script>
-                        tinymce.init({
+                        tinymce.init({                                                                                 //文字編輯器
                             selector: 'textarea',
                             language: 'zh_TW',
                             plugins: [
@@ -300,7 +291,8 @@
                     </script>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="modify3">
-                    <form method="post" action="topic/upload">
+                    <form method="post" enctype="multipart/form-data" action="{{$topic->groupno}}/upload">
+                        {{ csrf_field() }}
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 style="margin:5px;">上傳資料</h4></div>
@@ -308,13 +300,13 @@
                                 <tr>
                                     <td width="300px">上傳簡報檔(*.ppt 或 *.pptx 或 *.pps 或 *.ppsx)</td>
                                     <td>
-                                        <input id="file-0a" class="file" type="file" data-allowed-file-extensions='["ppt", "pptx","pps","ppsx"]'>
+                                        <input id="file-0a" class="file" name="ppt" type="file" data-allowed-file-extensions='["ppt", "pptx","pps","ppsx"]'>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>上傳pdf檔(*.pdf)</td>
                                     <td>
-                                        <input id="file-1a" class="file" type="file" data-allowed-file-extensions='["pdf"]'>
+                                        <input id="file-1a" class="file" name="pdf" type="file" data-allowed-file-extensions='["pdf"]'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -323,7 +315,7 @@
                 <a href="makesfx.exe">makesfx封裝</a></span>
                                     </td>
                                     <td>
-                                        <input id="file-2a" class="file" type="file" data-allowed-file-extensions='["zip","rar","7z","exe","apk"]'>
+                                        <input id="file-2a" class="file" name="data" type="file" data-allowed-file-extensions='["zip","rar","7z","exe","apk"]'>
                                     </td>
                                 </tr>
                                 <tr>
@@ -344,36 +336,6 @@
                 $('#myTab a').click(function (e) {
                     e.preventDefault();
                     $(this).tab('show');
-
-//                    var url = "";
-//                    switch(e.href)
-//                    {
-//                        case '#bro':
-//                            url = 'topic/showTopic';
-//                            break;
-//                        case '#modify1':
-//                            url = 'topic/editTopicinfo';
-//                            break;
-//                        case '#modify2':
-//                            url = 'topic/editTopiccontent';
-//                            break;
-//                        case '#modify3':
-//                            url = 'topic/upload';
-//                            break;
-//                        default :
-//                            url = 'topic/showTopic';
-//                            break;
-//                    }
-//                    console.log(rul);
-
-//                    $.ajax({type:'get',
-//                            url:url,
-//                            success:function()
-//                            {
-//
-//                            }
-//                    });
-
                 })
             </script>
         </div>

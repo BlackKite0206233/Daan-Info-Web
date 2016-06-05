@@ -7,14 +7,14 @@
                 <h4 style="margin:5px;">專題簡介</h4></div>
             <table class="table rows table-hover hidden-xs" style="text-align:center;">
                 <tr>
-                    <td rowspan="8" width="50%"><img class="img-responsive" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data1.png"></td>
+                    <td rowspan="8" width="50%"><img class="img-responsive" src="{{asset('upload/'.substr($topic->groupno,1,3).'/'.$topic->groupno.'/'.$topic->pic)}}"></td>
                     {!! $topicPresenters->outputTopic($topic,0) !!}
                 </tr>
             </table>
 
             <table class="table table-hover visible-xs-block" style="text-align:center;">
                 <tr>
-                    <td colspan="2"><img class="img-responsive" src="http://info.taivs.tp.edu.tw/topic/upload/105/G105C04/G105C04_Data1.png"></td>
+                    <td colspan="2"><img class="img-responsive" src="{{asset('upload/'.substr($topic->groupno,1,3).'/'.$topic->groupno.'/'.$topic->pic)}}"></td>
                 </tr>
                 <tr>
                     {!! $topicPresenters->outputTopic($topic,1) !!}
