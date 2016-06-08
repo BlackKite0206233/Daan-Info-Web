@@ -19,11 +19,27 @@ class topicpicRepositories {
         $this->topicpic = $topicpic;
     }
 
+    public function insert($groupno)
+    {
+        $topicpic = new Topicpic;
+
+        $topicpic->groupno = $groupno;
+
+        $topicpic->save();
+    }
+
     public function getPic($groupno)
     {
         $pic = $this->topicpic
                     ->where('groupno',$groupno)
                     ->first();
         return $pic;
+    }
+
+    public function upload($groupno,$field,$pic)
+    {
+        $this->topicpic
+             ->where('groupno',$groupno)
+             ->update([$field => $pic]);
     }
 } 

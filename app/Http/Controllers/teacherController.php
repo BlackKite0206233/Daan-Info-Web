@@ -1,5 +1,5 @@
 <?php
-
+//管理老師
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -21,22 +21,25 @@ class teacherController extends Controller
         $this->teacherlistRepositories = $teacherlistRepositories;
         $this->userRepositories = $userRepositories;
     }
-    //
-    public function store(Request $request)//post teacher
+
+    //新增老師
+    public function store(Request $request)                                                                      //post teacher
     {
-        //新增老師
+        //user資料表新增一筆老師資料(帳號、密碼、姓名、身分)
         $this->userRepositories
              ->insert($request['acc'],$request['password'],$request['name'],"t","");
     }
 
-    public function create()// get teacher/create
+    //新增老師 頁面
+    public function create()                                                                                     //get teacher/create
     {
-        //新增老師 頁面
+
     }
 
-    public function index()// get teacher
+    //老師列表
+    public function index()                                                                                      //get teacher
     {
-        //老師列表
+        //取得所有老師
         $teacher = $this->teacherlistRepositories
                         ->getTeacher();
     }

@@ -17,7 +17,7 @@ class userRepositories
         $this->user = $user;
     }
 
-    public function insert($acc ,$password ,$name ,$category ,$groupno)
+    public function insert($acc ,$password ,$name ,$category )
     {
         //新增
         $member = new User;
@@ -25,7 +25,6 @@ class userRepositories
         $member->password = Hash::make($password);
         $member->name = $name;
         $member->category = $category;
-        $member->groupno = $groupno;
         $member->save();
 
     }

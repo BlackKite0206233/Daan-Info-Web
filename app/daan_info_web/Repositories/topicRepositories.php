@@ -14,11 +14,13 @@ class topicRepositories
         $this->topicinfo = $topicinfo;
     }
 
-    public function insert($groupno)
+    public function insert($groupno,$teacher,$title)
     {
         //新增
         $topic = new Topicinfo;
         $topic->groupno = $groupno;
+        $topic->teacher = $teacher;
+        $topic->topictitle = $title;
         $topic->save();
     }
 

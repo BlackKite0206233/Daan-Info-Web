@@ -1,5 +1,5 @@
 <?php
-
+//管理專題類別
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,31 +17,34 @@ class classController extends Controller
     {
         $this->classRepositories = $classRepositories;
     }
-    //
-    public function store(Request $request)//post class
+
+    //新增專題類別
+    public function store(Request $request)                                             //post class
     {
-        //新增專題類別
+        //新增專題類別(類別名稱)
         $this->classRepositories
              ->insert($request['typename']);
     }
 
-    public function destroy(Request $request)// delete class/{class}
+    public function destroy($class,Request $request)                                    //delete class/{class}
     {
         //刪除專題類別
         $this->classRepositories
-             ->delete($request['id']);
+             ->delete($class);
     }
 
-    public function index()// get class/
+    //編輯專題類別 頁面
+    public function index()                                                            //get class/
     {
-        //編輯專題類別 頁面
+        //取得所有專題類別
         $class = $this->classRepositories
                       ->getAll();
     }
 
-    public function create()// get class/create
+    //新增專題類別 頁面
+    public function create()                                                           //get class/create
     {
-        //新增專題類別 頁面
+
     }
 
 }

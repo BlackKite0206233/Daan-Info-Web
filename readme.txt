@@ -17,6 +17,7 @@
 https://laravel.tw/                              laravel的中文介紹
 http://oomusou.io/laravel/laravel-architecture/  laravel的中大型專案架構
 REST軟體架構風格
+物件導向設計模式
 
 ################################################################################################
 

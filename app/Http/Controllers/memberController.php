@@ -1,5 +1,5 @@
 <?php
-
+//管理學生、修改密碼(老師、學生)
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use daan_info_web\Repositories\userRepositories;
-use daan_info_web\Repositories\topicRepositories;
 use daan_info_web\Repositories\studentRepositories;
 use daan_info_web\Repositories\stuscoreRepositories;
 
@@ -17,46 +16,39 @@ use daan_info_web\Services\memberServices;
 class memberController extends Controller
 {
     protected $userRepositories;
-    protected $topicRepositories;
     protected $studentRepositories;
     protected $stuscoreRepositories;
 
     protected $memberServices;
     public function __construct(userRepositories $userRepositories ,
-                              topicRepositories $topicRepositories ,
                               studentRepositories $studentRepositories ,
                               stuscoreRepositories $stuscoreRepositories ,
                               memberServices $memberServices)
     {
         $this->middleware('adminMiddleware',['except'=>['update','changePwd']]);
         $this->userRepositories = $userRepositories;
-        $this->topicRepositories = $topicRepositories;
         $this->studentRepositories = $studentRepositories;
         $this->stuscoreRepositories = $stuscoreRepositories;
 
         $this->memberServices = $memberServices;
     }
-    //
-    public function store(Request $request)//post member
-    {
-        //新增學生
-        $this->userRepositories
-             ->insert($request['acc'],$request['password'],$request['name'],"s",$request['group']);
 
+    //新增學生
+    public function store(Request $request)                                                               //post member
+    {
+        //user資料表新增一筆學生資料(帳號、密碼、姓名、身分)
+        $this->userRepositories
+             ->insert($request['acc'],$request['password'],$request['name'],"s");
+
+        //stuscore資料表新增一筆資料(帳號)
         $this->stuscoreRepositories
              ->insert($request['acc']);
-
-        $hasTopic = $this->topicRepositories
-                         ->getTopicFromGroupNo($request['group']);
-        if($hasTopic == NULL)
-            $this->topicRepositories
-                 ->insert($request['group']);
-
     }
 
-    public function update(Request $request,$member)//put member/{member}
+    //修改密碼(老師、學生)
+    public function update(Request $request,$member)                                                      //put member/{member}
     {
-        //修改密碼
+        //修改成功=>登出，重新登入
         if($this->memberServices
                ->updatePwd($member,$request['oldPwd'],$request['newPwd'],$request['retypePwd']))
             return redirect('logout');
@@ -64,28 +56,31 @@ class memberController extends Controller
         return redirect('changePwd');
     }
 
-    public function index()// get member/
+    //顯示所有學生
+    public function index()                                                                               //get member/
     {
-        //所有學生 頁面
+        //取得所有學生
         $stu = $this->studentRepositories
                     ->getAll();
     }
 
-    public function show(Request $request)// get member/{member}
+    //依年度顯示學生
+    public function show($member)                                                                        //get member/{member}
     {
-        //依年度
+        //取得指定年度學生
         $stu = $this->studentRepositories
-                    ->getFromYear($request['year']);
+                    ->getFromYear($member);
     }
 
-    public function create()// get member/create
+    //新增學生 頁面
+    public function create()                                                                             //get member/create
     {
-        //新增學生 頁面
+
     }
 
-    public function changePwd()
+    //修改密碼 頁面
+    public function changePwd()                                                                           //get changePwd
     {
-        //修改密碼 頁面
         return view('pwd');
     }
 

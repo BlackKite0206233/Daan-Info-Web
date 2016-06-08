@@ -8,6 +8,7 @@
 
 namespace daan_info_web\Services;
 
+use daan_info_web\Services\topicFactoryFunction\Upload;
 use Validator;
 use Response;
 use Illuminate\Http\Request;
@@ -23,16 +24,10 @@ class topicServices
         $this->topicRepositories = $topicRepositories;
     }
 
-    public function upload($groupno ,Request &$files,$rules,$local)
+    public function upload(Request &$files,$rule,$groupno)
     {
-        $list = "";
-        foreach($rules as $rul)
-        {
-            $list .= $rul.',';
-        }
-        $list = substr($list,0,-1);
-        $rule = ['file' => 'required | mimes:'.$list];
 
+        $list = "";
         foreach($files as $file)
         {
             $validator = Validator::make(['file' => $file],$rule);
@@ -45,40 +40,17 @@ class topicServices
                     $destinationPath = base_path() . '/upload/' . $year . '/' . $groupno;
                     $fileName = $file->getClientOriginaName() . '.' . $extension;
 
-                    switch($extension)
-                    {
-                        case 'jpg':
-                        case 'png':
-                        case 'gif':
-                            $field = 'pic';
-                            break;
-                        case 'ppt':
-                        case 'pptx':
-                        case 'pps':
-                        case 'ppsx':
-                            $field = 'ppt';
-                            break;
-                        case 'pdf':
-                            $field = 'pdf';
-                            break;
-                        default :
-                            $field = 'data';
-                            break;
-                    }
-
                     $file->move($destinationPath,$fileName);
 
-                    $this->topicRepositories
-                         ->upload($groupno,$field,$destinationPath . '/' . $fileName);
+                    $list .= $fileName . "、";
+
                 }
             }
-            else
-            {
-                return $fileName = $file->getClientOriginaName();
-            }
-        }
 
-        return 0;
+        }
+        $list = substr($list,0,-1);
+
+        return $list;
     }
 
 } 

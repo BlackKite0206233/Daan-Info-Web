@@ -1,5 +1,5 @@
 <?php
-
+//顯示專題
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -22,32 +22,36 @@ class browseController extends Controller
         $this->browseRepositories = $browseRepositories;
         $this->browsePresenters = $browsePresenters;
     }
-    //
+
+    //分頁顯示專題
     public function Pagination()                                               //get browse/page
     {
-        //分頁顯示專題
+        //取得所有專題
         $Pagination = $this->browseRepositories
                            ->Pagination();
         return view('list',['topic'=>$Pagination]);
     }
 
+    //依專題名稱搜尋專題(糢糊搜尋)
     public function search(Request $request)                                    //post browse/search
     {
-        //搜尋結果 頁面
+        //取得搜尋的專題
         $searchResult = $this->browseRepositories
                              ->search($request['Search']);
         return view('searchResult',['topic'=>$searchResult]);
     }
 
-    public function year($year ,Request $request)                               //get browse/year/{year}
+    //依年度顯示專題(用ajax)
+    public function year($year)                                                 //get browse/year/{year}
     {
-        //依年度顯示
-        if($year != 'all')
+
+        if($year != 'all')//搜尋指定年度專題
             $Pagination = $this->browseRepositories
                                ->getTopicinfoFromYear($year);
-        else
+        else//取得所有專題
             $Pagination = $this->browseRepositories
                 ->Pagination();
+
         if($Pagination != NULL)
             $data = $this->browsePresenters
                          ->brief($Pagination);
@@ -56,24 +60,26 @@ class browseController extends Controller
         return $data;
     }
 
-    public function topic($topic,Request $request)                               //get browse/topic/{topic}
+    //顯示指定專題
+    public function topic($topic)                                                 //get browse/topic/{topic}
     {
-        //顯示指定專題
+        //取得指定專題
         $Topic = $this->browseRepositories
                       ->getTopicFromGroupno($topic);
 
         return view('post',['topic'=>$Topic]);
     }
 
+    //老師開課資訊
     public function teacherPage()                                                 //get browse/teacher
     {
-        //老師開課資訊
         return view('teacher');
     }
 
+    //依老師顯示專題
     public function teacher($teacher,Request $request)                            //get browse/teacher/{teacher}
     {
-        //依老師顯示
+        //取得指定老師專題
         $topic = $this->browseRepositories
                       ->getTopicinfoFromTeacher($teacher);
 

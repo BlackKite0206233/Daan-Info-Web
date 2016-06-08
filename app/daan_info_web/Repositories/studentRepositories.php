@@ -44,4 +44,14 @@ class studentRepositories
 
         return $stuNo;
     }
+
+    public function setGroupNo($groupno,$StudentsName)
+    {
+        foreach($StudentsName as $stuname)
+        {
+            $this->user
+                 ->where('name',$stuname)
+                 ->update(['topicgroup'=>$groupno]);
+        }
+    }
 }

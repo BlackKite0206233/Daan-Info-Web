@@ -1,5 +1,5 @@
 <?php
-
+//管理評分項目
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -17,39 +17,44 @@ class scorelistController extends Controller
     {
         $this->scoreRepositories = $scoreRepositories;
     }
-    //
-    public function store(Request $request)// post scorelist
+
+    //新增評分項目
+    public function store(Request $request)                                                             //post scorelist
     {
-        //新增評分項目
+        //在scorelist資料表新增一筆資料(評分項目名稱、比例)
         $this->scoreRepositories
              ->insertScoreList($request['scorename'],$request['present']);
 
     }
 
-    public function update(Request $request)// put scorelist/{scorelist}
+    //修改評分項目
+    public function update(Request $request)                                                            //put scorelist/{scorelist}
     {
-        //修改評分項目
+        //更新評分項目(評分項目名稱、比例)
         $this->scoreRepositories
              ->editScoreList($request['id'],$request['scorename'],$request['present']);
     }
 
-    public function destroy(Request $request)// delete scorelist/{scorelist}
+    //移除評分項目
+    public function destroy(Request $request)                                                           //delete scorelist/{scorelist}
     {
-        //移除評分項目
+        //刪除評分項目
         $this->scoreRepositories
              ->deleteScoreList($request['id']);
     }
 
-    public function index()// get scorelist
+    //編輯、刪除評分項目 頁面
+    public function index()                                                                             //get scorelist
     {
-        //編輯、刪除評分項目 頁面
+        //取得所有評分項目
         $scorelist = $this->scoreRepositories
                           ->getAll();
 
     }
 
-    public function create()//get scorelist/create
+    //新增評分項目 頁面
+    public function create()                                                                            //get scorelist/create
     {
-        //新增評分項目 頁面
+
     }
 }

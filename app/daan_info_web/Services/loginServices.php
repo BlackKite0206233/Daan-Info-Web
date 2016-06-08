@@ -22,7 +22,7 @@ class loginServices {
         {
             if(Auth::user()->category == "s")
             {
-                return array('status'=>'student','memID'=>Auth::user()->idno);
+                return array('status'=>'student','memID'=>Auth::user()->idno,'groupno'=>Auth::user()->topicgroup);
             }
             else if(Auth::user()->acc == "admin")
             {

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: acer
- * Date: 2016/2/26
- * Time: 上午 11:33
- */
 
 namespace daan_info_web\Repositories;
 
