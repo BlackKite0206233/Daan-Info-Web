@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: acer
- * Date: 2016/2/15
- * Time: 下午 02:40
- */
-
+//處理專題內容的商業邏輯
 namespace daan_info_web\Services;
 
 use daan_info_web\Services\topicFactoryFunction\Upload;

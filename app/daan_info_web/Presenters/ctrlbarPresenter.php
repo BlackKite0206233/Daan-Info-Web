@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: stu
- * Date: 2016/5/20
- * Time: 下午 03:42
- */
-
+//處理控制列的顯示邏輯
 namespace daan_info_web\Presenters;
 
 

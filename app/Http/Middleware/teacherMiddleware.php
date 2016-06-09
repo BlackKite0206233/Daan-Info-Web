@@ -1,5 +1,5 @@
 <?php
-
+//只允許老師、系統管理員進入
 namespace App\Http\Middleware;
 
 use Closure;
@@ -16,10 +16,9 @@ class teacherMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
         if(session('status') == 'teacher')
             return $next($request);
         else
-            return redirect()->intended('/');
+            return redirect('/login');//如果不是->導向到登入化面
     }
 }

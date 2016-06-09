@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: stu
- * Date: 2016/5/23
- * Time: 下午 01:09
- */
-
+//處理專題內容的顯示邏輯
 namespace daan_info_web\Presenters;
 
 use daan_info_web\Repositories\userRepositories;
@@ -31,21 +25,27 @@ class topicPresenters {
         $this->teacherlistRepositories = $teacherlistRepositories;
     }
 
+    //依帳號回傳老師資料
     public function getTeacher($acc)
     {
         return $this->userRepositories
                    ->getTeacher($acc);
     }
 
+    //依編號回傳專題類別
     public function getTopictype($id)
     {
         return $this->topictypeRepositories
                    ->getTopictype($id);
     }
 
+    //回傳關鍵字
     public function keyword($keyword,$cellphone)
     {
+        //關鍵字用 "、" 分開
         $topickeyword = explode("、",$keyword);
+
+        //加上HTML標籤
         $result = "";
         for($i = 0;$i < count($topickeyword);$i++)
         {
@@ -57,9 +57,13 @@ class topicPresenters {
         return $result;
     }
 
+    //回傳專題內容
     public function getContent($content)
     {
+        //內容用 "#split#" 分開
         $topicContent = explode("#split#",$content);
+
+        //加上HTML標籤
         $result = '<div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">專題動機</h4></div>
@@ -76,9 +80,13 @@ class topicPresenters {
         return $result;
     }
 
+    //回傳專題內容(加上文字編輯器)
     public function updateContent($content)
     {
+        //內容用 "#split#" 分開
         $topicContent = explode("#split#",$content);
+
+        //加上HTML標籤
         $result = '<div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 style="margin:5px;">專題動機</h4></div>
@@ -99,11 +107,14 @@ class topicPresenters {
         return $result;
     }
 
+    //依組別編號回傳學生姓名
     public function getStudentName($groupno)
     {
+        //依組別編號取得學生
         $Student = $this->userRepositories
                         ->getStudent($groupno);
 
+        //每個學生中間用 "、" 隔開
         $result = "";
         foreach($Student as $student)
         {
@@ -113,10 +124,13 @@ class topicPresenters {
         return $result;
     }
 
+    //回傳影片
     public function getVideo($Video)
     {
+        //影片用 "|" 分開
         $topicVideo = explode("|",$Video);
 
+        //加上HTML標籤
         $result = "";
         foreach($topicVideo as $video)
         {
@@ -129,11 +143,14 @@ class topicPresenters {
         return $result;
     }
 
+    //回傳照片
     public function getPic($groupno,$type)
     {
+        //依組別編號取得照片
         $Pic = $this->topicpicRepositories
                     ->getPic($groupno);
 
+        //選擇取得合種照片(組員照片、系統架構圖、產品照片)
         $picpos = "";
         switch($type)
         {
@@ -148,8 +165,10 @@ class topicPresenters {
                 break;
         }
 
+        //每張照片用 "|" 分開
         $topcipic = explode("|",$picpos);
 
+        //加上HTML標籤
         $result = "";
         foreach($topcipic as $pic)
         {
@@ -162,6 +181,7 @@ class topicPresenters {
         return $result;
     }
 
+    //回傳編排過後的專題資訊
     public function outputTopic($topic,$cellphone)
     {
         $result = '<td>組別編號</td>
@@ -218,11 +238,14 @@ class topicPresenters {
         return $result;
     }
 
+    //專題類別選擇欄位
     public function selectTopictype($topictype)
     {
+        //取得所有專題類別
         $Object = $this->topictypeRepositories
                        ->all();
 
+        //加上HTML標籤
         $result = "";
         foreach($Object as $object)
         {
@@ -234,11 +257,14 @@ class topicPresenters {
         return $result;
     }
 
+    //老師選擇欄位
     public function selectTeacher($teacher)
     {
+        //取得所有老師
         $Object = $this->teacherlistRepositories
                        ->getTeacher();
 
+        //加上HTML標籤
         $result = "";
         foreach($Object as $object)
         {

@@ -1,5 +1,5 @@
 <?php
-
+//登入才可進入
 namespace App\Http\Middleware;
 
 use Closure;
@@ -18,6 +18,6 @@ class userMiddleware
         if(session('status') != 'guest' && session('status') != NULL)
             return $next($request);
         else
-            return redirect('login');
+            return redirect('login');//如果不是->導向到登入化面
     }
 }

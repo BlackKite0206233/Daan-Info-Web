@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: acer
- * Date: 2016/3/10
- * Time: 上午 11:51
- */
-
+//登入、登出邏輯
 namespace daan_info_web\Services;
 
 use Auth;

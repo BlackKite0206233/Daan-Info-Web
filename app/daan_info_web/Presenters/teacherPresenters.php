@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: stu
- * Date: 2016/5/25
- * Time: 上午 10:38
- */
-
+//處理老師的顯示邏輯
 namespace daan_info_web\Presenters;
 
 use daan_info_web\Repositories\teacherlistRepositories;

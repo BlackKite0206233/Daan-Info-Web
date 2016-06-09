@@ -17,7 +17,8 @@
 https://laravel.tw/                              laravelいゅざ残
 http://oomusou.io/laravel/laravel-architecture/  laravelい盡琜篶
 REST硁砰琜篶
-ン旧砞璸家Α
+SOLID砞璸玥
+ン旧砞璸家Α(ヘ玡Τㄏノ家Α紅よ猭家Α)
 
 ################################################################################################
 

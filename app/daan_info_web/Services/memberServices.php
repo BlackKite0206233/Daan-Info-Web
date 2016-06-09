@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: acer
- * Date: 2016/5/22
- * Time: 上午 08:09
- */
-
+//處理使用者的商業邏輯
 namespace daan_info_web\Services;
 
 use daan_info_web\Repositories\userRepositories;

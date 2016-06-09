@@ -1,5 +1,5 @@
 <?php
-
+//只允許系統管理員進入
 namespace App\Http\Middleware;
 
 use Closure;
@@ -19,6 +19,6 @@ class adminMiddleware
         if(session('status') == "admin")
             return $next($request);
         else
-            return redirect()->intended('/');
+            return redirect('/login');//如果不是->導向到登入化面
     }
 }
