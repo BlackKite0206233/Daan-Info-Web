@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: stu
- * Date: 2016/5/25
- * Time: 上午 10:03
- */
-
+//Topictype的資料庫邏輯
 namespace daan_info_web\Repositories;
 
 use daan_info_web\Topictype;
@@ -18,6 +12,7 @@ class topictypeRepositories {
         $this->topictype = $topictype;
     }
 
+    //新增專題類別
     public function insert($name)
     {
         $type = new Topictype;
@@ -25,6 +20,7 @@ class topictypeRepositories {
         $type->save();
     }
 
+    //取得指定專題類別
     public function  getTopictype($id)
     {
         $topictype = $this->topictype
@@ -33,6 +29,7 @@ class topictypeRepositories {
         return $topictype->typename;
     }
 
+    //取得所有專題類別
     public function all()
     {
         $topictype = $this->topictype

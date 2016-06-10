@@ -30,7 +30,7 @@ class teacherPresenters {
         $Teacher = $this->teacherlistRepositories
                         ->getTeacher();
         $pic = array();
-        $gradeinfo = array();
+        $gradeinfo = array(array());
 
         //取得圖片、開課資訊、加上HTML標籤
         $result = "";
@@ -49,7 +49,7 @@ class teacherPresenters {
                             <a href="teacher/' . $teacher->acc . '" style="text-decoration:none">
                                 <img class="img-circle" src="' . asset($pic[$key]) . '" alt="Generic placeholder image" style="width:280px;height:280px">
                                 <h4 style="font-weight:bold;margin:15px;">' . $teacher->name . '</h4>
-                                <h5 style="margin-top:-15px;color:rgb(181, 181, 181);">' . $gradeinfo[$key] . '</h5>
+                                <h5 style="margin-top:-15px;color:rgb(181, 181, 181);">' . $gradeinfo[$key]['content'] . '</h5>
                             </a>
                         </div>';
         }

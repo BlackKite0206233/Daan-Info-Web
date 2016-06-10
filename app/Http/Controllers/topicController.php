@@ -2,8 +2,8 @@
 //管理專題
 namespace App\Http\Controllers;
 
-use daan_info_web\Services\topicFactoryFunction\topicinfoFactory;
-use daan_info_web\Services\topicFactoryFunction\topicpicFactory;
+use daan_info_web\Services\uploadFactoryFunction\topicinfoFactory;
+use daan_info_web\Services\uploadFactoryFunction\topicpicFactory;
 
 use Illuminate\Http\Request;
 
@@ -14,6 +14,7 @@ use daan_info_web\Repositories\teacherRepositories;
 use daan_info_web\Repositories\studentRepositories;
 use daan_info_web\Repositories\userRepositories;
 use daan_info_web\Repositories\topicpicRepositories;
+use daan_info_web\Repositories\questionRepositories;
 
 use daan_info_web\Services\topicServices;
 
@@ -25,6 +26,7 @@ class topicController extends Controller
     protected $studentRepositories;
     protected $userRepositories;
     protected $topicpicRepositories;
+    protected $questionRepositories;
 
     protected $topicServices;
 
@@ -38,13 +40,15 @@ class topicController extends Controller
                                topicpicRepositories $topicpicRepositories ,
                                topicServices $topicServices ,
                                topicinfoFactory $topicinfoFactory ,
-                               topicpicFactory $topicpicFactory)
+                               topicpicFactory $topicpicFactory ,
+                               questionRepositories $questionRepositories)
     {
         $this->topicRepositories = $topicRepositories;
         $this->teacherRepositories = $teacherRepositories;
         $this->studentRepositories = $studentRepositories;
         $this->userRepositories = $userRepositories;
         $this->topicpicRepositories = $topicpicRepositories;
+        $this->questionRepositories = $questionRepositories;
 
         $this->topicServices = $topicServices;
 
@@ -69,6 +73,9 @@ class topicController extends Controller
         $this->topicpicRepositories
              ->insert($request['groupno']);
 
+        $this->questionRepositories
+             ->insert($request['groupno']);
+
         return redirect('topic/showTopic'); //重新導向到自己的專題
     }
 
@@ -91,11 +98,11 @@ class topicController extends Controller
         $pic->setRule(['jpg','png','gif']);//設定允許的附檔名
 
         $pic->field = 'memberpic';//設定存取的欄位名稱(下同)
-        $pic->upload($memPic);//上傳(下同)
+        $pic->uploadFile($memPic);//上傳(下同)
         $pic->field = 'structurepic';
-        $pic->upload($strPic);
+        $pic->uploadFile($strPic);
         $pic->field = 'productpic';
-        $pic->upload($proPic);
+        $pic->uploadFile($proPic);
 
         //更新topicinfo的資料(內容、影片)
         $this->topicRepositories
@@ -118,7 +125,7 @@ class topicController extends Controller
         $file->setRule(['jpg','png','gif']);//設定允許的附檔名
 
         $file->field = 'pic';//設定存取的欄位名稱
-        $file->upload($pic);//上傳
+        $file->uploadFile($pic);//上傳
 
         //更新topicinfo的資料(標題、關鍵字、類別)
         $this->topicRepositories
@@ -163,15 +170,15 @@ class topicController extends Controller
 
         $file->setRule(['ppt','pptx','pps','ppsx']);//設定允許的附檔名(下同)
         $file->field = 'ppt';//設定存取的欄位名稱(下同)
-        $file->upload($ppt);//上傳(下同)
+        $file->uploadFile($ppt);//上傳(下同)
 
         $file->setRule(['pdf']);
         $file->field = 'pdf';
-        $file->upload($pdf);
+        $file->uploadFile($pdf);
 
         $file->setRule(['7z','zip','rar','exe','apk']);
         $file->field = 'data';
-        $file->upload($data);
+        $file->uploadFile($data);
 
         return redirect('../showTopic');//重新導向到自己的專題
     }

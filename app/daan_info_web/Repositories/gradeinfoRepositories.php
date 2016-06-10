@@ -1,5 +1,5 @@
 <?php
-
+//Gradeinfo的資料庫邏輯
 namespace daan_info_web\Repositories;
 
 use daan_info_web\Gradeinfo;
@@ -13,9 +13,9 @@ class gradeinfoRepositories
         $this->gradeinfo = $gradeinfo;
     }
 
+    //新增開課資訊
     public function insert($gradeNo ,$teacherNo ,$content)
     {
-        //新增
         $info = new Gradeinfo;
         $info->gradeno = $gradeNo;
         $info->teacherno = $teacherNo;
@@ -23,9 +23,9 @@ class gradeinfoRepositories
         $info->save();
     }
 
-    public function edit($gradeinfo)//傳json
+    //編輯開課資訊(還沒寫完)
+    public function edit($gradeinfo)
     {
-        //編輯
         foreach($gradeinfo as $grade)
         {
             $this->gradeinfo
@@ -34,14 +34,15 @@ class gradeinfoRepositories
         }
     }
 
+    //刪除開課資訊
     public function delete($id)
     {
-        //刪除
         $this->gradeinfo
              ->where('idno',$id)
              ->delete();
     }
 
+    //取得指定年度開課資訊
     public function getFromYear($year)
     {
         return $this->gradeinfo
@@ -49,14 +50,7 @@ class gradeinfoRepositories
                    ->get();
     }
 
-    public function getFromTeacherAndYear($teacherno,$year)
-    {
-        return $this->gradeinfo
-                   ->where('gradeno',$year)
-                   ->where('teacherno',$teacherno)
-                   ->get();
-    }
-
+    //取得指定老師的最新年度開課資訊
     public function getFromTeacherAndLatestYear($teacherno)
     {
         $year = $this->gradeinfo
@@ -66,7 +60,7 @@ class gradeinfoRepositories
                           ->where('gradeno',$year)
                           ->first();
         if($gradeinfo != Null)
-            return $gradeinfo->content;
+            return ['year'=>$year,'content'=>$gradeinfo->content];
         else
             return 0;
     }

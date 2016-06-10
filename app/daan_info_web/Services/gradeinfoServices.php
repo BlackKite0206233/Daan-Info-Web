@@ -14,14 +14,21 @@ class gradeinfoServices {
         $this->gradeinfoRepositories = $gradeinfoRepositories;
     }
 
+    //顯示可編輯的專題資訊
     public function edit($year)
     {
-        $teacher = Auth::user();
-        if($teacher->acc == "admin")
+        $teacher = session('memID');
+        if($teacher == "admin")//系統管理員可編輯所有老師所有年度的專題資訊
+        {
+            //取得指定年度所有老師的專題資訊
             $this->gradeinfoRepositories
-                 ->getFromYear($year);
-        else
+                ->getFromYear($year);
+        }
+        else//老師只能編輯自己最新年度的專題資訊
+        {
+            //取得指定老師的最新年度專題資訊
             $this->gradeinfoRepositories
-                 ->getFromTeacherAndYear($teacher->memberno,$year);
+                ->getFromTeacherAndLatestYear($teacher);
+        }
     }
 } 

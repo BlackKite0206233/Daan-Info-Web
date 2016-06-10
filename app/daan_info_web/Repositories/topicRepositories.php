@@ -1,9 +1,8 @@
 <?php
-
+//Topicinfo的資料庫邏輯
 namespace daan_info_web\Repositories;
 
 use daan_info_web\Topicinfo;
-
 
 class topicRepositories
 {
@@ -14,9 +13,9 @@ class topicRepositories
         $this->topicinfo = $topicinfo;
     }
 
+    //新增專題(只新增專題編號、指導老師、標題，其他編輯時再更新)
     public function insert($groupno,$teacher,$title)
     {
-        //新增
         $topic = new Topicinfo;
         $topic->groupno = $groupno;
         $topic->teacher = $teacher;
@@ -24,14 +23,15 @@ class topicRepositories
         $topic->save();
     }
 
+    //更新專題資訊
     public function edit($id,$title,$keyword,$type)
     {
-        //編輯
         $this->topicinfo
              ->where('groupno' ,$id)
              ->update(['topictitle' => $title ,'topickeyword' => $keyword ,'topictype' => $type]);
     }
 
+    //更新專題內容
     public function editcontent($id,$content,$video)
     {
         $this->topicinfo
@@ -39,6 +39,7 @@ class topicRepositories
              ->update(['topiccontent'=>$content,'video'=>$video]);
     }
 
+    //更新上傳檔案
     public function upload($id,$field,$path)
     {
 
@@ -47,6 +48,7 @@ class topicRepositories
              ->update([$field => $path]);
     }
 
+    //刪除專題
     public function delete($id)
     {
         //刪除
@@ -55,12 +57,14 @@ class topicRepositories
              ->delete();
     }
 
+    //取得所有專題
     public function getAll()
     {
         return $this->topicinfo
                    ->get();
     }
 
+    //取得指定編號專題
     public function getFromId($id)
     {
         return $this->topicinfo
@@ -68,6 +72,7 @@ class topicRepositories
                    ->get();
     }
 
+    //取得專題組別編號
     public function getGroupno($id)
     {
         $groupno =  $this->topicinfo
@@ -76,6 +81,7 @@ class topicRepositories
         return $groupno->groupno;
     }
 
+    //取得特定組別專題
     public function getTopicFromGroupNo($groupNo)
     {
         return $this->topicinfo

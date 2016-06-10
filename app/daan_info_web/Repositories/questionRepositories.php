@@ -1,9 +1,8 @@
 <?php
-
+//Question的資料庫邏輯
 namespace daan_info_web\Repositories;
 
 use daan_info_web\Question;
-
 
 class questionRepositories {
 
@@ -14,25 +13,26 @@ class questionRepositories {
         $this->question = $question;
     }
 
-    public function insert($groupno,$questions)
+    //新增自評問題(只新增專題編號，新增問題時用更新的)
+    public function insert($groupno)
     {
-        foreach($questions as $question)
+        for($i=0;$i<3;$i++)
         {
-            $que = new Question;
-            $que->groupno->$groupno;
-            $que->question = $question;
-            $que->save();
+            $qestion = new Question;
+            $qestion->groupno = $groupno;
+            $qestion->save();
         }
     }
 
+    //編輯自評問題
     public function update($id,$question)
     {
         $this->question
              ->where('idno',$id)
              ->update(['question'=>$question]);
-
     }
 
+    //刪除自評問題
     public function delete($id)
     {
         $this->question
@@ -40,6 +40,7 @@ class questionRepositories {
              ->delete();
     }
 
+    //取得特定組別得自評問題
     public function getQuestionFromGroupno($groupno)
     {
         return $this->question

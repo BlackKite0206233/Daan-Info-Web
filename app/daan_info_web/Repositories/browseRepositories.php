@@ -1,5 +1,5 @@
 <?php
-
+//Topicinfo的資料庫邏輯
 namespace daan_info_web\Repositories;
 
 use daan_info_web\Topicinfo;
