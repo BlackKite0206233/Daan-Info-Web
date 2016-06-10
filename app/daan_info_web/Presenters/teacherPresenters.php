@@ -23,22 +23,28 @@ class teacherPresenters {
         $this->gradeinfoRepositories = $gradeinfoRepositories;
     }
 
+    //顯示老師、開課資訊
     public function getTeacher()
     {
+        //取得所有老師
         $Teacher = $this->teacherlistRepositories
                         ->getTeacher();
         $pic = array();
         $gradeinfo = array();
+
+        //取得圖片、開課資訊、加上HTML標籤
         $result = "";
         foreach($Teacher as $key => $teacher)
         {
+            //依老師帳號取得老師圖片
             $pic[$key] = $this->teacherRepositories
                             ->getPic($teacher->acc);
 
+            //依老師帳號取得開課資訊
             $gradeinfo[$key] = $this->gradeinfoRepositories
                                     ->getFromTeacherAndLatestYear($teacher->acc);
 
-
+            //加上HTML標籤
             $result .= '<div class="col-md-3" style="float:none;display:inline-block;">
                             <a href="teacher/' . $teacher->acc . '" style="text-decoration:none">
                                 <img class="img-circle" src="' . asset($pic[$key]) . '" alt="Generic placeholder image" style="width:280px;height:280px">
