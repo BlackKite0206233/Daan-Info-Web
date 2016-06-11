@@ -48,7 +48,7 @@ class studentRepositories
         return $stuNo;
     }
 
-    //設定學生的專題編號
+    //設定學生的組別編號
     public function setGroupNo($groupno,$StudentsName)
     {
         foreach($StudentsName as $stuname)
@@ -57,5 +57,23 @@ class studentRepositories
                  ->where('name',$stuname)
                  ->update(['topicgroup'=>$groupno]);
         }
+    }
+
+    //取得特定組別的學生
+    public function getStudent($groupno)
+    {
+        $student = $this->user
+            ->where('topicgroup',$groupno)
+            ->get();
+        return $student;
+    }
+
+    //取得組別編號
+    public function getGroup($id)
+    {
+        $group = $this->user
+            ->where('idno' ,$id)
+            ->first();
+        return $group->topicgroup;
     }
 }

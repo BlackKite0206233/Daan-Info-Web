@@ -2,34 +2,34 @@
 //處理專題內容的顯示邏輯
 namespace daan_info_web\Presenters;
 
-use daan_info_web\Repositories\userRepositories;
 use daan_info_web\Repositories\topictypeRepositories;
 use daan_info_web\Repositories\topicpicRepositories;
 use daan_info_web\Repositories\teacherlistRepositories;
+use daan_info_web\Repositories\studentRepositories;
 
 class topicPresenters {
 
-    protected $userRepositories;
     protected $topictypeRepositories;
     protected $topictpicRepositories;
     protected $teacherlistRepositories;
+    protected $studentRepositories;
 
-    public function __construct(userRepositories $userRepositories ,
-                              topictypeRepositories $topictypeRepositories ,
+    public function __construct(topictypeRepositories $topictypeRepositories ,
                               topicpicRepositories $topicpicRepositories ,
-                              teacherlistRepositories $teacherlistRepositories)
+                              teacherlistRepositories $teacherlistRepositories ,
+                              studentRepositories $studentRepositories)
     {
-        $this->userRepositories = $userRepositories;
         $this->topictypeRepositories = $topictypeRepositories;
         $this->topicpicRepositories = $topicpicRepositories;
         $this->teacherlistRepositories = $teacherlistRepositories;
+        $this->studentRepositories = $studentRepositories;
     }
 
     //依帳號回傳老師資料
     public function getTeacher($acc)
     {
-        return $this->userRepositories
-                   ->getTeacher($acc);
+        return $this->teacherlistRepositories
+                   ->getTeacherName($acc);
     }
 
     //依編號回傳專題類別
@@ -111,7 +111,7 @@ class topicPresenters {
     public function getStudentName($groupno)
     {
         //依組別編號取得學生
-        $Student = $this->userRepositories
+        $Student = $this->studentRepositories
                         ->getStudent($groupno);
 
         //每個學生中間用 "、" 隔開

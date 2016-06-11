@@ -28,6 +28,14 @@ class teacherlistRepositories
         return $this->user
                    ->where('category','t')
                    ->get();
+    }
 
+    //取得指定老師名稱
+    public function getTeacherName($acc)
+    {
+        $teacher = $this->user
+            ->where('acc',$acc)
+            ->first();
+        return $teacher->name;
     }
 } 

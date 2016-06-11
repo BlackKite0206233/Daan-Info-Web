@@ -48,32 +48,4 @@ class userRepositories
         return $pwd->password;
     }
 
-    //取得組別編號(應該要寫在studentRepositories阿，怎麼寫在這???)
-    public function getGroup($id)
-    {
-        $group = $this->user
-                      ->where('idno' ,$id)
-                      ->first();
-        return $group->topicgroup;
-    }
-
-    //取得老師名稱(應該要寫在teacherlistRepositories阿，怎麼寫在這???)
-    public function getTeacher($acc)
-    {
-        $teacher = $this->user
-                        ->where('acc',$acc)
-                        ->first();
-        return $teacher->name;
-    }
-
-    //取得特定組別的學生(應該要寫在studentRepositories阿，怎麼寫在這???)
-    public function getStudent($groupno)
-    {
-        $student = $this->user
-                        ->where('topicgroup',$groupno)
-                        ->get();
-        return $student;
-    }
-
-
 }
