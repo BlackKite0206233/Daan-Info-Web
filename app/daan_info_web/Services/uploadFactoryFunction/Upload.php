@@ -5,65 +5,80 @@ namespace daan_info_web\Services\uploadFactoryFunction;
 use Validator;
 use Response;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use File;
 abstract class Upload {
 
     public $groupno = "";//上傳的組別編號
-    public $Rule = "";//檔名限制
+    public $Rule = array();//檔名限制
     public $field = "";//儲存欄位名稱
 
     //設定檔名限制
     public function setRule($rules)
     {
-        $list = "";
-        //每個限制用 "，" 隔開
-        foreach($rules as $rule)
-        {
-            $list .= $rule.',';
-        }
-        $list = substr($list,0,-1);
-
-        $Rule = ['file' => 'required | mimes:'.$list];//設定檔名限制
+//        $list = "";
+//        //每個限制用 "，" 隔開
+//        foreach($rules as $rule)
+//        {
+//            $list .= $rule.',';
+//        }
+//        $list = substr($list,0,-1);
+//
+//        $this->Rule = 'mimes:'.$list;//設定檔名限制
+        $this->Rule = $rules;
     }
 
     //上傳檔案
-    protected function upload(Request &$files,$groupno)
+    protected function upload(UploadedFile $file,$oldFile)
     {
         $list = "";
-        foreach($files as $file)
-        {
-            $validator = Validator::make(['file' => $file],$this->Rule);
-            if(!$validator->fails())
+//        foreach($files as $file)
+//        {
+//            $validator = Validator::make( array('file' => $file) , array('file' => array($this->Rule) ) );
+//
+//            if($validator->fails())
+//            {
+
+            //laravel內建的驗證無法使用(可能是bug吧)，所以自己寫一個
+            foreach($this->Rule as $rule)
             {
-                if($file->isVaild())
+                if($file->getClientOriginalExtension() == $rule)//驗證副檔名是否正確
                 {
-                    if($groupno != "")//專題檔案儲存路徑
+                    if($file->isValid())//驗證檔案是否有效
                     {
-                        $year = substr($groupno,1,3);
-                        $destinationPath = base_path() . '/upload/' . $year . '/' . $groupno;
+                        if($this->groupno != "")//專題檔案儲存路徑
+                        {
+                            $year = substr($this->groupno,1,3);
+                            $destinationPath = public_path() . '/upload/' . $year . '/' . $this->groupno;
+                        }
+                        else//老師照片儲存路徑
+                        {
+                            $destinationPath = public_path() . '/upload/teacher' ;
+                        }
+
+                        $fileName = $file->getClientOriginalName();
+
+                        File::delete($destinationPath.'/'.$oldFile);
+
+                        $file->move($destinationPath,$fileName);
+
+                        //用 "|" 隔開檔名
+                        $list .= $fileName . "|";
                     }
-                    else//老師照片儲存路徑
-                    {
-                        $destinationPath = base_path() . '/upload/teacher' ;
-                    }
-
-                    $extension = $file->getClientOriginalExtension();
-                    $fileName = $file->getClientOriginaName() . '.' . $extension;
-
-                    $file->move($destinationPath,$fileName);
-
-                    //用 "|" 隔開檔名
-                    $list .= $fileName . "|";
                 }
+
             }
 
-        }
+//            }
+
+//        }
         $list = substr($list,0,-1);
 
         return $list;
     }
 
     //上傳檔案方法
-    public function uploadFile(Request &$Files)
+    public function uploadFile(UploadedFile $Files,$oldFile)
     {
 
     }

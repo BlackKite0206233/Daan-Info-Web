@@ -5,10 +5,11 @@ namespace daan_info_web\Services\uploadFactoryFunction;
 use daan_info_web\Repositories\topicRepositories;
 
 use Illuminate\Http\Request;
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 class uploadTopicInfo extends Upload {
 
     protected $topicRepositories;
-
 
     public function __construct(topicRepositories $topicRepositories)
     {
@@ -16,10 +17,10 @@ class uploadTopicInfo extends Upload {
     }
 
     //override upload
-    public function uploadFile(Request &$files)
+    public function uploadFile(UploadedFile $files,$oldFile)
     {
         //上傳檔案
-        $file = $this->upload($files,$this->groupno);
+        $file = $this->upload($files,$oldFile);
 
         //更新 topicinfo 資料表內容
         if($file != "")

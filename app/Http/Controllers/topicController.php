@@ -85,6 +85,9 @@ class topicController extends Controller
         //動機 跟 遇到的問題與解決辦法 用 #spilt# 隔開，放在同一個欄位
         $content = $request['editor1']."#spilt#".$request['editor2'];
 
+        //取得指定專題詳細資料(目的是取得原本上傳的檔案名稱)
+        $path = $this->topicRepositories
+                     ->getTopicFromGroupNo($topic);
 
         $memPic = $request->file('memPic');//組員照片
         $strPic = $request->file('strPic');//系統架構圖
@@ -98,23 +101,27 @@ class topicController extends Controller
         $pic->setRule(['jpg','png','gif']);//設定允許的附檔名
 
         $pic->field = 'memberpic';//設定存取的欄位名稱(下同)
-        $pic->uploadFile($memPic);//上傳(下同)
+        $pic->uploadFile($memPic,$path->memberpic);//上傳(下同)
         $pic->field = 'structurepic';
-        $pic->uploadFile($strPic);
+        $pic->uploadFile($strPic,$path->structurepic);
         $pic->field = 'productpic';
-        $pic->uploadFile($proPic);
+        $pic->uploadFile($proPic,$path->productpic);
 
         //更新topicinfo的資料(內容、影片)
         $this->topicRepositories
              ->editcontent($topic,$content,$request['video']);
 
 
-        return redirect('../showTopic');//重新導向到自己的專題
+        return redirect('topic/showTopic');//重新導向到自己的專題
     }
 
     //編輯專題資訊
     public function updateinfo($topic,Request $request)                                      //put topic/{topic}/info
     {
+        //取得指定專題詳細資料(目的是取得原本上傳的檔案名稱)
+        $path = $this->topicRepositories
+                     ->getTopicFromGroupNo($topic);
+
         $pic = $request->file('pic');//專題照片
 
         //上傳照片(工廠方法模式  選擇topicinfoFactory)
@@ -125,21 +132,21 @@ class topicController extends Controller
         $file->setRule(['jpg','png','gif']);//設定允許的附檔名
 
         $file->field = 'pic';//設定存取的欄位名稱
-        $file->uploadFile($pic);//上傳
+        $file->uploadFile($pic,$path->pic);//上傳
 
         //更新topicinfo的資料(標題、關鍵字、類別)
         $this->topicRepositories
-             ->edit($topic,$request['title'],$request['keyword'],$request['type']);
+             ->edit($topic,$request['topicname'],$request['topickeyword'],$request['topictype']);
 
 
-        return redirect('../showTopic');//重新導向到自己的專題
+        return redirect('topic/showTopic');//重新導向到自己的專題
     }
 
     //顯示指定專題 頁面
     public function showTopic()                                                               //get topic/showTopic
     {
         //依學生編號取得組別編號
-        $groupNo = $this->userRepositories
+        $groupNo = $this->studentRepositories
                         ->getGroup(session('memID'));
 
         //依組別編號取得專題詳細資訊
@@ -158,6 +165,10 @@ class topicController extends Controller
     //上傳檔案
     public function upload($topic,Request $request)                                           //post topic/{topic}/upload
     {
+        //取得指定專題詳細資料(目的是取得原本上傳的檔案名稱)
+        $path = $this->topicRepositories
+                     ->getTopicFromGroupNo($topic);
+
         $ppt = $request->file('ppt');//簡報
         $pdf = $request->file('pdf');//報告
         $data = $request->file('data');//檔案
@@ -170,17 +181,17 @@ class topicController extends Controller
 
         $file->setRule(['ppt','pptx','pps','ppsx']);//設定允許的附檔名(下同)
         $file->field = 'ppt';//設定存取的欄位名稱(下同)
-        $file->uploadFile($ppt);//上傳(下同)
+        $file->uploadFile($ppt,$path->ppt);//上傳(下同)
 
         $file->setRule(['pdf']);
         $file->field = 'pdf';
-        $file->uploadFile($pdf);
+        $file->uploadFile($pdf,$path->pdf);
 
         $file->setRule(['7z','zip','rar','exe','apk']);
         $file->field = 'data';
-        $file->uploadFile($data);
+        $file->uploadFile($data,$path->data);
 
-        return redirect('../showTopic');//重新導向到自己的專題
+        return redirect('topic/showTopic');//重新導向到自己的專題
     }
 
     //所有專題 頁面

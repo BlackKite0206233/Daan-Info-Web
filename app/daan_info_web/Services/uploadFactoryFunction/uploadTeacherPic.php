@@ -9,13 +9,15 @@
 namespace daan_info_web\Services\uploadFactoryFunction;
 
 use Illuminate\Http\Request;
+
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 class uploadTeacherPic extends Upload {
 
     //override upload
-    public function uploadFile(Request &$files)
+    public function uploadFile(UploadedFile $files,$oldFile)
     {
         //上傳檔案
-        $file = $this->upload($files,$this->field,$this->groupno);
+        $file = $this->upload($files,$oldFile);
 
         //更新 topicpic 資料表內容
         return $file;
