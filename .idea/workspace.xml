@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="topicController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="topicController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/topicController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.764706" vertical-offset="2430" max-vertical-offset="6480">
-              <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.5" vertical-offset="2130" max-vertical-offset="6780">
+              <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
               <folding>
                 <element signature="e#46#112#0#PHP" expanded="true" />
               </folding>
@@ -37,60 +37,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="postmodify.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
+      <file leaf-file-name="topicRepositories.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="10470">
-              <caret line="20" column="134" selection-start-line="20" selection-start-column="134" selection-end-line="20" selection-end-column="134" />
+            <state vertical-scroll-proportion="-59.235294" vertical-offset="476" max-vertical-offset="2910">
+              <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploadTopicInfo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicInfo.php">
+      <file leaf-file-name="postmodify.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1050">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state vertical-scroll-proportion="-4.4117646" vertical-offset="6150" max-vertical-offset="10470">
+              <caret line="210" column="103" selection-start-line="210" selection-start-column="103" selection-end-line="210" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topicPresenters.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.17647" vertical-offset="2280" max-vertical-offset="8460">
+              <caret line="103" column="73" selection-start-line="103" selection-start-column="73" selection-end-line="103" selection-end-column="73" />
               <folding>
-                <element signature="e#83#132#0#PHP" expanded="true" />
+                <marker date="1465880726852" expanded="true" signature="2081:2361" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="2133:2201" placeholder="..." />
+                <marker date="1465880726852" expanded="false" signature="2174:2185" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="2250:2334" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="2416:2644" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="2468:2542" placeholder="..." />
+                <marker date="1465880726852" expanded="false" signature="2509:2520" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="2902:3276" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="2954:3022" placeholder="..." />
+                <marker date="1465880726852" expanded="false" signature="2995:3006" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="3071:3249" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="3125:3218" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="3331:3649" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="3383:3457" placeholder="..." />
+                <marker date="1465880726852" expanded="false" signature="3424:3435" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="3506:3622" placeholder="..." />
+                <marker date="1465880726852" expanded="false" signature="4361:4373" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="4374:4652" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="4448:4629" placeholder="..." />
+                <marker date="1465880726852" expanded="false" signature="5473:5485" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="5486:5664" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="5548:5641" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="5906:6014" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6035:6163" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6184:6320" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6341:6469" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6490:6614" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6635:6701" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6722:7897" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6759:7897" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6803:7870" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6863:7146" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="6929:7111" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="7206:7495" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="7272:7460" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="7555:7839" placeholder="..." />
+                <marker date="1465880726852" expanded="true" signature="7622:7804" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploadTopicPic.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicPic.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1050">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-              <folding>
-                <element signature="e#83#135#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uploadTeacherPic.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTeacherPic.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="750">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-              <folding>
-                <element signature="e#146#174#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Upload.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/Upload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53571427" vertical-offset="360" max-vertical-offset="2700">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-              <folding>
-                <element signature="e#75#89#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-10.588235" vertical-offset="480" max-vertical-offset="2400">
+              <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +127,6 @@
       <list>
         <option value="$PROJECT_DIR$/resources/views/list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/post.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/topicFactoryFunction/upload.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/uploadTopicPic.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/userController.php" />
@@ -147,15 +166,16 @@
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/topictypeRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/teacherlistRepositories.php" />
-        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/studentRepositories.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Repositories/userRepositories.php" />
-        <option value="$PROJECT_DIR$/resources/views/postmodify.blade.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTeacherPic.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicPic.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicInfo.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/topicController.php" />
         <option value="$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/Upload.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/postmodify.blade.php" />
+        <option value="$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/topicController.php" />
       </list>
     </option>
   </component>
@@ -569,15 +589,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -626,19 +646,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2642015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26795283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33813748" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -658,9 +678,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31122994" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -819,13 +839,6 @@
         <state vertical-scroll-proportion="1.0" vertical-offset="870" max-vertical-offset="2670">
           <caret line="63" column="82" selection-start-line="63" selection-start-column="82" selection-end-line="63" selection-end-column="82" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78571427" vertical-offset="0" max-vertical-offset="2400">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1013,13 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8261905" vertical-offset="116" max-vertical-offset="2910">
-          <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3214285" vertical-offset="360" max-vertical-offset="2520">
@@ -1050,65 +1056,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.464286" vertical-offset="7710" max-vertical-offset="8550">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/queue.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2857144" vertical-offset="1920" max-vertical-offset="2760">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTeacherPic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="750">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="e#146#174#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicPic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="1050">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-          <folding>
-            <element signature="e#83#135#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1050">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-          <folding>
-            <element signature="e#83#132#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="10470">
-          <caret line="20" column="134" selection-start-line="20" selection-start-column="134" selection-end-line="20" selection-end-column="134" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/topicController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.764706" vertical-offset="2430" max-vertical-offset="6480">
-          <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
-          <folding>
-            <element signature="e#46#112#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,6 +1069,116 @@
           <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
           <folding>
             <element signature="e#75#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTeacherPic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="840">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding>
+            <element signature="e#146#174#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicPic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7190476" vertical-offset="56" max-vertical-offset="1050">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding>
+            <element signature="e#83#135#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Services/uploadFactoryFunction/uploadTopicInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64285713" vertical-offset="120" max-vertical-offset="1050">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding>
+            <element signature="e#83#132#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Repositories/topicRepositories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-59.235294" vertical-offset="476" max-vertical-offset="2910">
+          <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.588235" vertical-offset="480" max-vertical-offset="2400">
+          <caret line="37" column="91" selection-start-line="37" selection-start-column="91" selection-end-line="37" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/postmodify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4117646" vertical-offset="6150" max-vertical-offset="10470">
+          <caret line="210" column="103" selection-start-line="210" selection-start-column="103" selection-end-line="210" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/daan_info_web/Presenters/topicPresenters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.17647" vertical-offset="2280" max-vertical-offset="8460">
+          <caret line="103" column="73" selection-start-line="103" selection-start-column="73" selection-end-line="103" selection-end-column="73" />
+          <folding>
+            <marker date="1465880726852" expanded="true" signature="2081:2361" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="2133:2201" placeholder="..." />
+            <marker date="1465880726852" expanded="false" signature="2174:2185" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="2250:2334" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="2416:2644" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="2468:2542" placeholder="..." />
+            <marker date="1465880726852" expanded="false" signature="2509:2520" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="2902:3276" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="2954:3022" placeholder="..." />
+            <marker date="1465880726852" expanded="false" signature="2995:3006" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="3071:3249" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="3125:3218" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="3331:3649" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="3383:3457" placeholder="..." />
+            <marker date="1465880726852" expanded="false" signature="3424:3435" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="3506:3622" placeholder="..." />
+            <marker date="1465880726852" expanded="false" signature="4361:4373" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="4374:4652" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="4448:4629" placeholder="..." />
+            <marker date="1465880726852" expanded="false" signature="5473:5485" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="5486:5664" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="5548:5641" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="5906:6014" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6035:6163" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6184:6320" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6341:6469" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6490:6614" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6635:6701" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6722:7897" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6759:7897" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6803:7870" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6863:7146" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="6929:7111" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="7206:7495" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="7272:7460" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="7555:7839" placeholder="..." />
+            <marker date="1465880726852" expanded="true" signature="7622:7804" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/topicController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5" vertical-offset="2130" max-vertical-offset="6780">
+          <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+          <folding>
+            <element signature="e#46#112#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

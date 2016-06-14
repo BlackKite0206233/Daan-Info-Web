@@ -68,7 +68,7 @@ class topicPresenters {
                         <div class="panel-heading">
                             <h4 style="margin:5px;">專題動機</h4></div>
                         <div class="panel-body">
-                            <p>'.$topicContent[0].'</p>
+                            '.$topicContent[0].'
                             </div>
                     </div>
 
@@ -92,7 +92,7 @@ class topicPresenters {
                             <h4 style="margin:5px;">專題動機</h4></div>
                         <div class="panel-body">
                             <textarea name="editor1">
-                                <p>'.$topicContent[0].'</p>
+                                '.$topicContent[0].'
                             </textarea>
                         </div>
                     </div>

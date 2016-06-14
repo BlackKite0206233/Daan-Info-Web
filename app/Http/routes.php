@@ -35,7 +35,7 @@ Route::group(['middleware'=>['web']],function(){
         Route::group(['prefix'=>'topic'],function() {
             Route::get('showTopic', 'topicController@showTopic');                          //個人專題頁面
             Route::get('upload', 'topicController@uploadPage');                            //上傳檔案
-            Route::post('upload', 'topicController@upload');                               //上傳檔案
+            Route::post('{topic}/upload', 'topicController@upload');                       //上傳檔案
             Route::put('{topic}/info', 'topicController@updateinfo');                      //編輯專題資訊
         });
 

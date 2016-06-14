@@ -17,6 +17,7 @@ use daan_info_web\Repositories\topicpicRepositories;
 use daan_info_web\Repositories\questionRepositories;
 
 use daan_info_web\Services\topicServices;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 
 class topicController extends Controller
@@ -82,8 +83,8 @@ class topicController extends Controller
     //編輯專題內容
     public function update($topic,Request $request)                                          //put topic/{topic}
     {
-        //動機 跟 遇到的問題與解決辦法 用 #spilt# 隔開，放在同一個欄位
-        $content = $request['editor1']."#spilt#".$request['editor2'];
+        //動機 跟 遇到的問題與解決辦法 用 #split# 隔開，放在同一個欄位
+        $content = $request['editor1']."#split#".$request['editor2'];
 
         //取得指定專題詳細資料(目的是取得原本上傳的檔案名稱)
         $path = $this->topicRepositories
@@ -101,11 +102,16 @@ class topicController extends Controller
         $pic->setRule(['jpg','png','gif']);//設定允許的附檔名
 
         $pic->field = 'memberpic';//設定存取的欄位名稱(下同)
-        $pic->uploadFile($memPic,$path->memberpic);//上傳(下同)
+        if($memPic != NULL)
+            $pic->uploadFile($memPic,$path->memberpic);//上傳(下同)
+
         $pic->field = 'structurepic';
-        $pic->uploadFile($strPic,$path->structurepic);
+        if($strPic != NULL)
+            $pic->uploadFile($strPic,$path->structurepic);
+
         $pic->field = 'productpic';
-        $pic->uploadFile($proPic,$path->productpic);
+        if($proPic != NULL)
+            $pic->uploadFile($proPic,$path->productpic);
 
         //更新topicinfo的資料(內容、影片)
         $this->topicRepositories
@@ -130,9 +136,10 @@ class topicController extends Controller
         $file = $factory->selectDB();
         $file->groupno = $topic;//設定組別編號
         $file->setRule(['jpg','png','gif']);//設定允許的附檔名
-
         $file->field = 'pic';//設定存取的欄位名稱
-        $file->uploadFile($pic,$path->pic);//上傳
+
+        if($pic != NULL)
+            $file->uploadFile($pic,$path->pic);//上傳
 
         //更新topicinfo的資料(標題、關鍵字、類別)
         $this->topicRepositories
@@ -181,15 +188,18 @@ class topicController extends Controller
 
         $file->setRule(['ppt','pptx','pps','ppsx']);//設定允許的附檔名(下同)
         $file->field = 'ppt';//設定存取的欄位名稱(下同)
-        $file->uploadFile($ppt,$path->ppt);//上傳(下同)
+        if($ppt != NULL)
+            $file->uploadFile($ppt,$path->ppt);//上傳(下同)
 
         $file->setRule(['pdf']);
         $file->field = 'pdf';
-        $file->uploadFile($pdf,$path->pdf);
+        if($pdf != NULL)
+            $file->uploadFile($pdf,$path->pdf);
 
         $file->setRule(['7z','zip','rar','exe','apk']);
         $file->field = 'data';
-        $file->uploadFile($data,$path->data);
+        if($data != NULL)
+            $file->uploadFile($data,$path->data);
 
         return redirect('topic/showTopic');//重新導向到自己的專題
     }

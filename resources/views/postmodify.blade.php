@@ -208,7 +208,7 @@
                     </script>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="modify2">
-                    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form method="post" enctype="multipart/form-data" class="form-horizontal" action="/topic/{{$topic->groupno}}">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
                         {!! $topicPresenters->updateContent($topic->topiccontent) !!}
